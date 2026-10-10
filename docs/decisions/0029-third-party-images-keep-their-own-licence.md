@@ -29,8 +29,8 @@ The owner cannot relicense someone else's photograph, so the image cannot fall u
 ## Decision
 
 An essay may carry a third-party image under that image's own licence, ShareAlike included. The
-copy lives in `docs/essays/images/`. Its caption gives title, author, source, and licence, and
-says whether it was changed. The README's License section names the exception.
+copy lives in `docs/essays/images/`. A footnote in the essay gives its title, author, source, and
+licence, and says whether it was changed. The README's License section names the exception.
 
 This amends 0014's scope, not its choice: the owner's text stays CC BY 4.0.
 
@@ -40,7 +40,7 @@ This amends 0014's scope, not its choice: the owner's text stays CC BY 4.0.
   may choose a license for the collection, however this does not change the license applicable to
   the original material."[^cc] The first image is a byte-identical copy, so nothing was adapted.
 - **A changed image is an adaptation.** A crop or an edit of a BY-SA image must itself be offered
-  under BY-SA, and its caption must say what changed.
+  under BY-SA, and its footnote must say what changed.
 - **The plugin ships the image.** The marketplace entry's `source` is `./`, so an install carries
   `docs/`. A scanner or a blanket copyleft policy, the cost 0014 named, can now find one BY-SA
   file. It is an image beside an essay, and no skill depends on it.
