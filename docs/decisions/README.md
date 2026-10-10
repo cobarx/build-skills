@@ -24,7 +24,7 @@ skill. A reversed decision gets a new record, and the old one is marked supersed
 | [0011](0011-durable-context-file-problems-by-default.md) | A problem you notice is filed by default | Accepted |
 | [0012](0012-adopting-standards-a-peer-skill.md) | Adopting standards is a peer skill, not a platform rule | Accepted |
 | [0013](0013-cite-sources-in-footnotes.md) | Cite sources in footnotes, outside the line limit | Accepted |
-| [0014](0014-license-cc-by-4-0.md) | License the text under CC BY 4.0; code takes a software licence | Accepted |
+| [0014](0014-license-cc-by-4-0.md) | License the text under CC BY 4.0; code takes a software licence | Accepted, amended by 0029 |
 | [0015](0015-skill-evals-cases-sit-under-their-skill.md) | `skill-evals`: cases sit under the skill they test | Accepted |
 | [0016](0016-skill-evals-each-case-explains-itself.md) | `skill-evals`: each case explains itself in a README | Accepted |
 | [0017](0017-skill-evals-llm-graded-cases-ship-known-bad-and-known-good-controls.md) | `skill-evals`: an LLM-graded case ships a known-bad and a known-good control | Accepted |
@@ -34,3 +34,4 @@ skill. A reversed decision gets a new record, and the old one is marked supersed
 | [0021](0021-decision-analysis-decision-log-analysis-is-a-peer-of-the-record.md) | Decision analysis is a peer skill of the decision log | Accepted |
 | [0022](0022-simplicity-thresholds-move-to-a-reference.md) | `simplicity`'s thresholds move to a reference | Accepted |
 | [0024](0024-skill-evals-a-judge-is-pinned-by-its-model-alone.md) | `skill-evals`: a judge is pinned by its model alone | Accepted |
+| [0029](0029-third-party-images-keep-their-own-licence.md) | A third-party image keeps its own licence | Accepted |

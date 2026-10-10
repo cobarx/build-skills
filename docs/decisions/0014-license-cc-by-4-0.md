@@ -1,6 +1,6 @@
 # 0014. License the text under CC BY 4.0; code takes a software licence
 
-- **Status:** Accepted
+- **Status:** Accepted. Scope amended by [0029](0029-third-party-images-keep-their-own-licence.md).
 - **Decided:** 2026-10-04 · **Recorded:** 2026-09-28 · Claude Opus 5.5
 - **Affects:** every file; how others credit what they copy or adapt
 
