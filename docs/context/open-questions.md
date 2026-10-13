@@ -68,6 +68,42 @@ fresh-session check can't reproduce that. Testing it needs a replayed long conve
 prompt; the fallback is an always-on rule in CLAUDE.md. Raised in 0020; the test and the
 decision it feeds are #58.
 
+## Candidates from a LaptopPad session (2026-10-09)
+
+From designing a laptop pad (`Projects/Hardware/LaptopPad`) and tuning Dota 2 on the same laptop.
+The owner agreed 1 to 4 should be drafted as skill changes; 5 waits for more data; 6 is the
+owner's rule and needs a home.
+
+1. **One folder per design revision** (`durable-context`). Renders and mockups go in
+   `artifacts/<subject>/revN/`, indexed by a README section per revision. Generator scripts hold
+   only the current design, so the images are the history. Owner's request when the folder got
+   cluttered. Refined the same day: superseded revisions move to `archive/` (still indexed), so
+   only current work sits at the top.
+2. **Every revision reports its own requirement checks** (`definition-of-done`). The mockup script
+   prints clearance, envelope fit and tip-over force on every render. Rev 3 looked right and put
+   the laptop's feet on the pad; only the printed check caught it.
+3. **Primary sources over project docs** (`platform-correctness`). A project doc said gamescope's
+   `-s` was sharpness; the tool's own help said mouse sensitivity, which was the root cause being
+   chased. Owner's rule: always go back to the primary source; the man page usually beats
+   `--help` for detail. A project doc or memory describing a tool is a claim to check against it.
+   Only when the man page or help is wrong (exceedingly rare) or ambiguous does testing the
+   behaviour or reading the source decide. The same holds for APIs: check the provider's own
+   reference docs, not our summary of them or docs generated from them, unless no primary source
+   exists.
+4. **Check the owner's named mechanism against their goal** (an example for `spec`). The owner
+   asked for metal-to-metal contact to move heat; bare contact conducts worse than a thin thermal
+   pad. The goal held and the mechanism changed.
+5. **Fair A/B tests: equal starting state, alternating order, say what a stand-in can't
+   reproduce.** One example so far (a tablet standing in for the pad, whose 60s run started 10°C
+   cooler than the baseline and soaked heat into its own mass). Needs more cases before it
+   generalises, and has no obvious home.
+6. **Confirm the setup with the person before every interactive test run.** Owner's rule. When a
+   person sets up the physical conditions (hardware placement, power, what's plugged in), state the
+   setup and wait for their OK before each run; never assume it carried over from an earlier
+   message or session. An agent started a run assuming a tablet was still under the laptop from the
+   night before; it wasn't, and the run was stopped and discarded. Home not decided: it is an
+   event-triggered check like `spec`'s, but about test execution rather than the goal.
+
 ## Stranded elsewhere
 
 Research for the **playhead** project, including the caption test corpus (Sintel's ~40 languages,
