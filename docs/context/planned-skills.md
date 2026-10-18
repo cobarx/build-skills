@@ -210,6 +210,11 @@ Splits from siblings: `decision-log` owns how a decision is made and recorded, t
 decisions must be made before starting. `platform-correctness` owns conforming to a platform, this owns choosing
 one. `linting` owns the mechanism, this owns standing it up on day one.
 
+## `readme`: an entry point answers the questions its reader arrives with
+
+Replaces part of `organize` (ai-skills-cobarx). Scope, examples and the eval are in
+[retiring-organize.md](retiring-organize.md). Draft on branch `readme-skill`.
+
 ## Also planned
 
 `harness` (make the system locally observable without external services), `tdd` (port),
