@@ -44,6 +44,20 @@ Deming.
 Planned: `linting`, `test-fidelity`, `glossary`, `harness`, `project-setup`, a skill for the *why*
 behind a goal (name not settled), plus ports of `tdd` and `error-taxonomy`.
 
+## Context cost
+
+Measured on 2026-10-12 in Claude Code 2.1.296 with Claude Opus 5.5, with the 17 skills under
+`skills/` installed:
+
+| What | When it is paid | Tokens |
+|---|---|---|
+| The skill index: every name and description | Every session | 2,078 |
+| One skill's body | Each time that skill loads | 550 to 1,119, median 907 |
+
+The index figure is the difference in prompt tokens between two headless sessions that differ only
+in whether the plugin is enabled. Each body figure is that `SKILL.md` without its front matter,
+counted the same way. Other models tokenize differently, so the counts hold for this one only.
+
 ## Installation
 
 ### Claude Code
