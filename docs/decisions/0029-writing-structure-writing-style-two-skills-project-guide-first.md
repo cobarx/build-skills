@@ -64,10 +64,10 @@ personal preferences (no em dashes, for one) stay in his own agent instructions,
 **Only rules the owner holds with confidence are adopted now.** He asked to "adopt the things that
 I have high confidence in, and then do some tests with the other ideas." The classic sentence
 rules (active voice as a default, omitting needless words, positive form, concrete language,
-characters as subjects, old information before new) are held for testing in a follow-up issue;
+characters as subjects, old information before new) are held for testing;
 active voice in particular is not always better, by Pullum's and Williams's evidence. Conventions
 for specific artifacts (commit messages, PR descriptions, issues, READMEs) are held for the same
-issue.
+issue, [#159](https://github.com/cobarx/build-skills/issues/159).
 
 **Standing on its own (structure rule 7) has no exception for readers who were there.** Asked
 about a commit message written with and without the session's context, the owner noted that the
@@ -85,6 +85,8 @@ and credited.
 - A repo that wants its own writing standard keeps it in its own files; these skills defer to it.
   sysadmin-skills keeps its "Writing for readers" section for readers without build-skills.
 - Both skills rest on one session's corrections plus converged published guidance, with no evals
-  yet. The follow-up issue covers evals along with the held style rules.
+  yet. [#159](https://github.com/cobarx/build-skills/issues/159) covers evals along with the held
+  style rules.
 - How build-skills as a whole should behave in a repo that has not adopted it is wider than
-  writing, and is its own open issue.
+  writing, and is its own open issue,
+  [#160](https://github.com/cobarx/build-skills/issues/160).
