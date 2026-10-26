@@ -53,6 +53,5 @@ project's own guide decides for itself (0029).
 
 - In the owner's repos the ban and the rule agree. Elsewhere, a writer following the rule rarely
   reaches for a dash, without the skill overriding a project that uses them.
-- Whether the rule changes what an agent writes is untested; it belongs in the evals the
-  follow-up issue,
-  [#159](https://github.com/cobarx/build-skills/issues/159), covers.
+- Whether the rule changes what an agent writes is untested; it belongs in the evals that
+  [#159](https://github.com/cobarx/build-skills/issues/159) covers.
