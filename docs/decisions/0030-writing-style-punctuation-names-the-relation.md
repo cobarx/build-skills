@@ -24,7 +24,7 @@ style guide limits the em dash to a break in a sentence and prefers a colon or p
 item and its description.
 
 Wikipedia's editors, cataloguing signs of AI writing, report that models hard-coded against em
-dashes stopped using "any sort of alternate punctuation", and that the resulting run of commas and
+dashes stopped using other kinds of punctuation, and that the resulting run of commas and
 periods "has become its own sign of AI writing." The claim is tagged "citation needed".
 Anthropic's prompting guidance makes the general point: tell a model what to do rather than what
 not to do.

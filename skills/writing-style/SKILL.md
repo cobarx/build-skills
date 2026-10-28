@@ -29,7 +29,8 @@ it keeps the small words that say how one idea relates to the next.
    while working, which means nothing to a reader who wasn't there.[^jargon]
 
 4. **Refer to people by their role.** Not as "I", "we" or "you" meaning the author or the agent,
-   but as the owner, the reviewer, the maintainer. "You" addressed to the reader is fine.
+   but as the owner, the reviewer, the maintainer. "You" addressed to the reader is
+   fine.[^readers]
 
 5. **Join two ideas with the mark that says how they relate.** Use a colon when what follows
    explains, illustrates or lists what came before; a semicolon for two closely related statements;
@@ -51,19 +52,21 @@ Decisions affecting this skill: `docs/decisions/*-writing-style-*.md`
 
 [^google]: Google, *Google developer documentation style guide*, "About this guide", CC BY 4.0,
     <https://developers.google.com/style>: "Follow style guidance specific to your project or
-    product."
+    product." Adapted: a project's existing docs count as its guidance.
 [^fplg]: *Federal Plain Language Guidelines* (2011), "Use short, simple words", reposted by the
     Center for Plain Language,
     <https://centerforplainlanguage.org/wp-content/uploads/2025/12/FederalPLGuidelines.pdf>.
 [^spec]: OpenAI, *Model Spec* (2026-08-18), CC0, <https://model-spec.openai.com/2026-08-18.html>: a
     professional tone "doesn't mean the model should sound stuffy and formal."
 [^jargon]: Google, *Google developer documentation style guide*, "Jargon", CC BY 4.0,
-    <https://developers.google.com/style/jargon>: define necessary jargon clearly on first use.
+    <https://developers.google.com/style/jargon>: describe a term briefly on first reference, or
+    link to a definition. Paraphrased.
+[^readers]: cobarx/sysadmin-skills, AGENTS.md, "Writing for readers" (2026-10-26),
+    <https://github.com/cobarx/sysadmin-skills/blob/main/AGENTS.md>: the owner's convention.
 [^strunk]: William Strunk Jr., *The Elements of Style* (1920), Rule 5 and the entry on "While",
-    public domain, <https://www.gutenberg.org/ebooks/37134>: the semicolon is "this simple method of
-    indicating relationship between statements"; an all-purpose connective comes from "uncertainty
-    which of the two connectives is the more appropriate."
+    public domain, <https://www.gutenberg.org/ebooks/37134>: an all-purpose connective comes from
+    "uncertainty which of the two connectives is the more appropriate."
 [^sw]: William Strunk Jr. and E. B. White, *The Elements of Style*, 4th ed. (Allyn & Bacon,
-    2000), Rule 8: "Use a dash only when a more common mark of punctuation seems inadequate."
+    2000), Rule 8: a dash only when a more common mark seems inadequate. Paraphrased.
 [^williams]: Joseph M. Williams and Joseph Bizup, *Style: Lessons in Clarity and Grace*, 11th ed.
     (Pearson, 2014), Appendix I: punctuation as choices with different effects. Paraphrased.
