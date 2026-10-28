@@ -73,6 +73,8 @@ The licence column uses three terms. **Quote** means the source is public domain
 | 9 | One topic per paragraph and per section, opened by a sentence that states its point. | [Strunk Rules 8 and 9](https://www.gutenberg.org/ebooks/37134); [FPLG paragraphs](https://centerforplainlanguage.org/wp-content/uploads/2025/12/FederalPLGuidelines.pdf); Williams Lesson 8 (Williams and Bizup, *Style: Lessons in Clarity and Grace*, 11th ed., Pearson, 2014) | Strunk, FPLG: quote. Williams: paraphrase |
 | ref | Artifact forms: commit message, PR description, issue, README (as described in the previous section). | Beams, Pope, git, Google eng-practices, GitHub Docs, Mozilla, makeareadme, Standard Readme (URLs above) | GitHub Docs, eng-practices, Conventional Commits, makeareadme, Standard Readme: quote. Beams, Pope, Mozilla (no licence shown), Tatham (OpenContent): paraphrase |
 
+Candidate 9 was left out of the first draft and adopted in review of #156, as two rules: one point per paragraph (rule 7) and the point first, at every scale (rule 3). Candidate 6's ordering, "how-to first, reference next, explanation last", is not in Diátaxis: its home, compass, how-to, reference and explanation pages, read on 2026-10-28, keep the kinds apart and have each link to the others, but order only the steps within a how-to guide. So the skill takes its order from candidate 7 (rule 4, cited to Purdue OWL) and its separation from Diátaxis (rule 5).
+
 ### Style skill (proposed purpose: write sentences a reader understands on first reading)
 
 | # | Candidate rule | Sources | Licence |

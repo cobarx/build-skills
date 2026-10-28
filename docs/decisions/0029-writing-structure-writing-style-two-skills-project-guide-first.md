@@ -69,7 +69,17 @@ active voice in particular is not always better, by Pullum's and Williams's evid
 for specific artifacts (commit messages, PR descriptions, issues, READMEs) are held for the same
 issue, [#159](https://github.com/cobarx/build-skills/issues/159).
 
-**Standing on its own (structure rule 7) has no exception for readers who were there.** Asked
+**A rule holds one instruction: two that can fail independently are two rules.** In review the
+owner asked whether point-first "also implies that each paragraph has a single point or topic,"
+and held both parts with confidence. A paragraph can make one point and save it for its end, so
+one point per paragraph (structure rule 7) and the point first (rule 3, widened to every scale)
+are separate rules; Strunk's Rules 8 and 9 split them the same way. By the same test the old rule 4
+became two: a document can keep how-to, reference and explanation apart and still put its
+provenance first, as the motivating document did, so ordering by use (rule 4) and keeping the
+kinds apart (rule 5) fail independently. Whether the test should apply to every skill's rules is
+open, in [#164](https://github.com/cobarx/build-skills/issues/164).
+
+**Standing on its own (structure rule 9) has no exception for readers who were there.** Asked
 about a commit message written with and without the session's context, the owner noted that the
 participants may not need the context stated, "however, the second one still reads better even if
 you do have the context," and a writer can't tell where the text will be read: "are you squashed
