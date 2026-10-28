@@ -2,3 +2,5 @@
 node_modules/
 # Per-machine link to this project's agent memory (claude-memory-link, cobarx/agent-memory-cobarx)
 .agents/memory
+# Claude Code worktrees (claude --worktree, EnterWorktree)
+.claude/worktrees/
