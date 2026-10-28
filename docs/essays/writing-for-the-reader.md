@@ -140,9 +140,9 @@ examples in Strunk & White aren't passives at all.[^pullum] Active voice, which 
 assume is always better, isn't: the passive is right when who acted is unknown or doesn't matter,
 or when it keeps the familiar term at the front of the sentence. A study of AI-written text found
 that GPT-4o uses agentless passives at about half the human rate, while instruction-tuned models in
-general overuse nominalizations and "-ing" clauses.[^pnas] Williams' versions of the rules (make the characters the subjects and
-their actions the verbs, put familiar information before new) target those excesses directly. They
-are the strongest candidates for the tests.
+general overuse nominalizations and "-ing" clauses.[^pnas] Williams' versions of the rules (make
+the characters the subjects and their actions the verbs, put familiar information before new)
+target those excesses directly. They are the strongest candidates for the tests.
 
 Some advice is left out on purpose: usage folklore such as the split-infinitive ban, which Pullum
 and Williams both reject; lists of banned words, which go stale with each model generation; fixed
