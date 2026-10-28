@@ -51,9 +51,9 @@ how-to guides, reference and explanation in separate places,[^diataxis] and DITA
 standard for technical documentation) splits its topics the same way. Six traditions, from
 self-management to technical documentation, arrive at one sequence: name the reader's goal, put the
 point first, keep different kinds of material apart, and put background last. That sequence is
-rules 2 to 4 of `writing-structure`.
+rules 2 to 5 of `writing-structure`.
 
-Hampton's word correction became rule 6, and I think it's the most useful thing to come out of the
+Hampton's word correction became rule 8, and I think it's the most useful thing to come out of the
 session. Calling the items "findings" named how they were produced. Calling them "lessons" named
 what they were to the reader, and once they were lessons, each one had to be something to do, and
 the document had to start with how to use one. The name chose the order.
@@ -68,7 +68,7 @@ second one still reads better even if you do have the context. And you would hav
 time to determine, are you squashed and merging or relying on the PR description or relying on the
 commit log? That's tough. So generalizing to the more complete case is probably better."
 
-That second point is why `writing-structure` rule 7 has no exception for insiders. A writer can't
+That second point is why `writing-structure` rule 9 has no exception for insiders. A writer can't
 know which surface the text will end up on, and the version written for a stranger costs the
 insider nothing. The git project says the same about commit messages: summarize the discussion
 rather than link to it.[^git] Google's guide to change descriptions lists "Phase 1." as a bad
