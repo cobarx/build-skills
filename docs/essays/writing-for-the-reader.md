@@ -47,10 +47,11 @@ correspondence (bottom line up front)."[^bluf] Journalism's inverted pyramid put
 first, so a reader who stops early still has it.[^owl] The plain-language standard ISO 24495-1
 defines success as readers who "can easily find what they need, understand what they find, and use
 that information."[^iso] Diátaxis, the most widely adopted open framework for documentation, keeps
-doing, looking up and understanding in separate places,[^diataxis] and DITA's topic types split
-the same way. Six traditions, from self-management to aircraft manuals, arrive at one sequence:
-name the reader's goal, put the point first, keep different kinds of material apart, and put
-background last. That sequence is the first four rules of `writing-structure`.
+how-to guides, reference and explanation in separate places,[^diataxis] and DITA (the OASIS
+standard for technical documentation) splits its topics the same way. Six traditions, from
+self-management to technical documentation, arrive at one sequence: name the reader's goal, put the
+point first, keep different kinds of material apart, and put background last. That sequence is
+rules 2 to 4 of `writing-structure`.
 
 Hampton's word correction became rule 6, and I think it's the most useful thing to come out of the
 session. Calling the items "findings" named how they were produced. Calling them "lessons" named
@@ -85,7 +86,7 @@ should look like in a given repo."
 So a repo states its own standard in its own files, where anyone can read it without these skills.
 The skills govern how a contributor writes, and defer to that standard wherever there is one.
 Google's developer style guide already had the rule, in nearly the words we needed: "Follow style
-guidance specific to your project or product. If project-specific style guidelines don't provide
+guidance specific to your project or product. ... If project-specific style guidelines don't provide
 explicit guidance, then follow this guide."[^google] It also says to depart from the guide "when
 doing so improves your content." That became rule 1 of both skills, with one addition of ours: a
 project's visible conventions (its existing docs, its `git log`) count as its guidance even when
@@ -138,8 +139,8 @@ convenient and sometimes necessary," and Geoffrey Pullum shows that three of the
 examples in Strunk & White aren't passives at all.[^pullum] Active voice, which most people would
 assume is always better, isn't: the passive is right when who acted is unknown or doesn't matter,
 or when it keeps the familiar term at the front of the sentence. A study of AI-written text found
-models already use agentless passives at about half the human rate, while overusing nominalizations
-and "-ing" clauses.[^pnas] Williams' versions of the rules (make the characters the subjects and
+that GPT-4o uses agentless passives at about half the human rate, while instruction-tuned models in
+general overuse nominalizations and "-ing" clauses.[^pnas] Williams' versions of the rules (make the characters the subjects and
 their actions the verbs, put familiar information before new) target those excesses directly. They
 are the strongest candidates for the tests.
 
