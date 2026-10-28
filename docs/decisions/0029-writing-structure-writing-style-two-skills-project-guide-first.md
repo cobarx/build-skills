@@ -54,7 +54,7 @@ scale of a document, section and paragraph; within a sentence, word and punctuat
 to style. Each names the other under "Not here".
 
 **Rule 1 of each is precedence, adopted from Google's style guide** (CC BY 4.0): "Follow style
-guidance specific to your project or product. If project-specific style guidelines don't provide
+guidance specific to your project or product. ... If project-specific style guidelines don't provide
 explicit guidance, then follow this guide," and "Depart from it when doing so improves your
 content." Adapted in one way, which is ours and not Google's: a project's visible conventions (its
 existing docs, its `git log`, per the git project's SubmittingPatches) count as its guidance. This
@@ -76,9 +76,10 @@ you do have the context," and a writer can't tell where the text will be read: "
 and merging or relying on the PR description or relying on the commit log? ... So generalizing to
 the more complete case is probably better."
 
-Each rule cites its source in a footnote (0013). Text from public-domain, CC0 and CC BY sources is
-quoted; share-alike and in-copyright sources (Diátaxis, Minto, Covey, Williams) are paraphrased
-and credited.
+Each rule cites its source in a footnote (0013). In the skills, text from public-domain, CC0 and
+CC BY sources is quoted, and share-alike and in-copyright sources (Diátaxis, Minto, Covey, Strunk &
+White, Williams) are paraphrased and credited. Essays and decisions may quote a short passage from
+an in-copyright source, attributed.
 
 ## Consequences
 
