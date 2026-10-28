@@ -34,4 +34,5 @@ skill. A reversed decision gets a new record, and the old one is marked supersed
 | [0021](0021-decision-analysis-decision-log-analysis-is-a-peer-of-the-record.md) | Decision analysis is a peer skill of the decision log | Accepted |
 | [0022](0022-simplicity-thresholds-move-to-a-reference.md) | `simplicity`'s thresholds move to a reference | Accepted |
 | [0024](0024-skill-evals-a-judge-is-pinned-by-its-model-alone.md) | `skill-evals`: a judge is pinned by its model alone | Accepted |
+| [0029](0029-writing-structure-writing-style-two-skills-project-guide-first.md) | Writing is two skills, and the project's own guide comes first | Accepted |
 | [0031](0031-fifty-lines-of-rules.md) | No skill's rules run past fifty lines | Accepted |

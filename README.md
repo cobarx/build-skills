@@ -40,6 +40,7 @@ Deming.
 | [decision-log](skills/decision-log/SKILL.md) | A decision is reasoned in the open. |
 | [decision-analysis](skills/decision-analysis/SKILL.md) | Give the decider what they need to weigh a choice themselves. |
 | [adopting-standards](skills/adopting-standards/SKILL.md) | Adopt an existing standard before inventing your own. |
+| [writing-structure](skills/writing-structure/SKILL.md) | Order a document so its reader gets what they need first. |
 
 Planned: `linting`, `test-fidelity`, `glossary`, `harness`, `project-setup`, a skill for the *why*
 behind a goal (name not settled), plus ports of `tdd` and `error-taxonomy`.
