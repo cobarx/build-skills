@@ -19,11 +19,11 @@ skill. A reversed decision gets a new record, and the old one is marked supersed
 | [0006](0006-glossary-industry-terms-over-coinage.md) | Industry terms over our own | Accepted |
 | [0007](0007-review-adversarial-stance-is-not-a-skill.md) | The adversarial stance is not a skill | Accepted |
 | [0008](0008-durable-context-essays-three-documentation-classes.md) | Three documentation classes, not two | Accepted |
-| [0009](0009-seventy-line-limit.md) | No skill runs past seventy lines | Accepted, amended by 0013 |
+| [0009](0009-seventy-line-limit.md) | No skill runs past seventy lines | Accepted, amended by 0013 and 0031 |
 | [0010](0010-platform-correctness-look-for-a-standard-before-inventing-one.md) | Look for a standard before inventing one | Superseded by 0012 |
 | [0011](0011-durable-context-file-problems-by-default.md) | A problem you notice is filed by default | Accepted |
 | [0012](0012-adopting-standards-a-peer-skill.md) | Adopting standards is a peer skill, not a platform rule | Accepted |
-| [0013](0013-cite-sources-in-footnotes.md) | Cite sources in footnotes, outside the line limit | Accepted |
+| [0013](0013-cite-sources-in-footnotes.md) | Cite sources in footnotes, outside the line limit | Accepted, amended by 0031 |
 | [0014](0014-license-cc-by-4-0.md) | License the text under CC BY 4.0; code takes a software licence | Accepted |
 | [0015](0015-skill-evals-cases-sit-under-their-skill.md) | `skill-evals`: cases sit under the skill they test | Accepted |
 | [0016](0016-skill-evals-each-case-explains-itself.md) | `skill-evals`: each case explains itself in a README | Accepted |
@@ -34,3 +34,4 @@ skill. A reversed decision gets a new record, and the old one is marked supersed
 | [0021](0021-decision-analysis-decision-log-analysis-is-a-peer-of-the-record.md) | Decision analysis is a peer skill of the decision log | Accepted |
 | [0022](0022-simplicity-thresholds-move-to-a-reference.md) | `simplicity`'s thresholds move to a reference | Accepted |
 | [0024](0024-skill-evals-a-judge-is-pinned-by-its-model-alone.md) | `skill-evals`: a judge is pinned by its model alone | Accepted |
+| [0031](0031-fifty-lines-of-rules.md) | No skill's rules run past fifty lines | Accepted |
