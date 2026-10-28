@@ -20,19 +20,20 @@ it keeps the small words that say how one idea relates to the next.
    These rules fill what it leaves unsaid, and any of them gives way when breaking it makes the
    text clearer.[^google]
 
-2. **Use plain words and full sentences.** Write it the way you would say it to a colleague: keep
-   the articles and the verbs, and prefer the everyday word ("use", "is") to the formal one. Keep a
-   technical term when it is the exact name for the thing. If no one would say a sentence out loud,
-   rewrite it.[^fplg][^spec]
+2. **Use plain words.** Prefer the everyday word ("use", "is") to the formal one, as you would say
+   it to a colleague. Keep a technical term when it is the exact name for the thing.[^fplg][^spec]
 
-3. **Define a term the reader may not know when it first appears.** That includes any name coined
-   while working, which means nothing to a reader who wasn't there.[^jargon]
+3. **Write full sentences.** Keep the articles and verbs that notes drop: "uses counter now"
+   becomes "the function now uses the counter." If a sentence is awkward or confusing read aloud,
+   rewrite it.[^articles][^tone]
 
-4. **Refer to people by their role.** Not as "I", "we" or "you" meaning the author or the agent,
+4. **Define a term the reader may not know when it first appears.**[^jargon]
+
+5. **Refer to people by their role.** Not as "I", "we" or "you" meaning the author or the agent,
    but as the owner, the reviewer, the maintainer. "You" addressed to the reader is
    fine.[^readers]
 
-5. **Join two ideas with the mark that says how they relate.** Use a colon when what follows
+6. **Join two ideas with the mark that says how they relate.** Use a colon when what follows
    explains, illustrates or lists what came before; a semicolon for two closely related statements;
    a comma and a word ("because", "so", "but") for cause, consequence or contrast; parentheses for
    an aside; and a period when each idea deserves its own weight. A dash says none of these, so use
@@ -41,8 +42,8 @@ it keeps the small words that say how one idea relates to the next.
 
 ## Not here
 
-What goes where in a document, including leading with the point and introducing every list, is
-`writing-structure`. Spelling, capitalization and other house mechanics are the project's own
+What goes where in a document, including leading with the point, introducing every list and
+explaining a label coined while working, is `writing-structure`. Spelling, capitalization and other house mechanics are the project's own
 guide's (rule 1). Sentence rules still being tested (active voice as a default, omitting needless
 words, positive form) are not here yet.
 
@@ -58,6 +59,11 @@ Decisions affecting this skill: `docs/decisions/*-writing-style-*.md`
     <https://centerforplainlanguage.org/wp-content/uploads/2025/12/FederalPLGuidelines.pdf>.
 [^spec]: OpenAI, *Model Spec* (2026-08-18), CC0, <https://model-spec.openai.com/2026-08-18.html>: a
     professional tone "doesn't mean the model should sound stuffy and formal."
+[^articles]: Google, *Google developer documentation style guide*, "Articles (a, an, the)", CC BY
+    4.0, <https://developers.google.com/style/articles>: "Don't skip articles for brevity."
+[^tone]: Google, *Google developer documentation style guide*, "Voice and tone", CC BY 4.0,
+    <https://developers.google.com/style/tone>: "Try reading parts of your document out loud"; a
+    sentence "that's awkward or confusing when spoken" can be made more conversational.
 [^jargon]: Google, *Google developer documentation style guide*, "Jargon", CC BY 4.0,
     <https://developers.google.com/style/jargon>: describe a term briefly on first reference, or
     link to a definition. Paraphrased.
