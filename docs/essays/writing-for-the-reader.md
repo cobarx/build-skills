@@ -123,7 +123,7 @@ seems inadequate."[^sw] Wikipedia's editors, cataloguing the signs of AI writing
 that made us word the rule carefully. They report that models hard-coded against em dashes stopped
 using other punctuation and produced a flat run of commas and periods, which "has become its own
 sign of AI writing" (a claim the page itself marks as needing a citation).[^wiki] A ban moves the
-habit to a new mark. So `writing-style` rule 5 names a mark for each relation and makes the dash
+habit to a new mark. So `writing-style` rule 6 names a mark for each relation and makes the dash
 the last resort. Decision 0030 records why.
 
 ## What isn't in the skills yet
