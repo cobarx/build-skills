@@ -2,7 +2,7 @@
 name: naming
 description: This skill should be used when naming a function, variable, type, or file; when reviewing a diff; when no single name seems to fit what something does; when a name reaches for process, handle, manage, data, or info; or when a function body does something its name did not lead you to expect. It governs what a name means, not what shape it takes.
 license: CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)
-metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills-cobarx/tree/main/skills/naming"}
+metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills/tree/main/skills/naming"}
 ---
 
 # naming

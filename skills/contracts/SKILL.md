@@ -2,7 +2,7 @@
 name: contracts
 description: This skill should be used when drawing a boundary between two parts of the same system; when starting a module, package or service; when adding a public entry point to one; when a change to one unit forces simultaneous edits in its callers; when you are about to open another unit's implementation to answer a question; when an implementation is getting clever; or when integrating with a system you do not control. It governs what units are allowed to know about each other, inside a system as much as at its edges.
 license: CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)
-metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills-cobarx/tree/main/skills/contracts"}
+metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills/tree/main/skills/contracts"}
 ---
 
 # contracts

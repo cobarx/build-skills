@@ -1,15 +1,15 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "build-skills-cobarx",
-  "description": "Hampton Maxwell's skills for how software gets built",
+  "name": "build-skills",
+  "description": "Skills that help you define your vision, allowing the AI to implement it",
   "owner": {
     "name": "Hampton Maxwell",
     "email": "me@hamptonmaxwell.com"
   },
   "plugins": [
     {
-      "name": "build-skills-cobarx",
-      "description": "Skills for how software gets built, each loaded when it applies",
+      "name": "build-skills",
+      "description": "Skills for designing and building high-quality software and physical products with AI assistance",
       "author": {
         "name": "Hampton Maxwell",
         "email": "me@hamptonmaxwell.com"

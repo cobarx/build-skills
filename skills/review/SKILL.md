@@ -2,7 +2,7 @@
 name: review
 description: This skill should be used when reviewing a change, a PR, or another agent's work; when deciding what a reviewer checks or how independent it must be; or when a review needs to report a blocker rather than route around it. It governs the act of reviewing, not the standards reviewed against.
 license: CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)
-metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills-cobarx/tree/main/skills/review"}
+metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills/tree/main/skills/review"}
 ---
 
 # review

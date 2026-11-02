@@ -1,8 +1,14 @@
-# build-skills-cobarx
+# build-skills
 
-Skills for how software gets built.
+Skills for designing and building high-quality software and physical products with AI assistance.
+They help you define your vision, allowing the AI to implement it.
 
-Each skill is a short set of rules, loaded by an AI coding assistant when it applies. They are
+Most were written while building software; however, the principles carry over, and the skills are
+designed to be adapted to other domains. Measuring the real part before designing around it is
+`fixtures`; building a drawer organizer on the [Gridfinity](https://gridfinity.xyz) grid rather
+than inventing your own is `adopting-standards`.
+
+Each skill is a short set of rules, loaded by an AI agent when it applies. They are
 deliberately brief: a skill costs context every time it fires, so it holds rules and nothing else.
 The reasoning behind them lives in [docs/essays/](docs/essays/).
 
@@ -34,6 +40,8 @@ Deming.
 | [decision-log](skills/decision-log/SKILL.md) | A decision is reasoned in the open. |
 | [decision-analysis](skills/decision-analysis/SKILL.md) | Give the decider what they need to weigh a choice themselves. |
 | [adopting-standards](skills/adopting-standards/SKILL.md) | Adopt an existing standard before inventing your own. |
+| [writing-structure](skills/writing-structure/SKILL.md) | Order a document so its reader gets what they need first. |
+| [writing-style](skills/writing-style/SKILL.md) | Write sentences a reader understands on the first reading. |
 
 Planned: `linting`, `test-fidelity`, `glossary`, `harness`, `project-setup`, a skill for the *why*
 behind a goal (name not settled), plus ports of `tdd` and `error-taxonomy`.
@@ -45,21 +53,21 @@ behind a goal (name not settled), plus ports of `tdd` and `error-taxonomy`.
 Install from GitHub, for every project on this machine:
 
 ```bash
-claude plugin marketplace add cobarx/build-skills-cobarx
-claude plugin install build-skills-cobarx@build-skills-cobarx
+claude plugin marketplace add cobarx/build-skills
+claude plugin install build-skills@build-skills
 ```
 
-Inside a session, `/plugin marketplace add cobarx/build-skills-cobarx` then
-`/plugin install build-skills-cobarx@build-skills-cobarx` does the same, and asks for a scope.
+Inside a session, `/plugin marketplace add cobarx/build-skills` then
+`/plugin install build-skills@build-skills` does the same, and asks for a scope.
 
 #### Updating
 
 Auto-update is off by default for marketplaces outside Anthropic's own. Either turn it on
-(`/plugin`, **Marketplaces** tab, select `build-skills-cobarx`, **Enable auto-update**), or update
+(`/plugin`, **Marketplaces** tab, select `build-skills`, **Enable auto-update**), or update
 by hand:
 
 ```bash
-claude plugin update build-skills-cobarx@build-skills-cobarx
+claude plugin update build-skills@build-skills
 ```
 
 `plugin.json` sets a version, so an update arrives when that version changes.
@@ -69,13 +77,13 @@ claude plugin update build-skills-cobarx@build-skills-cobarx
 To work on the skills, point the marketplace at your clone instead, so `git pull` is the update:
 
 ```bash
-claude plugin marketplace add ./build-skills-cobarx
-claude plugin install build-skills-cobarx@build-skills-cobarx
+claude plugin marketplace add ./build-skills
+claude plugin install build-skills@build-skills
 ```
 
 Run that from the directory that holds the clone. Edits to an existing skill load in the next
-session; after adding or removing a skill, run `/plugin marketplace update build-skills-cobarx`.
-To load a clone for one session without installing, use `claude --plugin-dir ./build-skills-cobarx`.
+session; after adding or removing a skill, run `/plugin marketplace update build-skills`.
+To load a clone for one session without installing, use `claude --plugin-dir ./build-skills`.
 
 ### Other agents
 
@@ -84,7 +92,7 @@ OpenAI Codex, GitHub Copilot (CLI, VS Code, JetBrains), Cursor, and Gemini CLI r
 Install there with the GitHub CLI:
 
 ```bash
-gh skill install cobarx/build-skills-cobarx --all --dir ~/.agents/skills
+gh skill install cobarx/build-skills --all --dir ~/.agents/skills
 ```
 
 Update with `gh skill update --all`. For an agent with its own directory, swap `--dir` for
@@ -99,7 +107,8 @@ skill, directly under that directory.
 Two conventions do most of the work:
 
 **The outline is the skill.** No expanded rationale, no worked examples where the rule is already
-unambiguous. No skill here runs past seventy lines, not counting footnoted citations.
+unambiguous. No skill's rules run past fifty lines, counting every section from the first heading
+up to "Not here" ([0031](docs/decisions/0031-fifty-lines-of-rules.md)).
 
 **Draft long, then keep only what is a rule.** The long draft is a discovery tool, not the
 deliverable. The test applied to every line: does this change what anyone does? See
@@ -116,4 +125,4 @@ To credit a skill you copy or adapt, give its title, author, source, licence, an
 changed:
 
 > Adapted from "simplicity" by Hampton Maxwell,
-> <https://github.com/cobarx/build-skills-cobarx>, CC BY 4.0. Changes: …
+> <https://github.com/cobarx/build-skills>, CC BY 4.0. Changes: …

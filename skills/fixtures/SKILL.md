@@ -2,7 +2,7 @@
 name: fixtures
 description: This skill should be used whenever a test needs data that originates outside the codebase, such as command output, network responses, sensor readings, third-party API payloads, page state from a site you do not control. It governs where that data comes from and what has to be recorded alongside it. Load it before writing a test that needs such data, before writing or running a capture, and when a fixture stops matching reality.
 license: CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)
-metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills-cobarx/tree/main/skills/fixtures"}
+metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills/tree/main/skills/fixtures"}
 ---
 
 # fixtures

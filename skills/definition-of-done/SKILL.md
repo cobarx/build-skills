@@ -2,7 +2,7 @@
 name: definition-of-done
 description: This skill should be used when preparing a change for review or deciding whether a unit is complete; when a PR description would otherwise say "tested", "verified", or "works" without showing it; when a change produces output someone should exercise (a rendered file, a running script, a page); or when checking a change against its spec. It governs what a change shows, not what its tests assert.
 license: CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)
-metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills-cobarx/tree/main/skills/definition-of-done"}
+metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills/tree/main/skills/definition-of-done"}
 ---
 
 # definition-of-done

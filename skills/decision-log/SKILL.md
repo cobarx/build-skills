@@ -2,7 +2,7 @@
 name: decision-log
 description: This skill should be used when a choice is made between options (a tool, a library, an architecture); when an agent is about to hand someone a decision to make; or when a past decision is revisited or reversed. It governs how a decision is made and recorded, not which decisions must be made before starting.
 license: CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)
-metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills-cobarx/tree/main/skills/decision-log"}
+metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills/tree/main/skills/decision-log"}
 ---
 
 # decision-log

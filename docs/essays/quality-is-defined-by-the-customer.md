@@ -22,6 +22,11 @@ mentored.[^pdsa] Japanese manufacturers applied those techniques well enough tha
 American organisations set out to learn how, and the US Navy adopted Deming's teaching and named
 its programme "Total Quality Management" in 1985.[^wiki]
 
+[![W. Edwards Deming, left, laughing with Henry Neave, who holds a copy of Deming's book Out of the
+Crisis][photo-file]][photo-page]
+
+*W. Edwards Deming, left, with Henry Neave, who holds Deming's* Out of the Crisis.[^photo]
+
 The name has faded since. ASQ notes TQM "is not as widely used in the United States as it once
 was,"[^asq] and much of its practice now goes under quality management, ISO 9000, Lean and Six
 Sigma.[^wiki] A methodology that keeps the measurement but drops Deming's recommendations for how an
@@ -158,6 +163,8 @@ TQM as the tradition the skills belong to, and links here.
 [good]: define-what-good-looks-like.md
 [issue-111]: https://github.com/cobarx/build-skills-cobarx/issues/111
 [successors]: ../context/deming-points-in-successors.md
+[photo-file]: https://upload.wikimedia.org/wikipedia/commons/0/04/Dr_Deming_and_Dr_Neave.png
+[photo-page]: https://commons.wikimedia.org/wiki/File:Dr_Deming_and_Dr_Neave.png
 
 [^asq]: American Society for Quality, "What Is Total Quality Management (TQM)?",
     <https://asq.org/quality-resources/total-quality-management>, reviewed November 2024. Overview
@@ -165,6 +172,10 @@ TQM as the tradition the skills belong to, and links here.
 [^deming]: W. Edwards Deming, *Out of the Crisis* (MIT Press), pp. 23-24, as condensed by the
     W. Edwards Deming Institute, "Dr. Deming's 14 Points for Management",
     <https://deming.org/explore/fourteen-points/>.
+[^photo]: Photograph: "Dr Deming and Dr Neave" by Broken chords, Wikimedia Commons,
+    <https://commons.wikimedia.org/wiki/File:Dr_Deming_and_Dr_Neave.png>, licensed under
+    [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Shown from Commons; this repo
+    holds no copy.
 [^pdsa]: The W. Edwards Deming Institute, "PDSA Cycle", <https://deming.org/explore/pdsa/>.
     Shewhart as Deming's mentor at Bell Labs, and why Deming preferred *study* to *check*.
 [^toyota]: Toyota Motor Corporation, "Toyota Production System",

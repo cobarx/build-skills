@@ -2,7 +2,7 @@
 name: adopting-standards
 description: This skill should be used when about to invent a file format, file or directory layout, marker or config file name, schema, versioning scheme, protocol, record format, or process convention that other tools or people will read; when choosing between a published standard and a home-grown one; when two standards compete for the same need; or when adopting a draft standard or only part of one. It governs whether to adopt an existing standard, not the conventions of the runtime environment.
 license: CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)
-metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills-cobarx/tree/main/skills/adopting-standards"}
+metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills/tree/main/skills/adopting-standards"}
 ---
 
 # adopting-standards

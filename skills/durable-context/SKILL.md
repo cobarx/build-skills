@@ -2,7 +2,7 @@
 name: durable-context
 description: This skill should be used when recording a decision, a follow-up, project knowledge, or working state; when you notice a bug, gap, or risk outside the task at hand; when tempted to leave it in agent memory, a chat, or a PR description; or when deciding where a note should live so the next person or agent can find it. It governs where context lives, not what any single document says.
 license: CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)
-metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills-cobarx/tree/main/skills/durable-context"}
+metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills/tree/main/skills/durable-context"}
 ---
 
 # durable-context

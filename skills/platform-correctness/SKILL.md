@@ -2,7 +2,7 @@
 name: platform-correctness
 description: This skill should be used when deciding where configuration, data, cache, or logs live; when choosing how a program is configured or invoked; when naming things or laying out files; when choosing between a platform primitive and a hand-rolled equivalent; when setting or relying on a support baseline; when a deprecated API is involved; or whenever a convention is about to be asserted from memory rather than looked up.
 license: CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)
-metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills-cobarx/tree/main/skills/platform-correctness"}
+metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills/tree/main/skills/platform-correctness"}
 ---
 
 # platform-correctness

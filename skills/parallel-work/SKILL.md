@@ -2,7 +2,7 @@
 name: parallel-work
 description: This skill should be used when more than one agent or person works a project at the same time; when creating a worktree or branch to run a unit of work beside another; when deciding whether a change needs its own ports, cache, or database; when two branches would touch the same shared state; or when a worktree or branch outlives the work that created it. It governs how far to isolate concurrent work, not the git commands that do it.
 license: CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)
-metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills-cobarx/tree/main/skills/parallel-work"}
+metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills/tree/main/skills/parallel-work"}
 ---
 
 # parallel-work

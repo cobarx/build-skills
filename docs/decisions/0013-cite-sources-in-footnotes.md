@@ -1,6 +1,7 @@
 # 0013. Cite sources in footnotes, outside the line limit
 
-- **Status:** Accepted. Amends [0009](0009-seventy-line-limit.md) (how lines are counted).
+- **Status:** Accepted. Amends [0009](0009-seventy-line-limit.md) (how lines are counted). Count
+  amended by [0031](0031-fifty-lines-of-rules.md).
 - **Decided:** 2026-09-28 · **Recorded:** 2026-09-28 · Claude Opus 5.5
 - **Affects:** every skill, essay, and decision that credits a source
 
