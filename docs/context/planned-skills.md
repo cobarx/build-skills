@@ -3,6 +3,13 @@
 **Scratchpad.** In-progress designs for skills not yet written. Messy on purpose, and not
 subject to `simplicity` rule 8, which targets output presented as finished.
 
+## `writing-skills`: how to write a skill's rules
+
+The owner's call (2026-11-02): this should become a skill. Its first rule is the convention now in
+AGENTS.md: every sentence of a rule says what to do or how to tell it's done. `skill-review` rule 10
+checks the same thing in review. Other candidates are the rest of AGENTS.md's conventions on writing
+a skill, and the evidence in decision 0033.
+
 ## Not ready: owning the type you accept
 
 Candidate rule for `contracts`, parked because the first attempt at stating it was too absolute.

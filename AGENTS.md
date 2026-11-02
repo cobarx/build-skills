@@ -23,6 +23,9 @@ the one-sentence test, and a change to a skill passes the same gates as a change
 - **Each skill's purpose fits one sentence with no "and".** If it needs one, it is two skills.
 - **Industry terms over our own.** Coinage is permitted for constructs local to this repo, and is
   recorded as ours.
+- **Every sentence of a rule says what to do or how to tell it's done.** Rewrite or move any other
+  sentence; an example of what the rule requires counts. Check this while writing a rule, and
+  `skill-review` rule 10 checks it in review. A merged skill meets this when it is next edited.
 - **Skills never link to context; context links to skills.** Each skill carries one stable glob at
   its foot rather than a list that grows.
 
