@@ -1,0 +1,87 @@
+{
+ "skill-rule": {
+  "X": {
+   "arm": "review",
+   "run": 1,
+   "words": 64
+  },
+  "Y": {
+   "arm": "baseline",
+   "run": 3,
+   "words": 90
+  },
+  "Z": {
+   "arm": "rule",
+   "run": 1,
+   "words": 85
+  }
+ },
+ "commit-message": {
+  "X": {
+   "arm": "baseline",
+   "run": 1,
+   "words": 102
+  },
+  "Y": {
+   "arm": "rule",
+   "run": 3,
+   "words": 84
+  },
+  "Z": {
+   "arm": "review",
+   "run": 2,
+   "words": 86
+  }
+ },
+ "pr-description": {
+  "X": {
+   "arm": "rule",
+   "run": 2,
+   "words": 150
+  },
+  "Y": {
+   "arm": "review",
+   "run": 1,
+   "words": 136
+  },
+  "Z": {
+   "arm": "baseline",
+   "run": 1,
+   "words": 178
+  }
+ },
+ "readme-section": {
+  "X": {
+   "arm": "rule",
+   "run": 3,
+   "words": 161
+  },
+  "Y": {
+   "arm": "baseline",
+   "run": 1,
+   "words": 186
+  },
+  "Z": {
+   "arm": "review",
+   "run": 2,
+   "words": 151
+  }
+ },
+ "doc-page": {
+  "X": {
+   "arm": "review",
+   "run": 2,
+   "words": 306
+  },
+  "Y": {
+   "arm": "rule",
+   "run": 3,
+   "words": 277
+  },
+  "Z": {
+   "arm": "baseline",
+   "run": 1,
+   "words": 334
+  }
+ }
+}

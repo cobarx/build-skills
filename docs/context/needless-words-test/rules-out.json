@@ -1,0 +1,56 @@
+[
+ {
+  "rule": 1,
+  "X": "1. **Check the skill once against the rules for how a skill is written.** Start with the rules in the skill's project. For anything they don't cover, use the rules of any collection of skills it follows. If two documents set different limits, such as a maximum length, check the skill against each and say which one you held it to.",
+  "Y": "1. **Check the skill once against the rules for how a skill is written.** The rules in the skill's own project come first, and those of any collection of skills it follows cover what they leave out. If two documents set different limits, such as a maximum length, check against each and say which you held the skill to.",
+  "Z": "1. **Check the skill once against the rules for how a skill is written.** The rules of the skill's own project come first. For anything they don't cover, use the rules of any collection of skills the skill follows. If two documents set different limits, such as a maximum length, check the skill against each limit and say which one you held it to."
+ },
+ {
+  "rule": 2,
+  "X": "2. **Answer three questions separately: does the skill load, does the agent follow it, and is the result better?** Each needs its own evidence, and \"it loaded in every run\" answers only the first. Better means better than the result of the same task without the skill. If one of the skill's rules makes no difference between those two runs, report that rule as unproven. Say how many runs support each result, because one run is an example, not a rate.",
+  "Y": "2. **Answer three questions separately: does the skill load, does the agent follow it, and is the result better?** Each question needs its own evidence: \"it loaded in every run\" answers only the first. To judge whether the result is better, run the same task with and without the skill and compare the two results. If one of the skill's rules makes no difference between those runs, report that rule as unproven. For each answer, say how many runs support it, because one run is an example, not a rate.",
+  "Z": "2. **Answer three questions separately: does the skill load, does the agent follow it, and is the result better?** Each question needs its own evidence: \"it loaded in every run\" answers only the first. To judge whether the result is better, run the same task with and without the skill and compare. If a rule makes no difference between those runs, report it as unproven. For each answer, say how many runs support it, because one run is an example, not a rate."
+ },
+ {
+  "rule": 3,
+  "X": "3. **Run a task the skill should not load for, more than once.** Choose ordinary work that shares words with the skill's `description`. Repeat the same task, because a skill can load on one run and not the next. If the skill loads, run the task without the skill and compare the two answers. Report both that the skill loaded and how the answer changed.",
+  "Y": "3. **Run a task the skill should not load for, more than once.** Choose ordinary work that shares words with the skill's `description`. Repeat the task, because a skill can load on one run and not the next. If the skill loads, run the task without the skill and compare the answers. Report that the skill loaded and how the answer changed.",
+  "Z": "3. **Run a task the skill should not load for, more than once.** Choose ordinary work that shares words with the skill's `description`. Repeat the same task because a skill can load on one run and not the next. If it loads, compare the answer with a run without the skill, and report how the answer changed as well as the fact that it loaded."
+ },
+ {
+  "rule": 4,
+  "X": "4. **Test what the author's demo didn't try.** A demo is output the skill's author offers to show the skill working, and it shows which platforms and kinds of project were tried. Run the skill on the ones it leaves out, because those runs can find something new.",
+  "Y": "4. **Test what the author's demo didn't try.** A demo is the output an author offers to show the skill working, and it shows which platforms and kinds of project were tried. The gaps are where a run can find something new.",
+  "Z": "4. **Test what the author's demo didn't try.** A demo is output the author offers to show the skill working. Note which platforms and kinds of project it covers, then run the skill on ones it doesn't, because only those runs can find something new."
+ },
+ {
+  "rule": 5,
+  "X": "5. **Prove that each run tested what you meant it to.** Before trusting a run, check its log that the agent received no other instructions, such as the user's global settings, and that it could read the skill's reference files. Don't rely on the agent's answer, which looks normal even when one of these went wrong.",
+  "Y": "5. **Prove that each run tested what you meant it to.** Before trusting a run, check its log for two things: that the agent received no other instructions, such as the user's global settings, and that it could read the skill's reference files. Don't rely on the agent's answer for this, because the answer looks normal even when one of these went wrong.",
+  "Z": "5. **Prove that each run tested what you meant it to.** Before trusting a run, confirm from its log that no other instructions, such as the user's global settings, reached it, and that the agent could read the skill's reference files. If either went wrong, the answer still looks normal."
+ },
+ {
+  "rule": 6,
+  "X": "6. **For each of the skill's rules, name a way to follow its words and still miss its point.** Such a way is a loophole. For example, an agent can obey \"at most two steps\" by giving two steps that run six commands. Look for loopholes in the runs, but report every loophole you find, and mark each as used in a run or only reasoned.",
+  "Y": "6. **For each of the skill's rules, name a way to follow its words and still miss its point.** For example, an agent can obey \"at most two steps\" by giving two steps that run six commands in total. That is a loophole. Look for loopholes in the runs, and report each one even if no run used it, marking which ones a run used and which you only reasoned could happen.",
+  "Z": "6. **For each of the skill's rules, name a way to follow its words and still miss its point.** Such a way is a loophole. For example, an agent can obey \"at most two steps\" by giving two steps that run six commands in total. Look for loopholes in the runs, but report every loophole you find, even if no run used it, and mark each one as either used in a run or only reasoned."
+ },
+ {
+  "rule": 7,
+  "X": "7. **Check that the skill follows its own rules, and that its rules and reference files agree.** Apply the skill's instructions to its own text, reference files and PR: a skill that says \"never from memory\" can't ship commands written from memory. Then compare each rule with the reference files, because they can contradict each other unnoticed.",
+  "Y": "7. **Check that the skill follows its own rules, and that its rules and reference files agree.** Apply the skill's instructions to its text, its reference files and the pull request that adds or changes it. For example, a skill that says \"never from memory\" can't include commands written from memory. Then compare each rule with the reference files, because the two can contradict without anyone noticing.",
+  "Z": "7. **Check that the skill follows its own rules, and that its rules and reference files agree.** Apply the skill's instructions to its own text, its reference files and the PR that submits it: for example, a skill that says never to write commands from memory can't include commands written from memory. Then compare each rule with the reference files, because the two can contradict each other without anyone noticing."
+ },
+ {
+  "rule": 8,
+  "X": "8. **Verify every factual statement in the skill, and run every command it gives.** Check each statement, including the reasons the skill gives for its rules, against the documentation for the version it applies to, and cite that documentation. Run each command on every platform the project supports and confirm it produces what the skill says. If a command could do harm, run it on a disposable machine. Report any statement or command you couldn't check as unverified.",
+  "Y": "8. **Verify every factual statement in the skill, and run every command it gives.** Check each statement, including the reasons the skill gives for its rules, against the documentation for the version the statement applies to, and cite the documentation you used. Run each command on every platform the project supports and confirm that it produces what the skill says. If a command could do harm, run it on a disposable machine. Report any statement or command you couldn't check as unverified.",
+  "Z": "8. **Verify every factual statement in the skill, and run every command it gives.** Check each statement, including the reasons rules give, against the documentation for the version it applies to, and cite what you used. Run each command on every platform the project supports, on a disposable machine if it could do harm, and confirm it produces what the skill says. Report anything you couldn't check as unverified."
+ },
+ {
+  "rule": 9,
+  "X": "9. **Review what the merge will produce, not only the branch.** Confirm that the commit you reviewed is the one on the remote, because a local branch can be behind. Then check what the merge will produce, because a merge with no conflicts can still be wrong: for example, a version field can reuse a number already released (see the `skill-versioning` skill).",
+  "Y": "9. **Review what the merge will produce, not only the branch.** First, confirm the commit you reviewed is the one on the remote, because a local branch can be behind it. Then check the result of merging the branch into its target, because a merge with no conflicts can still be wrong: for example, a version field can reuse a released number (see the `skill-versioning` skill).",
+  "Z": "9. **Review what the merge will produce, not only the branch.** First, confirm that the commit you reviewed is the one on the remote, because a local branch can be behind it. Then check the result of merging the branch into its target, because a merge with no conflicts can still be wrong: for example, a version field can end up reusing a number that was already released (see the `skill-versioning` skill)."
+ }
+]
