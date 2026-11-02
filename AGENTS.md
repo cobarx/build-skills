@@ -1,9 +1,9 @@
-# build-skills-cobarx
+# build-skills
 
 ## Summary
 
-Skills for how software gets built: sizing units of work, platform conventions, naming,
-formatting, linting, testing, contracts.
+Skills for designing and building high-quality software and physical products with AI assistance:
+sizing units of work, platform conventions, naming, formatting, linting, testing, contracts.
 
 Each skill is `skills/<name>/SKILL.md`; the README says how to install them.
 
@@ -42,4 +42,5 @@ the one-sentence test, and a change to a skill passes the same gates as a change
   to learn, what it shapes. One per idea, not per decision
 - [docs/decisions/](docs/decisions/) - terse, dated, append-only record of what was settled.
   Superseded rather than edited
-- [docs/context/](docs/context/) - what is not settled yet: open questions and working notes
+- [docs/context/](docs/context/) - what is not settled yet: open questions. Working notes stay on
+  their branch (`durable-context` rule 7)

@@ -2,7 +2,7 @@
 name: format
 description: This skill should be used when setting up a project; when choosing a formatter; when a formatting disagreement arises; before a bulk reformat; or when reviewing a diff where formatting noise obscures the change. It removes formatting from the set of things anyone argues about.
 license: CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)
-metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills-cobarx/tree/main/skills/format"}
+metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills/tree/main/skills/format"}
 ---
 
 # format

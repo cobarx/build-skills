@@ -2,7 +2,7 @@
 name: essays
 description: This skill should be used when writing or editing an essay in docs/essays/; when an essay needs an author line or a date; or when an essay is revised and the change should be recorded. It governs how an essay is signed and versioned (one part of writing one), not what it says.
 license: CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)
-metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills-cobarx/tree/main/skills/essays"}
+metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills/tree/main/skills/essays"}
 ---
 
 # essays

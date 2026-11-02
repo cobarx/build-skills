@@ -2,7 +2,7 @@
 name: spec
 description: This skill should be used when asked whether or how something can be done; when about to recommend, compare, or propose a tool, library, rule, heuristic, model, or design, in conversation as much as in code; when handed a choice between options; when starting a project or a unit of work; or when it is unclear how much of the behaviour to pin down. It governs defining what the system must do, and how deeply, before choosing how.
 license: CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)
-metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills-cobarx/tree/main/skills/spec"}
+metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills/tree/main/skills/spec"}
 ---
 
 # spec

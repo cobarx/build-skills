@@ -2,7 +2,7 @@
 name: simplicity
 description: This skill should be used before starting any unit of work; when a task or PR description needs the word "and" to be accurate; when a function grows a third level of nesting; when a new dependency is proposed; when a complexity gate fails; or when asked to do several things at once. It keeps the cost of understanding a change low, so any one part can be reviewed with only its contract in view.
 license: CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)
-metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills-cobarx/tree/main/skills/simplicity"}
+metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills/tree/main/skills/simplicity"}
 ---
 
 # simplicity

@@ -2,7 +2,7 @@
 name: decision-analysis
 description: This skill should be used when someone has to choose between options and wants them weighed; when asked for pros and cons, a comparison of approaches, or an analysis before deciding; when the decider distrusts one option and wants to see the case for it; or before a decision is recorded. It governs performing the analysis a decision is made from, not recording the decision.
 license: CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)
-metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills-cobarx/tree/main/skills/decision-analysis"}
+metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills/tree/main/skills/decision-analysis"}
 ---
 
 # decision-analysis

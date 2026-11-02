@@ -2,7 +2,7 @@
 name: durable-context
 description: This skill should be used when recording a decision, a follow-up, project knowledge, or working state; when you notice a bug, gap, or risk outside the task at hand; when tempted to leave it in agent memory, a chat, or a PR description; or when deciding where a note should live so the next person or agent can find it. It governs where context lives, not what any single document says.
 license: CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)
-metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills-cobarx/tree/main/skills/durable-context"}
+metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills/tree/main/skills/durable-context"}
 ---
 
 # durable-context
@@ -38,6 +38,12 @@ later. If it matters past this moment, it belongs in the project, in the open.
    say so in the issue, which is where that discussion belongs. The one exception is the developer's
    to make, never yours to infer: early in a project, areas not expected to work yet can be
    declared, at the entry point or in the moment, and problems there go unfiled.
+
+7. **Working notes stay on their branch.** Notes taken while working are a unit of work like any
+   other, kept on their own branch, apart from anything that will merge, and never merged as they
+   are. What reaches main is sorted by kind: each open question, proposed change, settled choice
+   and piece of settled reasoning goes to its own home (rules 2 and 5), on a separate branch. The
+   rest stays in the notes branch and its PR.
 
 ## Not here
 
