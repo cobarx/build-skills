@@ -24,8 +24,13 @@ best-supported version is usually the latest stable release.
 
 3. **Let a release settle before taking it.** A runtime's own stability signal, such as promotion
    to LTS, decides for that runtime. Anything else waits out a cooldown of at least three
-   days,[^cooldown] and a new major line waits for its first patch release as well. A range that
-   would resolve to the waiting release hasn't waited. A security fix doesn't wait.
+   days,[^cooldown] and a new major line waits for its first patch release as well. A security fix
+   doesn't wait: exempt that package from any gate.
+
+   Have the tool enforce the cooldown, because a gate also covers indirect dependencies and makes
+   an open package range safe. If the project already sets a release-age gate or a pinning policy,
+   follow it. If not, set a three-day gate where the package manager has one (npm's
+   `min-release-age`[^gate]), and pin exact versions where it doesn't.
 
 4. **Once a release has settled, only compatibility holds it back, and the hold is named.** When something that relies
    on the dependency can't take the latest, use the newest version it accepts. Say which dependency
@@ -59,3 +64,5 @@ Decisions affecting this skill: `docs/decisions/*-dependency-versions-*.md`
     <https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference>,
     paraphrased: `cooldown` delays version updates by a set number of days, 3 by default, and doesn't
     apply to security updates. Renovate calls the same idea `minimumReleaseAge`.
+[^gate]: npm, "config", <https://docs.npmjs.com/cli/v11/using-npm/config>: "only versions that were
+    available more than the given number of days ago will be installed."

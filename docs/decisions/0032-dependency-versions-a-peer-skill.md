@@ -18,6 +18,10 @@ are closer to end of life, lack newer bug fixes, features and perf enhancements.
 would be the latest stable release, provided it has been out long enough to have a good chance of
 being stable and that it is compatible with the dependencies that rely on it."
 
+Hampton, 2026-11-02, on open package ranges: "we need a way to force the 3 day cooldown like
+dependabot has. if this is hard to do, pinning achieves that result. i expect people will have
+different preferences for whether to leave it open, so it should be configurable".
+
 ## Options
 
 - **One rule in `platform-correctness`.** Smallest. Rejected: a library or tool version isn't a
@@ -32,7 +36,7 @@ being stable and that it is compatible with the dependencies that rely on it."
 A peer skill, `dependency-versions`, named for what it decides. Hampton's goal is the skill's
 purpose and its first rule.
 
-Four things in the rules are Claude's proposals from that goal, not Hampton's words, and are
+Five things in the rules are Claude's proposals from that goal, not Hampton's words, and are
 accepted only as he reviews this record:
 
 - **The cooldown of three days** comes from Dependabot's default, and Renovate's
@@ -40,6 +44,12 @@ accepted only as he reviews this record:
   Both are supply-chain measures more than stability ones, so it may be too short for Hampton's "good chance of being stable".
 - **A new major line waits for its first patch release** as a cheap sign that early bugs have been
   through a round of fixes. This one is judgment, with no source.
+- **Enforce the cooldown with the package manager's gate** (rule 3), measured on npm 11.17.0 the
+  same day. With `min-release-age=3`, `^5.0.5` resolved Vitest to 5.0.5 and nothing installed was
+  under three days old. An exact pin at 5.0.5 with no gate still installed `tinybench` at 1.3 days
+  old, so pinning is the fallback for tools with no gate, not an equivalent. Skills have no
+  settings, so the project's own config is the setting: its gate value and its ranges, followed
+  when present, as `writing-style` follows a project's own guide.
 - **Pin the line rather than a range** (rule 5) follows from the failure above, and libraries are
   excepted because their users choose the version. A library leaves the top of its range open, as
   Vitest and ESLint do, because a closed range made a new Node.js line an install failure for some
@@ -52,5 +62,7 @@ accepted only as he reviews this record:
   one, each as its own unit.
 - Pinned lines need moving when a new LTS arrives. That is a small, regular cost, and rule 6 accepts
   it.
+- Only npm's gate was run. What it does to a blocked security fix, and what older npm versions do
+  with the setting, are unchecked and tracked with the rest of the follow-up review in an issue.
 - Upgrades are sometimes blocked by another package's range, and the skill makes those holds visible
   rather than removing them.
