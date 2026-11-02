@@ -42,4 +42,5 @@ the one-sentence test, and a change to a skill passes the same gates as a change
   to learn, what it shapes. One per idea, not per decision
 - [docs/decisions/](docs/decisions/) - terse, dated, append-only record of what was settled.
   Superseded rather than edited
-- [docs/context/](docs/context/) - what is not settled yet: open questions and working notes
+- [docs/context/](docs/context/) - what is not settled yet: open questions. Working notes stay on
+  their branch (`durable-context` rule 7)
