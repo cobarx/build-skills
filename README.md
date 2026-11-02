@@ -35,6 +35,7 @@ Deming.
 | [definition-of-done](skills/definition-of-done/SKILL.md) | Done is the goal shown to be met. |
 | [essays](skills/essays/SKILL.md) | An essay carries its provenance. |
 | [review](skills/review/SKILL.md) | A reviewer tries to break the work against the standard it claims to meet. |
+| [skill-review](skills/skill-review/SKILL.md) | Judge a skill by what it makes an agent do, not by how it reads. |
 | [durable-context](skills/durable-context/SKILL.md) | Context lives in the project, where the next reader, human or agent, will find it. |
 | [spec](skills/spec/SKILL.md) | Say what the system must do before choosing how. |
 | [decision-log](skills/decision-log/SKILL.md) | A decision is reasoned in the open. |
