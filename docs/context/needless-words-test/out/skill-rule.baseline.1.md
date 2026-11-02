@@ -1,0 +1,3 @@
+1. **Check a run's log before believing the run.** A skill run can be contaminated in two ways: the user's global settings can reach it, and the skill's reference files can be unreadable if the skill's directory was not added to the run. In both cases the final answer still looks perfectly normal, so reading the answer will not reveal the problem. Before counting a run as evidence, the reviewer should confirm from its log that no global settings reached it and that the reference files could be read.[^operate]
+
+[^operate]: This problem came up in the review of the `operate` skill on 2026-11-01.

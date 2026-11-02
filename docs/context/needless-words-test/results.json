@@ -1,0 +1,2070 @@
+{
+ "controls": [
+  {
+   "doc": "skill-rule",
+   "facts": 5,
+   "known_good": 5,
+   "known_bad": 0
+  },
+  {
+   "doc": "commit-message",
+   "facts": 6,
+   "known_good": 0,
+   "known_bad": 0
+  },
+  {
+   "doc": "pr-description",
+   "facts": 6,
+   "known_good": 6,
+   "known_bad": 0
+  },
+  {
+   "doc": "readme-section",
+   "facts": 5,
+   "known_good": 5,
+   "known_bad": 0
+  },
+  {
+   "doc": "doc-page",
+   "facts": 7,
+   "known_good": 7,
+   "known_bad": 0
+  }
+ ],
+ "rows": [
+  {
+   "doc": "skill-rule",
+   "arm": "baseline",
+   "n": 1,
+   "text": "1. **Check a run's log before believing the run.** A skill run can be contaminated in two ways: the user's global settings can reach it, and the skill's reference files can be unreadable if the skill's directory was not added to the run. In both cases the final answer still looks perfectly normal, so reading the answer will not reveal the problem. Before counting a run as evidence, the reviewer should confirm from its log that no global settings reached it and that the reference files could be read.[^operate]\n\n[^operate]: This problem came up in the review of the `operate` skill on 2026-11-01.",
+   "words": 103,
+   "cost": 0.47617709999999996,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 5,
+   "total": 5,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "skill-rule",
+   "arm": "baseline",
+   "n": 2,
+   "text": "1. **Check each run's log before believing the run.** A skill run can be contaminated in two ways: the user's global settings can reach it, and the skill's reference files can be unreadable if the skill's directory wasn't added. In either case the final answer looks perfectly normal, so reading the answer won't reveal the problem. Don't count a run as evidence until its log shows that global settings stayed out and the reference files were readable. (This problem came up in the review of the `operate` skill on 2026-11-01.)",
+   "words": 90,
+   "cost": 0.0725927,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 5,
+   "total": 5,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "skill-rule",
+   "arm": "baseline",
+   "n": 3,
+   "text": "1. **Check a run's log before believing the run.** The user's global settings can reach a skill run, and the skill's reference files can be unreadable if their directory wasn't added. In both cases the final answer looks perfectly normal, so reading it won't reveal the problem. Before treating a run as evidence, the reviewer uses its log to confirm that global settings didn't reach the run and that the skill could read its reference files.[^operate]\n\n[^operate]: This problem came up in the review of the `operate` skill on 2026-11-01.",
+   "words": 90,
+   "cost": 0.46573440000000005,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 5,
+   "total": 5,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "skill-rule",
+   "arm": "rule",
+   "n": 1,
+   "text": "1. **Check each run's log before believing the run.** Two problems can contaminate a skill run: the user's global settings can reach it, and the skill's reference files can be unreadable if their directory wasn't added to the run. The final answer looks normal either way, so reading it won't reveal them. Count a run as evidence only after its log shows that global settings stayed out and the reference files were read. (This came up in the review of the `operate` skill on 2026-11-01.)",
+   "words": 85,
+   "cost": 0.0735527,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 5,
+   "total": 5,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     false,
+     false,
+     false,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "skill-rule",
+   "arm": "rule",
+   "n": 2,
+   "text": "1. **Check each run's log before believing the run.** Confirm in the log that the user's global settings did not reach the run and that the skill's reference files were readable, because they can't be read if the skill's directory wasn't added. When either goes wrong, the final answer still looks normal, so reading the answer won't reveal the problem. (This came up in the review of the `operate` skill on 2026-11-01.)",
+   "words": 72,
+   "cost": 0.4739931,
+   "cuts": null,
+   "facts": [
+    false,
+    false,
+    true,
+    true,
+    true
+   ],
+   "kept": 3,
+   "total": 5,
+   "votes": [
+    [
+     false,
+     false,
+     true,
+     true,
+     true
+    ],
+    [
+     false,
+     false,
+     true,
+     true,
+     true
+    ],
+    [
+     false,
+     false,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "skill-rule",
+   "arm": "rule",
+   "n": 3,
+   "text": "1. **Check a run's log before believing the run.** A skill run can be contaminated in two ways: the user's global settings can reach it, or the skill's reference files can be unreadable because their directory wasn't added. The final answer looks normal in both cases, so reading it won't reveal the problem. Use the log to confirm that the user's global settings didn't reach the run and that the skill could read its reference files. (This came up in the review of the `operate` skill on 2026-11-01.)",
+   "words": 88,
+   "cost": 0.063426,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 5,
+   "total": 5,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "skill-rule",
+   "arm": "review",
+   "n": 1,
+   "text": "1. **Check each run's log before believing it.** A skill run can be contaminated: the user's global settings can reach it, and the skill's reference files can be unreadable if their directory wasn't added. The final answer looks normal either way. Confirm in the log that no global settings reached the run and that the reference files were read. Source: `operate` skill review, 2026-11-01.",
+   "words": 64,
+   "cost": 0.0214908,
+   "cuts": {
+    "proposed": 3,
+    "applied": 3
+   },
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 5,
+   "total": 5,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "skill-rule",
+   "arm": "review",
+   "n": 2,
+   "text": "1. **Check a run's log before you believe it.** A skill run can be contaminated in two ways: the user's global settings can reach it, and the skill's reference files can be unreadable if their directory wasn't added. The final answer looks normal in both cases. Use the log to confirm that no global settings reached the run and that the skill could read its reference files. (From the `operate` skill review, 2026-11-01.)",
+   "words": 73,
+   "cost": 0.444698,
+   "cuts": {
+    "proposed": 3,
+    "applied": 3
+   },
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 5,
+   "total": 5,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "skill-rule",
+   "arm": "review",
+   "n": 3,
+   "text": "1. **Check a run's log before believing the run.** Two things can contaminate a skill run: the user's global settings can reach it, and the skill's reference files can be unreadable if their directory wasn't added. Either way, the final answer looks normal. Only the log can show that neither happened.[^operate]\n\n[^operate]: From the review of the `operate` skill on 2026-11-01.",
+   "words": 61,
+   "cost": 0.0645715,
+   "cuts": {
+    "proposed": 1,
+    "applied": 1
+   },
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 5,
+   "total": 5,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "commit-message",
+   "arm": "baseline",
+   "n": 1,
+   "text": "skill-review: remove the subagent shell check from running-a-skill\n\nThe reference told reviewers to check whether a run got a shell through\na subagent. That check is unnecessary because --disallowedTools Bash also\ncovers subagents. On Claude Code 2.1.310, a general-purpose subagent had\nno Bash tool in 4 of 4 runs under the flag. Without the flag and with the\ncommand allowed, a subagent ran the command in 1 of 1 runs, so the test\ncan detect a subagent's shell access when it exists.\n\nskills/skill-review/references/running-a-skill.md now says the flag also\ncovers subagents, and the check is gone. The results are written up in\ndocs/context/skill-review-lessons.md.",
+   "words": 102,
+   "cost": 0.0157608,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 6,
+   "total": 6,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "commit-message",
+   "arm": "baseline",
+   "n": 2,
+   "text": "skill-review: drop the subagent shell check from running-a-skill\n\nThe running-a-skill reference told reviewers to check whether a run got\na shell through a subagent. That check isn't needed, because\n--disallowedTools Bash also covers subagents.\n\nWe tested this on Claude Code 2.1.310. Under --disallowedTools Bash, a\ngeneral-purpose subagent had no Bash tool in 4 of 4 runs. Without the\nflag and with the command allowed, a subagent ran the command in 1 of 1\nruns, so the setup can show a subagent using a shell when one is\navailable.\n\nThe reference now says the flag also covers subagents, and the check is\ngone. The results are written up in docs/context/skill-review-lessons.md.",
+   "words": 109,
+   "cost": 0.010287600000000001,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 6,
+   "total": 6,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "commit-message",
+   "arm": "baseline",
+   "n": 3,
+   "text": "skill-review: remove the subagent shell check from running-a-skill\n\nThe reference told reviewers to check whether a run got a shell through a\nsubagent. Testing shows the check is unnecessary because --disallowedTools\nBash also covers subagents, so the reference now says that and no longer\nasks for the check.\n\nOn Claude Code 2.1.310, a general-purpose subagent had no Bash tool in 4 of\n4 runs under --disallowedTools Bash. As a control, without the flag and with\nthe command allowed, a subagent ran the command in 1 of 1 runs.\n\nThe results are written up in docs/context/skill-review-lessons.md.",
+   "words": 95,
+   "cost": 0.0095676,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 6,
+   "total": 6,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "commit-message",
+   "arm": "rule",
+   "n": 1,
+   "text": "skill-review: drop the subagent shell check from running-a-skill\n\nThe reference told reviewers to check whether a run got a shell through a\nsubagent. That check isn't needed, because --disallowedTools Bash also covers\nsubagents.\n\nOn Claude Code 2.1.310, a general-purpose subagent had no Bash tool in 4 of 4\nruns under --disallowedTools Bash. Without the flag and with the command\nallowed, a subagent ran the command in 1 of 1 runs.\n\nskills/skill-review/references/running-a-skill.md now says the flag covers\nsubagents. The results are written up in docs/context/skill-review-lessons.md.",
+   "words": 84,
+   "cost": 0.0233699,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 6,
+   "total": 6,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "commit-message",
+   "arm": "rule",
+   "n": 2,
+   "text": "skill-review: remove the subagent shell check from the reference\n\nskills/skill-review/references/running-a-skill.md told reviewers to\ncheck whether a run got a shell through a subagent. The check is not\nneeded, because --disallowedTools Bash also covers subagents. The\nreference now says so.\n\nTesting on Claude Code 2.1.310 showed that under --disallowedTools\nBash, a general-purpose subagent had no Bash tool in 4 of 4 runs.\nWithout the flag and with the command allowed, a subagent ran the\ncommand in 1 of 1 runs.\n\nThe results are written up in docs/context/skill-review-lessons.md.",
+   "words": 86,
+   "cost": 0.0475955,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 6,
+   "total": 6,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     false
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "commit-message",
+   "arm": "rule",
+   "n": 3,
+   "text": "Tell skill reviewers that --disallowedTools covers subagents\n\nskills/skill-review/references/running-a-skill.md told reviewers to check whether a run got a shell through a subagent. That check isn't needed, so the reference now says the flag also covers subagents, and the check is gone.\n\nOn Claude Code 2.1.310, a general-purpose subagent had no Bash tool in 4 of 4 runs under --disallowedTools Bash. Without the flag and with the command allowed, a subagent ran the command in 1 of 1 runs.\n\nThe results are written up in docs/context/skill-review-lessons.md.",
+   "words": 84,
+   "cost": 0.0192586,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 6,
+   "total": 6,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "commit-message",
+   "arm": "review",
+   "n": 1,
+   "text": "skill-review: drop the subagent shell check from running-a-skill\n\nThe reference told reviewers to check whether a run got a shell through\na subagent. That check isn't needed, because --disallowedTools Bash also\ncovers subagents.\n\nTested on Claude Code 2.1.310. Under --disallowedTools Bash, a\ngeneral-purpose subagent had no Bash tool in 4 of 4 runs. Without the\nflag and with the command allowed, a subagent ran the command in 1 of 1\nruns.\n\nskills/skill-review/references/running-a-skill.md now says the flag\ncovers subagents. The results are written up in\ndocs/context/skill-review-lessons.md.",
+   "words": 85,
+   "cost": 0.0453922,
+   "cuts": {
+    "proposed": 1,
+    "applied": 1
+   },
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 6,
+   "total": 6,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "commit-message",
+   "arm": "review",
+   "n": 2,
+   "text": "Remove subagent shell check from skill-review reference\n\nskills/skill-review/references/running-a-skill.md told reviewers to check\nwhether a run got a shell through a subagent. Testing on Claude Code\n2.1.310 shows that --disallowedTools Bash also covers subagents, so the\ncheck is unnecessary:\n\n- Under --disallowedTools Bash, a general-purpose subagent had no Bash\n  tool in 4 of 4 runs.\n- Without the flag and with the command allowed, a subagent ran the\n  command in 1 of 1 runs.\n\nThe reference now says the flag also covers subagents.\n\nResults are in docs/context/skill-review-lessons.md.",
+   "words": 86,
+   "cost": 0.0352034,
+   "cuts": {
+    "proposed": 1,
+    "applied": 1
+   },
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 6,
+   "total": 6,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     false
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "commit-message",
+   "arm": "review",
+   "n": 3,
+   "text": "skill-review: drop subagent shell check from running-a-skill\n\nThe running-a-skill reference told reviewers to check whether a run got\na shell through a subagent. That check is unnecessary, because\n--disallowedTools Bash also covers subagents.\n\nOn Claude Code 2.1.310, a general-purpose subagent had no Bash tool in\n4 of 4 runs under --disallowedTools Bash. Without the flag and with the\ncommand allowed, a subagent ran the command in 1 of 1 runs, so the\nabsence of Bash came from the flag.\n\nThe reference now says the flag also covers subagents. Results are in docs/context/skill-review-lessons.md.",
+   "words": 92,
+   "cost": 0.0419162,
+   "cuts": {
+    "proposed": 1,
+    "applied": 1
+   },
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 6,
+   "total": 6,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "pr-description",
+   "arm": "baseline",
+   "n": 1,
+   "text": "**Record the decision to cap a skill's rule-bearing sections at fifty lines**\n\nThis PR adds `docs/decisions/0031-fifty-lines-of-rules.md`, which replaces the seventy-line limit on a whole skill file with a fifty-line limit on its rule-bearing sections. No skill needs changing to meet the new cap, so merging it changes only the rule that future skills and reviews follow.\n\nThe old limit, decision 0009, counted the whole file with `wc -l`, so the frontmatter and footer used up room meant for rules. The new limit does not count the following parts of a skill:\n\n- the frontmatter\n- the title\n- the purpose\n- the \"Not here\" section\n- the footer\n- the footnotes\n\nEvery skill already fits within the cap. These are the highest counts of rule-bearing lines, measured on 2026-10-28:\n\n| Skill | Rule-bearing lines |\n| --- | --- |\n| `procedures` | 48 |\n| `steward` | 46 |\n| `contracts` | 44 |\n\nThe record gives an `awk` command that reproduces the count. There is no automatic check yet, so reviewers enforce the limit in review.",
+   "words": 178,
+   "cost": 0.0443051,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 6,
+   "total": 6,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "pr-description",
+   "arm": "baseline",
+   "n": 2,
+   "text": "**Cap a skill's rule-bearing sections at 50 lines instead of the whole file at 70**\n\nThis PR records a decision in `docs/decisions/0031-fifty-lines-of-rules.md`: a skill's rule-bearing sections are now limited to 50 lines, replacing the 70-line limit on the whole file from decision 0009. Merging it requires no changes to any skill, because all of them already meet the new cap.\n\nThe old limit counted the whole file with `wc -l`, so the frontmatter and footer used up room meant for rules. The new count leaves out these parts of a skill:\n\n- Frontmatter\n- Title\n- Purpose\n- The \"Not here\" section\n- Footer\n- Footnotes\n\nThe closest skills to the cap, measured on 2026-10-28, have this many rule-bearing lines:\n\n| Skill | Lines |\n| --- | --- |\n| `procedures` | 48 |\n| `steward` | 46 |\n| `contracts` | 44 |\n\nTo check these numbers, run the `awk` command given in the decision record.\n\nThere is no automatic check yet, so the limit is enforced in review for now.",
+   "words": 173,
+   "cost": 0.0233448,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 6,
+   "total": 6,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "pr-description",
+   "arm": "baseline",
+   "n": 3,
+   "text": "# Cap a skill's rule-bearing sections at 50 lines\n\nThis PR records a decision to cap a skill's rule-bearing sections at 50 lines, replacing the 70-line cap on the whole file. Merging it requires no changes to any skill, because all of them already meet the new cap.\n\n## Why the limit is changing\n\nThe old limit, decision 0009, counted the whole file with `wc -l`, so the frontmatter and footer used up room meant for rules. The new limit counts only the lines that carry rules. These parts of a skill are no longer counted:\n\n- Frontmatter\n- Title\n- Purpose\n- The \"Not here\" section\n- Footer\n- Footnotes\n\n## How current skills measure up\n\nA count on 2026-10-28 found that the largest skill has 48 rule-bearing lines, 2 under the cap. These three skills have the most:\n\n| Skill | Rule-bearing lines |\n| --- | --- |\n| `procedures` | 48 |\n| `steward` | 46 |\n| `contracts` | 44 |\n\nTo reproduce the count, run the `awk` command given in `docs/decisions/0031-fifty-lines-of-rules.md`.\n\n## Enforcement\n\nThere is no automatic check yet, so reviewers have to enforce the limit during review.",
+   "words": 194,
+   "cost": 0.018829,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 6,
+   "total": 6,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "pr-description",
+   "arm": "rule",
+   "n": 1,
+   "text": "**Record the decision to cap rule-bearing lines at fifty**\n\nThis PR records a decision to cap a skill's rule-bearing sections at fifty lines, replacing the seventy-line cap on the whole file set by decision 0009. No skill needs changing to meet the new cap, which is enforced in review because there is no automatic check yet.\n\nDecision 0009 counted the whole file with `wc -l`, so the frontmatter and footer used up room meant for rules. The new count excludes the frontmatter, title, purpose, the Not here section, footer and footnotes.\n\nThese three skills had the most rule-bearing lines when measured on 2026-10-28, so they sit closest to the cap:\n\n| Skill | Rule-bearing lines |\n| --- | --- |\n| procedures | 48 |\n| steward | 46 |\n| contracts | 44 |\n\nThe record, `docs/decisions/0031-fifty-lines-of-rules.md`, gives an awk command that reproduces the count.",
+   "words": 147,
+   "cost": 0.0491955,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 6,
+   "total": 6,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "pr-description",
+   "arm": "rule",
+   "n": 2,
+   "text": "**Cap a skill's rule-bearing sections at fifty lines**\n\nThis change records a decision to replace the seventy-line limit on a whole skill file with a fifty-line limit on its rule-bearing sections. No skill needs changing to meet the new cap, so merging affects only how skills are measured from now on.\n\nThe old limit, decision 0009, counted the whole file with `wc -l`, so the frontmatter and footer used up room meant for rules. The new limit doesn't count the frontmatter, title, purpose, Not here section, footer or footnotes.\n\nThe three longest skills, measured on 2026-10-28, all fit under the cap:\n\n| Skill | Rule-bearing lines |\n| --- | --- |\n| procedures | 48 |\n| steward | 46 |\n| contracts | 44 |\n\nThere is no automatic check yet, so reviewers enforce the limit. To reproduce the count, use the awk command in the record, `docs/decisions/0031-fifty-lines-of-rules.md`.",
+   "words": 150,
+   "cost": 0.0268459,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 6,
+   "total": 6,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "pr-description",
+   "arm": "rule",
+   "n": 3,
+   "text": "# Cap a skill's rule-bearing sections at fifty lines\n\nThis PR records a decision to cap a skill's rule-bearing sections at fifty lines, replacing the seventy-line cap on the whole file. No skill needs changing to meet the new cap. The record is `docs/decisions/0031-fifty-lines-of-rules.md`.\n\n## Why the limit changed\n\nThe old limit, decision 0009, counted the whole file with `wc -l`, so the frontmatter and footer used up room meant for rules. The new limit doesn't count the frontmatter, title, purpose, Not here section, footer or footnotes.\n\n## Effect on existing skills\n\nThese three skills had the most rule-bearing lines when measured on 2026-10-28, and the highest is two lines under the cap:\n\n| Skill | Rule-bearing lines |\n| --- | --- |\n| `procedures` | 48 |\n| `steward` | 46 |\n| `contracts` | 44 |\n\nTo reproduce the count, run the awk command given in the record.\n\n## Enforcement\n\nThere is no automatic check yet, so the limit is enforced in review.",
+   "words": 166,
+   "cost": 0.033884000000000004,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 6,
+   "total": 6,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "pr-description",
+   "arm": "review",
+   "n": 1,
+   "text": "# Cap a skill's rule-bearing sections at fifty lines\n\nThis PR records a decision to cap a skill's rule-bearing sections at fifty lines, replacing the seventy-line cap on the whole file. No skill needs changing.\n\n## Why the limit changes\n\nThe old limit, decision 0009, counted the whole file with `wc -l`, so the frontmatter and footer used up room meant for rules. The new count leaves out the frontmatter, title, purpose, the Not here section, footer and footnotes.\n\n## How current skills measure up\n\nAs measured on 2026-10-28, the skill with the most rule-bearing lines is procedures with 48, followed by steward with 46 and contracts with 44. To reproduce the count, run the awk command in the record, `docs/decisions/0031-fifty-lines-of-rules.md`.\n\n## Enforcement\n\nThere is no automatic check yet, so the limit is enforced in review.",
+   "words": 136,
+   "cost": 0.06381150000000001,
+   "cuts": {
+    "proposed": 2,
+    "applied": 2
+   },
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 6,
+   "total": 6,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "pr-description",
+   "arm": "review",
+   "n": 2,
+   "text": "**Cap a skill's rule-bearing sections at fifty lines instead of the whole file at seventy**\n\nThis change records the decision in `docs/decisions/0031-fifty-lines-of-rules.md`. It can be merged without changing any skill, because every skill already meets the new cap.\n\nThe old limit, decision 0009, counted the whole file with `wc -l`, so the frontmatter and footer used up room meant for rules. The new limit no longer counts:\n\n- frontmatter\n- title\n- purpose\n- the Not here section\n- footer\n- footnotes\n\nOn 2026-10-28, these skills had the most rule-bearing lines:\n\n| Skill | Rule-bearing lines |\n| --- | --- |\n| procedures | 48 |\n| steward | 46 |\n| contracts | 44 |\n\nThe limit has no automatic check yet, so reviewers enforce it. The decision record gives an `awk` command that reproduces the count.",
+   "words": 139,
+   "cost": 0.0504256,
+   "cuts": {
+    "proposed": 2,
+    "applied": 2
+   },
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 6,
+   "total": 6,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "pr-description",
+   "arm": "review",
+   "n": 3,
+   "text": "This pull request records a decision to cap a skill's rule-bearing sections at fifty lines, replacing the seventy-line cap on the whole file. No skill needs changing to meet the new cap. The record is `docs/decisions/0031-fifty-lines-of-rules.md`.\n\nThe old limit, decision 0009, counted the whole file with `wc -l`, so the frontmatter and footer used up room meant for rules. The new count leaves out the frontmatter, title, purpose, the Not here section, footer and footnotes.\n\nThese three skills had the most rule-bearing lines on 2026-10-28:\n\n- `procedures`: 48 lines\n- `steward`: 46 lines\n- `contracts`: 44 lines\n\nTo check these numbers, run the awk command in the record.\n\nThere is no automatic check yet, so the limit is enforced in review.",
+   "words": 121,
+   "cost": 0.0585315,
+   "cuts": {
+    "proposed": 2,
+    "applied": 2
+   },
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 6,
+   "total": 6,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "readme-section",
+   "arm": "baseline",
+   "n": 1,
+   "text": "## Try the skills for one session\n\nYou can try this library in Claude Code without installing it permanently. When you load it from a local clone with `--plugin-dir`, the skills are available for that session only.\n\nTo load the library and check that it works, follow these steps:\n\n1. Clone the repository, replacing `<repository-url>` and `/path/to/clone` with your own values:\n\n   ```sh\n   git clone <repository-url> /path/to/clone\n   ```\n\n2. From your project directory, start Claude Code with `--plugin-dir` pointing at the clone:\n\n   ```sh\n   claude --plugin-dir /path/to/clone\n   ```\n\n3. Ask Claude Code to do a task that matches one of the skills, then watch for a Skill tool call. Skills load on their own when a task matches their description, so you don't need to invoke them by name.\n\nEach skill keeps its reference files in its own `references/` directory. If the clone is outside your project, an agent may not be able to read those files unless you also pass the same path to `--add-dir`:\n\n```sh\nclaude --plugin-dir /path/to/clone --add-dir /path/to/clone\n```\n\n`--plugin-dir` works here because the library is a plugin directory, with its manifest at `.claude-plugin/plugin.json`.",
+   "words": 186,
+   "cost": 0.0374835,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 5,
+   "total": 5,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "readme-section",
+   "arm": "baseline",
+   "n": 2,
+   "text": "## Try the library without installing it\n\nYou can try these skills for a single Claude Code session, and nothing is installed permanently. The repository is itself a plugin directory (its manifest is at `.claude-plugin/plugin.json`), so Claude Code can load it directly from a clone.\n\nTo start a session with the skills available, follow these steps:\n\n1. Clone the repository:\n\n   ```sh\n   git clone <repository-url> /path/to/library\n   ```\n\n2. Start Claude Code with `--plugin-dir` pointing at the clone:\n\n   ```sh\n   claude --plugin-dir /path/to/library\n   ```\n\n3. Check that the skills load by asking for a task that matches a skill's description, then watching for a Skill tool call. You don't need to invoke a skill by name, because skills load on their own when the task matches their description.\n\nEach skill keeps its reference files in its own `references/` directory. If the clone is outside your project, an agent may not be able to read those files until you also pass the same path to `--add-dir`:\n\n```sh\nclaude --plugin-dir /path/to/library --add-dir /path/to/library\n```\n\nThe skills stop being available when the session ends. To use them again, start Claude Code with the same flags.",
+   "words": 189,
+   "cost": 0.047861100000000004,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 5,
+   "total": 5,
+   "votes": [
+    [
+     false,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "readme-section",
+   "arm": "baseline",
+   "n": 3,
+   "text": "## Try it without installing\n\nYou can try this library for a single Claude Code session, and nothing is installed permanently. To start a session with the skills available, clone the repository and point `--plugin-dir` at the clone:\n\n```sh\ngit clone <repository-url> ~/skill-library\nclaude --plugin-dir ~/skill-library\n```\n\nThe clone's root is the plugin directory, and its manifest is at `.claude-plugin/plugin.json`. To stop using the skills, start Claude Code without the flag.\n\n### Check that the skills load\n\nYou don't need to invoke the skills by hand, because each one loads on its own when a task matches its description. To check that this is working, ask Claude Code to do a task that matches a skill's description, then watch for a Skill tool call.\n\n### Give access to reference files\n\nEach skill keeps its reference files in its own `references/` directory. If the clone is outside your project, an agent may not be able to read those files until you also pass the clone's path to `--add-dir`:\n\n```sh\nclaude --plugin-dir ~/skill-library --add-dir ~/skill-library\n```",
+   "words": 174,
+   "cost": 0.0169974,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 5,
+   "total": 5,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "readme-section",
+   "arm": "rule",
+   "n": 1,
+   "text": "## Try the skills without installing\n\nTo try this library, load it from a local clone for a single Claude Code session. The skills are available only in that session, and nothing is installed permanently. This works because the library is a plugin directory, with its manifest at `.claude-plugin/plugin.json`.\n\n1. Clone the repository:\n\n   ```sh\n   git clone <repository-url> /path/to/clone\n   ```\n\n2. Start Claude Code with `--plugin-dir` pointing at the clone:\n\n   ```sh\n   claude --plugin-dir /path/to/clone\n   ```\n\n3. Ask Claude Code to do a task that matches a skill's description, then watch for a Skill tool call. Skills load on their own when a task matches, so the call confirms that the library is working.\n\nEach skill keeps its reference files in its own `references/` directory. If the clone is outside your project, an agent may not be able to read those files unless you also pass the same path to `--add-dir`:\n\n```sh\nclaude --plugin-dir /path/to/clone --add-dir /path/to/clone\n```",
+   "words": 156,
+   "cost": 0.0338019,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 5,
+   "total": 5,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "readme-section",
+   "arm": "rule",
+   "n": 2,
+   "text": "## Try the skills without installing them\n\nYou can try this library for a single Claude Code session by cloning it and pointing Claude Code at the clone. The skills are available only in that session, and nothing is installed permanently.\n\nTo start a session with the skills and confirm they work:\n\n1. Clone the repository:\n\n   ```sh\n   git clone <repository-url> ~/skill-library\n   ```\n\n2. From your project, start Claude Code with `--plugin-dir` pointing at the clone:\n\n   ```sh\n   claude --plugin-dir ~/skill-library\n   ```\n\n   If the clone is outside your project, an agent may not be able to read the files in each skill's `references/` directory. To give it access, pass the same path to `--add-dir`:\n\n   ```sh\n   claude --plugin-dir ~/skill-library --add-dir ~/skill-library\n   ```\n\n3. Ask Claude Code to do a task that matches a skill's description, then watch for a Skill tool call. You don't need to invoke the skill yourself, because skills load on their own when a task matches their description.\n\nThe `--plugin-dir` flag works here because the repository is a plugin directory, with its manifest at `.claude-plugin/plugin.json`.",
+   "words": 176,
+   "cost": 0.0352139,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 5,
+   "total": 5,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     false,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "readme-section",
+   "arm": "rule",
+   "n": 3,
+   "text": "## Try the skills without installing them\n\nTo try these skills, clone the repository and point Claude Code at the clone with `--plugin-dir`. The skills are available for that session only, and nothing is installed permanently.\n\n1. Clone the repository:\n\n   ```sh\n   git clone <repository-url> /path/to/clone\n   ```\n\n2. Start Claude Code from your project, using the path to the clone:\n\n   ```sh\n   claude --plugin-dir /path/to/clone\n   ```\n\n   This works because the repository is a plugin directory, with its manifest at `.claude-plugin/plugin.json`.\n\n3. Ask Claude Code to do a task that matches a skill's description, then watch for a Skill tool call. You don't need to invoke the skill yourself, because skills load on their own when a task matches their description.\n\nEach skill keeps its reference files in its own `references/` directory. If the clone is outside your project, the agent may not be able to read those files until you pass the same path to `--add-dir`:\n\n```sh\nclaude --plugin-dir /path/to/clone --add-dir /path/to/clone\n```",
+   "words": 161,
+   "cost": 0.0287305,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 5,
+   "total": 5,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "readme-section",
+   "arm": "review",
+   "n": 1,
+   "text": "## Try it without installing\n\nTo try the skills in Claude Code, clone the repository and start a session with `--plugin-dir` pointing at the clone:\n\n```sh\ngit clone <repository-url> /path/to/clone\nclaude --plugin-dir /path/to/clone\n```\n\nThe skills are available for that session only. This works because the repository is a plugin directory, with its manifest at `.claude-plugin/plugin.json`.\n\nSkills load on their own when a task matches their description. To check that they're working, ask for a task that one of them covers and watch for a Skill tool call.\n\nEach skill keeps its reference files in its `references/` directory. If the clone is outside your project, an agent may need `--add-dir` with the same path to read them:\n\n```sh\nclaude --plugin-dir /path/to/clone --add-dir /path/to/clone\n```",
+   "words": 124,
+   "cost": 0.0654563,
+   "cuts": {
+    "proposed": 1,
+    "applied": 1
+   },
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 5,
+   "total": 5,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "readme-section",
+   "arm": "review",
+   "n": 2,
+   "text": "## Try the skills without installing them\n\nTo try the skills for a single Claude Code session, clone the repository and point `--plugin-dir` at the clone. Nothing is installed permanently.\n\n1. Clone the repository:\n\n   ```sh\n   git clone <repository-url> /path/to/clone\n   ```\n\n2. Start Claude Code with the clone as a plugin directory:\n\n   ```sh\n   claude --plugin-dir /path/to/clone\n   ```\n\n   If the clone is outside your project, add `--add-dir` with the same path:\n\n   ```sh\n   claude --plugin-dir /path/to/clone --add-dir /path/to/clone\n   ```\n\n3. Ask Claude Code to do a task that matches a skill's description, and watch for a Skill tool call, which shows that the skill loaded.\n\nSkills load when a task matches their description, so you don't need to invoke them by name.\n\nAn agent may need `--add-dir` to read each skill's `references/` directory when the clone is outside your project.\n\n`--plugin-dir` works because the repository is a plugin directory, with its manifest at `.claude-plugin/plugin.json`.",
+   "words": 151,
+   "cost": 0.0764447,
+   "cuts": {
+    "proposed": 5,
+    "applied": 5
+   },
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 5,
+   "total": 5,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "readme-section",
+   "arm": "review",
+   "n": 3,
+   "text": "## Try the library without installing it\n\nTo try the skills for a single Claude Code session, clone the repository and point `--plugin-dir` at the clone. Nothing is installed permanently.\n\nReplace `<repository-url>` and `/path/to/clone` with your own values:\n\n1. Clone the repository:\n\n   ```sh\n   git clone <repository-url> /path/to/clone\n   ```\n\n2. Start Claude Code from your project, with the clone as the plugin directory:\n\n   ```sh\n   claude --plugin-dir /path/to/clone\n   ```\n\n3. Ask for a task that matches a skill's description, and watch for a Skill tool call. Skills load on their own when the task matches, so you don't need to invoke them by name.\n\nIf the clone is outside your project, an agent may not be able to read the files in each skill's `references/` directory. To give it access, pass the same path to `--add-dir`:\n\n```sh\nclaude --plugin-dir /path/to/clone --add-dir /path/to/clone\n```\n\n`--plugin-dir` accepts the clone because the repository is a plugin directory, with its manifest at `.claude-plugin/plugin.json`.",
+   "words": 157,
+   "cost": 0.04952329999999999,
+   "cuts": {
+    "proposed": 3,
+    "applied": 3
+   },
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 5,
+   "total": 5,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "doc-page",
+   "arm": "baseline",
+   "n": 1,
+   "text": "# Compare an agent's behavior with and without a skill\n\nTo see what a skill changes, run the same prompt twice from the same clean directory: once with the skill's plugin and once without it. Then check each run's log to confirm what the agent could access and what it did before you compare the answers.\n\n## Run the comparison\n\n1. Create a new throwaway directory that holds only what the task needs.\n\n2. In that directory, add a `.claude/settings.json` file that excludes your global `CLAUDE.md`. Replace the path with the full path to your own file:\n\n   ```json\n   {\n     \"claudeMdExcludes\": [\"/home/your-name/.claude/CLAUDE.md\"]\n   }\n   ```\n\n3. Run the prompt with the plugin, setting both `--plugin-dir` and `--add-dir` to the plugin's directory. This command saves the log outside the task directory:\n\n   ```sh\n   claude -p \"$PROMPT\" \\\n     --plugin-dir /path/to/plugin \\\n     --add-dir /path/to/plugin \\\n     --output-format stream-json --verbose > ../with-skill.jsonl\n   ```\n\n4. Run the same prompt without those two flags, changing nothing else:\n\n   ```sh\n   claude -p \"$PROMPT\" \\\n     --output-format stream-json --verbose > ../without-skill.jsonl\n   ```\n\n## Check the logs\n\nCheck each log before you read its answer, because an answer doesn't show whether the skill loaded or whether a read was refused. These entries show what happened in the run:\n\n| Log entry | What it tells you |\n| --- | --- |\n| `init` entry | What was available to the agent |\n| `Skill` `tool_use` entries | Whether the skill loaded |\n| `permission_denials` in the final `result` entry | Which reads or writes were refused |\n\n## Why the setup matters\n\nTwo parts of the setup prevent results that look valid but aren't:\n\n- **`claudeMdExcludes`:** `--setting-sources project` doesn't keep your global `CLAUDE.md` out of a run on its own. Without the exclusion, your personal instructions can affect both runs.\n- **`--add-dir`:** Without this flag, reads of the skill's reference files are refused and the run carries on as if nothing happened. The agent then works without those files, and the only sign may be in the log.",
+   "words": 334,
+   "cost": 0.07424510000000001,
+   "cuts": null,
+   "facts": [
+    false,
+    false,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 5,
+   "total": 7,
+   "votes": [
+    [
+     false,
+     false,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     false,
+     false,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     false,
+     false,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "doc-page",
+   "arm": "baseline",
+   "n": 2,
+   "text": "# Compare what an agent does with and without a skill\n\nTo see what a skill changes, run the same prompt twice from a clean directory, once with the skill's plugin and once without it. Then check each run's log before you read its answer, because the log shows whether the skill loaded and whether any reads or writes were refused.\n\n## Run the comparison\n\nFollow these steps, replacing the example prompt and paths with your own:\n\n1. Create a new throwaway directory that holds only what the task needs, and work from there.\n\n2. Add a `.claude/settings.json` file that excludes your global `CLAUDE.md`:\n\n   ```json\n   {\n     \"claudeMdExcludes\": [\"/home/you/.claude/CLAUDE.md\"]\n   }\n   ```\n\n3. Run the prompt with the plugin, and save the log to a file:\n\n   ```sh\n   claude -p \"Your prompt\" \\\n     --plugin-dir /path/to/plugin \\\n     --add-dir /path/to/plugin \\\n     --output-format stream-json --verbose > with-skill.jsonl\n   ```\n\n4. Run the same prompt without `--plugin-dir` and `--add-dir`, changing nothing else:\n\n   ```sh\n   claude -p \"Your prompt\" \\\n     --output-format stream-json --verbose > without-skill.jsonl\n   ```\n\n5. Check both logs, using the entries listed in the next section.\n\n6. Compare the two answers.\n\n## What to check in each log\n\nEach of these log entries answers a different question about the run:\n\n| Log entry | What it tells you |\n| --- | --- |\n| The `init` entry | What was available to the agent |\n| `Skill` `tool_use` entries | Whether the skill loaded |\n| `permission_denials` in the final `result` entry | Which reads or writes were refused |\n\n## Why the setup matters\n\nTwo settings can quietly invalidate the comparison:\n\n- **`claudeMdExcludes`:** `--setting-sources project` alone doesn't keep your global `CLAUDE.md` out of the run. Without the exclusion, your global instructions can affect both runs.\n- **`--add-dir`:** Without this flag, reads of the skill's reference files are refused, and the run carries on as if nothing happened. The answer won't show the problem, so check `permission_denials` in the log.",
+   "words": 323,
+   "cost": 0.047784,
+   "cuts": null,
+   "facts": [
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 6,
+   "total": 7,
+   "votes": [
+    [
+     false,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     false,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "doc-page",
+   "arm": "baseline",
+   "n": 3,
+   "text": "# Compare an agent's behavior with and without a skill\n\nTo see what a skill changes, run the same prompt twice in a clean directory, once with the skill's plugin and once without it. Then check each run's log to confirm what the agent could access and did before you compare the answers.\n\n## Run the comparison\n\nFollow these steps to produce one log for each run:\n\n1. Create a new throwaway directory that holds only what the task needs, and change into it.\n\n2. Add a `.claude/settings.json` file that excludes your global `CLAUDE.md`, using its absolute path:\n\n   ```json\n   {\n     \"claudeMdExcludes\": [\"/home/you/.claude/CLAUDE.md\"]\n   }\n   ```\n\n3. Set the prompt, the plugin path and a log directory outside the throwaway directory:\n\n   ```sh\n   PROMPT=\"The task you want to test\"\n   PLUGIN=/path/to/plugin\n   LOGS=/path/to/logs\n   ```\n\n4. Run the prompt with the plugin:\n\n   ```sh\n   claude -p \"$PROMPT\" --plugin-dir \"$PLUGIN\" --add-dir \"$PLUGIN\" \\\n     --output-format stream-json --verbose > \"$LOGS/with-skill.jsonl\"\n   ```\n\n5. If the first run changed any files in the directory, restore them.\n\n6. Run the same prompt without the plugin:\n\n   ```sh\n   claude -p \"$PROMPT\" --output-format stream-json --verbose > \"$LOGS/without-skill.jsonl\"\n   ```\n\n## Check the logs\n\nCheck these entries in each log before you read the answer:\n\n- **The `init` entry** shows what was available to the agent.\n- **`Skill` `tool_use` entries** show whether the skill loaded.\n- **`permission_denials` in the final `result` entry** lists any refused reads or writes.\n\nThe comparison is valid only if the plugin is available in the first run and absent from the second, and the first run's skill loaded with no refused reads. Otherwise, fix the setup and run the comparison again.\n\n## Why the setup matters\n\nEach part of the setup keeps the two runs comparable or exposes a failure that the answer alone would hide:\n\n- **`claudeMdExcludes`:** `--setting-sources project` alone doesn't keep your global `CLAUDE.md` out of the run, and its instructions could affect both results.\n- **`--add-dir`:** Without this flag, reads of the skill's reference files are refused and the run carries on as if nothing happened. The answer gives no sign that the agent worked without those files.\n- **A log directory outside the throwaway directory:** The second run can't read the first run's log.",
+   "words": 365,
+   "cost": 0.0717707,
+   "cuts": null,
+   "facts": [
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 6,
+   "total": 7,
+   "votes": [
+    [
+     false,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     false,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "doc-page",
+   "arm": "rule",
+   "n": 1,
+   "text": "# Compare an agent's behavior with and without a skill\n\nTo see what a skill changes, run the same prompt twice in a clean directory, once with the skill's plugin and once without it. Then check each run's log to confirm what the agent actually had and did before you compare the answers.\n\n## Run the comparison\n\nFollow these steps to produce one log for each run:\n\n1. Create a new throwaway directory that holds only what the task needs, and run the remaining steps from it.\n\n2. Add a `.claude/settings.json` file that excludes your global `CLAUDE.md`, using its actual path:\n\n   ```json\n   {\n     \"claudeMdExcludes\": [\"/home/you/.claude/CLAUDE.md\"]\n   }\n   ```\n\n3. Run the prompt with the plugin, saving the output to a file:\n\n   ```sh\n   claude -p \"<prompt>\" \\\n     --plugin-dir /path/to/plugin \\\n     --add-dir /path/to/plugin \\\n     --output-format stream-json --verbose > with-skill.jsonl\n   ```\n\n4. Run the same prompt without the two plugin flags, changing nothing else:\n\n   ```sh\n   claude -p \"<prompt>\" \\\n     --output-format stream-json --verbose > without-skill.jsonl\n   ```\n\n## Check each log before reading the answer\n\nCheck these entries in both logs:\n\n| Log entry | What it tells you |\n| --- | --- |\n| The `init` entry | What was available to the agent |\n| `Skill` `tool_use` entries | Whether the skill loaded |\n| `permission_denials` in the final `result` entry | Which reads or writes were refused |\n\nThe comparison holds only if the logs show that the skill loaded in the first run and that no refused read or write affected either run. Compare the answers only after that.\n\n## Why these settings matter\n\n- **`claudeMdExcludes`:** `--setting-sources project` alone doesn't keep your global `CLAUDE.md` out of the run, so its instructions could affect both runs and hide the skill's effect.\n- **`--add-dir`:** Without this flag, reads of the plugin's reference files are refused and the run carries on as if nothing happened. The answer gives no sign of the refusal, which is why you check the log first.",
+   "words": 327,
+   "cost": 0.0658195,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 7,
+   "total": 7,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     false,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "doc-page",
+   "arm": "rule",
+   "n": 2,
+   "text": "# Compare what an agent does with and without a skill\n\nTo see what a skill changes, run the same prompt twice in a clean directory, once with the skill's plugin and once without it. Then check each run's log before you compare the answers.\n\n## Run the comparison\n\n1. Create a new throwaway directory that holds only what the task needs.\n\n2. Add a `.claude/settings.json` that excludes your global `CLAUDE.md`, because `--setting-sources project` alone doesn't keep it out:\n\n   ```json\n   {\n     \"claudeMdExcludes\": [\"/home/you/.claude/CLAUDE.md\"]\n   }\n   ```\n\n3. Run the prompt with the plugin, saving the log to a file:\n\n   ```sh\n   claude -p \"PROMPT\" \\\n     --plugin-dir /path/to/plugin \\\n     --add-dir /path/to/plugin \\\n     --output-format stream-json --verbose > with-skill.jsonl\n   ```\n\n4. Run the same prompt without `--plugin-dir` and `--add-dir`, changing nothing else:\n\n   ```sh\n   claude -p \"PROMPT\" \\\n     --output-format stream-json --verbose > without-skill.jsonl\n   ```\n\n## Check each log before reading the answer\n\nAn answer can look normal even when the run didn't test what you intended. Look for these entries in each log to confirm what happened:\n\n| Log entry | What it tells you |\n| --- | --- |\n| `init` entry | What was available to the run |\n| `Skill` `tool_use` entries | Whether the skill loaded |\n| `permission_denials` in the final `result` entry | Which reads or writes were refused |\n\n## Why the plugin run needs `--add-dir`\n\n`--plugin-dir` alone doesn't let the agent read the plugin's reference files. Without `--add-dir`, those reads are refused and the run carries on as if nothing happened, so the refusals may only be visible in `permission_denials`.",
+   "words": 263,
+   "cost": 0.0457216,
+   "cuts": null,
+   "facts": [
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 6,
+   "total": 7,
+   "votes": [
+    [
+     false,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     false,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     false,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "doc-page",
+   "arm": "rule",
+   "n": 3,
+   "text": "# Compare what an agent does with and without a skill\n\nTo see what a skill changes, run the same prompt twice in a clean directory, once with the plugin that provides the skill and once without it. Then check each run's log before reading its answer, because the log shows whether the answer reflects the skill at all.\n\n## Run the comparison\n\nFollow these steps to produce one log for each run:\n\n1. Create a new throwaway directory that holds only what the task needs.\n\n2. Add a `.claude/settings.json` that excludes your global `CLAUDE.md`. You need this because `--setting-sources project` alone doesn't keep that file out.\n\n   ```json\n   {\n     \"claudeMdExcludes\": [\"/absolute/path/to/.claude/CLAUDE.md\"]\n   }\n   ```\n\n3. From that directory, run the prompt with the plugin:\n\n   ```sh\n   claude -p \"$PROMPT\" --setting-sources project \\\n     --plugin-dir \"$PLUGIN\" --add-dir \"$PLUGIN\" \\\n     --output-format stream-json --verbose > with-skill.jsonl\n   ```\n\n4. Run the same prompt without the plugin, changing nothing else:\n\n   ```sh\n   claude -p \"$PROMPT\" --setting-sources project \\\n     --output-format stream-json --verbose > without-skill.jsonl\n   ```\n\nSet both `--plugin-dir` and `--add-dir` for the first run. Without `--add-dir`, reads of the skill's reference files are refused and the run carries on as if nothing happened, so its answer can look like a fair test of the skill when it isn't.\n\n## Check the logs\n\nLook for these entries in each log before reading its answer:\n\n| Log entry | What it tells you |\n| --- | --- |\n| The `init` entry | What was available to the run |\n| `tool_use` entries for the `Skill` tool | Whether the skill loaded |\n| `permission_denials` in the final `result` entry | Which reads or writes were refused |",
+   "words": 277,
+   "cost": 0.061068300000000006,
+   "cuts": null,
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 7,
+   "total": 7,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "doc-page",
+   "arm": "review",
+   "n": 1,
+   "text": "# Compare what an agent does with and without a skill\n\nTo see what a skill changes, run the same prompt twice in a clean directory, once with the skill's plugin and once without it. Then check each run's log before reading its answer.\n\n## Run the comparison\n\n1. Create a throwaway directory that holds only what the task needs.\n\n2. In that directory, add a `.claude/settings.json` file that excludes your global `CLAUDE.md`:\n\n   ```json\n   {\n     \"claudeMdExcludes\": [\"/home/YOUR_USER/.claude/CLAUDE.md\"]\n   }\n   ```\n\n3. Run the prompt with the plugin, replacing `PROMPT` and `PLUGIN_PATH` with your own values:\n\n   ```sh\n   claude -p \"PROMPT\" --plugin-dir PLUGIN_PATH --add-dir PLUGIN_PATH \\\n     --output-format stream-json --verbose > ../with-skill.jsonl\n   ```\n\n4. Run the same prompt without the plugin, changing nothing else:\n\n   ```sh\n   claude -p \"PROMPT\" \\\n     --output-format stream-json --verbose > ../without-skill.jsonl\n   ```\n\n## Check each log\n\nCheck these entries in both logs before you read the answers:\n\n| Log entry | What it tells you |\n| --- | --- |\n| `init` | What was available to the run |\n| `Skill` `tool_use` | Whether the skill loaded |\n| `permission_denials` in the final `result` | Which reads or writes were refused |\n\n## Why the setup matters\n\nTwo settings prevent problems that the answers alone may not reveal:\n\n- **`claudeMdExcludes`:** `--setting-sources project` alone doesn't keep your global `CLAUDE.md` out of the run.\n- **`--add-dir`:** Without this flag, reads of the skill's reference files are refused, and the run carries on as if nothing happened.",
+   "words": 245,
+   "cost": 0.0838734,
+   "cuts": {
+    "proposed": 1,
+    "applied": 1
+   },
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 7,
+   "total": 7,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "doc-page",
+   "arm": "review",
+   "n": 2,
+   "text": "# Compare what an agent does with and without a skill\n\nTo see what a skill changes, run the same prompt twice in a clean directory, once with the skill's plugin and once without it. Then check each run's log before you read its answer.\n\n## Run the comparison\n\nReplace the example paths and prompt with your own:\n\n1. Create a throwaway directory that holds only what the task needs, and work from there.\n\n2. Add a `.claude/settings.json` file that excludes your global `CLAUDE.md`:\n\n   ```json\n   {\n     \"claudeMdExcludes\": [\"/home/you/.claude/CLAUDE.md\"]\n   }\n   ```\n\n3. Run the prompt with the plugin:\n\n   ```sh\n   claude -p \"Your prompt\" \\\n     --plugin-dir /path/to/plugin \\\n     --add-dir /path/to/plugin \\\n     --output-format stream-json --verbose \\\n     > /tmp/with-skill.jsonl\n   ```\n\n4. Run the same prompt without the plugin, changing nothing else:\n\n   ```sh\n   claude -p \"Your prompt\" \\\n     --output-format stream-json --verbose \\\n     > /tmp/without-skill.jsonl\n   ```\n\n5. Check both logs as described in the next section.\n\n6. Compare the two answers.\n\n## Check the logs\n\nEach log shows what the agent could do and what it did. Look for these in each one:\n\n| Log entry | What it tells you |\n| --- | --- |\n| `init` entry | What was available to the run |\n| `Skill` `tool_use` entries | Whether the skill loaded |\n| `permission_denials` in the final `result` entry | Which reads or writes were refused |\n\n## Why the setup matters\n\nTwo settings prevent results that look valid but aren't:\n\n- **`claudeMdExcludes`:** `--setting-sources project` alone doesn't keep your global `CLAUDE.md` out of the run. If it loads, its instructions can affect both runs and hide the skill's effect.\n- **`--add-dir`:** Without this flag, reads of the plugin's reference files are refused, and the run carries on as if nothing happened. The answer alone won't reveal the failure, which is why you check the log first.",
+   "words": 306,
+   "cost": 0.0974947,
+   "cuts": {
+    "proposed": 5,
+    "applied": 5
+   },
+   "facts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 7,
+   "total": 7,
+   "votes": [
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  },
+  {
+   "doc": "doc-page",
+   "arm": "review",
+   "n": 3,
+   "text": "# Compare an agent's behavior with and without a skill\n\nTo see what a skill changes, run the same prompt twice in a throwaway directory, once with the plugin that contains the skill and once without it. Then compare the two logs and answers.\n\n## Run the comparison\n\n1. Create a throwaway directory that holds only what the task needs, and move into it.\n\n2. Add `.claude/settings.json`, replacing the path with the location of your global `CLAUDE.md`:\n\n   ```json\n   {\n     \"claudeMdExcludes\": [\"/home/your-user/.claude/CLAUDE.md\"]\n   }\n   ```\n\n3. Run the prompt with the plugin, replacing `/path/to/plugin` with its location:\n\n   ```sh\n   claude -p \"YOUR PROMPT\" \\\n     --setting-sources project \\\n     --plugin-dir /path/to/plugin \\\n     --add-dir /path/to/plugin \\\n     --output-format stream-json --verbose > with-skill.jsonl\n   ```\n\n4. Run the same prompt without the plugin:\n\n   ```sh\n   claude -p \"YOUR PROMPT\" \\\n     --setting-sources project \\\n     --output-format stream-json --verbose > without-skill.jsonl\n   ```\n\n5. Check each log using the table below.\n\n6. Compare the two answers.\n\n## What to check in each log\n\nEach log shows what the agent could use and what it did. Check these entries:\n\n| Log entry | What it tells you |\n| --- | --- |\n| `init` entry | What was available to the run |\n| `Skill` `tool_use` entries | Whether the skill loaded |\n| `permission_denials` in the final `result` entry | Which reads or writes were refused |\n\n## Why the setup matters\n\nThe two runs should differ only in `--plugin-dir` and `--add-dir`, so any difference in behavior can be traced to the plugin.\n\n**`claudeMdExcludes`:** `--setting-sources project` doesn't keep your global `CLAUDE.md` out of the run on its own, so the file has to be excluded.\n\n**`--add-dir`:** Without this flag, reads of the skill's reference files are refused and the run carries on as if nothing happened. The answer won't show that the agent missed those files, which is why you check the log before reading the answer.",
+   "words": 314,
+   "cost": 0.081272,
+   "cuts": {
+    "proposed": 5,
+    "applied": 5
+   },
+   "facts": [
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "kept": 6,
+   "total": 7,
+   "votes": [
+    [
+     false,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    [
+     false,
+     false,
+     true,
+     false,
+     true,
+     true,
+     true
+    ],
+    [
+     false,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   ]
+  }
+ ]
+}
