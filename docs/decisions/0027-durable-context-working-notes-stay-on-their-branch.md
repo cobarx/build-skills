@@ -35,6 +35,9 @@ have their own branch like any other work. This also needs no trigger: the merge
 `durable-context` gains rule 7, and AGENTS.md drops "working notes" from what `docs/context/`
 holds. One instance is enough: the failure cost a session to recover from.
 
+Hampton, 2026-11-02: the notes also stay apart from anything that will merge. Agents given the first
+wording put notes and sorted records on one branch, where a normal merge carries the notes to main.
+
 ## Consequences
 
 - `durable-context` loads when an agent records working state or decides where a note lives,
@@ -42,4 +45,5 @@ holds. One instance is enough: the failure cost a session to recover from.
 - `docs/context/deming-points-in-successors.md` is a working note already on main, marked as an
   unfinished draft, and the TQM essay links to it. #115 rebuilds that analysis, and its sorted
   output replaces the note.
+- A session starting on main can't see notes on their branch until it is told the branch's name.
 - A closed PR is a working note's archive. The essays cite #89 and #90 for their source sessions.

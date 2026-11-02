@@ -40,9 +40,10 @@ later. If it matters past this moment, it belongs in the project, in the open.
    declared, at the entry point or in the moment, and problems there go unfiled.
 
 7. **Working notes stay on their branch.** Notes taken while working are a unit of work like any
-   other, kept on their own branch and never merged as they are. What reaches main is sorted by
-   kind: each open question, proposed change, settled choice and piece of settled reasoning goes to
-   its own home (rules 2 and 5). The rest stays in the branch and its PR.
+   other, kept on their own branch, apart from anything that will merge, and never merged as they
+   are. What reaches main is sorted by kind: each open question, proposed change, settled choice
+   and piece of settled reasoning goes to its own home (rules 2 and 5), on a separate branch. The
+   rest stays in the notes branch and its PR.
 
 ## Not here
 
