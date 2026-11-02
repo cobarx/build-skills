@@ -39,3 +39,4 @@ skill. A reversed decision gets a new record, and the old one is marked supersed
 | [0029](0029-writing-structure-writing-style-two-skills-project-guide-first.md) | Writing is two skills, and the project's own guide comes first | Accepted |
 | [0030](0030-writing-style-punctuation-names-the-relation.md) | Punctuation names the relation, rather than banning the dash | Accepted |
 | [0031](0031-fifty-lines-of-rules.md) | No skill's rules run past fifty lines | Accepted |
+| [0032](0032-dependency-versions-a-peer-skill.md) | Which version to use is a peer skill, and the answer is the best-supported one | Accepted |

@@ -56,6 +56,7 @@ that ecosystem, and nothing fails loudly when it does.
 Error handling is `error-taxonomy`. Module boundaries are `contracts`. Complexity and dependency
 admission are `simplicity`. Why a technology was chosen is `decision-log`. Whether to adopt a
 standard from beyond the platform (a record format, a version scheme) is `adopting-standards`.
+Which version of the runtime or a dependency to use is `dependency-versions`.
 
 ---
 
