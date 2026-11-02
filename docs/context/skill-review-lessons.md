@@ -105,7 +105,7 @@ about 638), which is part of why the fix here is a test for each sentence and no
 ## The retest of 2026-11-02
 
 **Result:** reviewers with the skill found no more of the planted defects than reviewers without it,
-apart from one loophole. What the skill changed is how they reviewed, at about 1.7 times the cost. It
+apart from one loophole. What the skill changed is how they reviewed, at several times the cost. It
 also showed a gap in rule 3.
 
 Six reviewers (Opus 5.5, `high` effort) reviewed `tidy`, a synthetic skill with eight planted defects,
@@ -131,7 +131,8 @@ These differences did not depend on the planted defects:
   they couldn't say whether it helped. One found that asking before deleting clearly helps, and another
   that the skill made one task worse.
 - **Report:** those with the skill gave a verdict for each rule, and stated run counts.
-- **Cost:** $5.37 in total with the skill, $3.21 without.
+- **Cost:** $0.54 to $1.41 a review without the skill. With it, $1.55 to $1.92 for the session plus its
+  runs, which are billed separately. The one review that stated its run costs came to $6.81 in all.
 
 What the retest showed about `skill-review` itself:
 
