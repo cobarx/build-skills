@@ -41,8 +41,7 @@ Add `--disallowedTools Bash` when the task must not touch the machine. Say so in
 a run with no shell can't carry out the task and shows only what the agent would do. To judge a plan
 from such a run, carry out its commands on a copy of the project.
 
-Check too whether the agent tried to get a shell through a subagent, and whether it got one, because
-a subagent with a shell could change the real machine.
+The flag also takes the shell away from subagents, so an agent can't get one by starting a subagent.
 
 Claude Code also keeps a session log of each run in `~/.claude/projects/`, so deleting the throwaway
 project doesn't remove those logs.

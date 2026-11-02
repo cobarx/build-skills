@@ -10,8 +10,8 @@ Using this skill, a reviewer can tell whether a skill improves what an agent doe
 harm, from evidence someone else could rerun. A skill can pass this repo's format checks and
 still fail that, so reading alone doesn't meet the goal.
 
-The skill belongs in this library beside `review` and adds to it, rather than replacing it
-(confirmed by the owner, 2026-11-01).
+The owner asked for this skill on 2026-11-01. The agent writing it proposed that it sit in this
+library beside `review` and add to it, rather than replace it.
 
 ## Where the rules came from
 
@@ -74,6 +74,12 @@ after a review against `writing-style` and `writing-structure`. The description 
 same three prompts were rerun three times each, with the same results (3 of 3, 0 of 3, 0 of 3). An
 agent given only SKILL.md then said what each rule told it to do, and its accounts matched the
 intended meaning. That agent stands in for a new reader, and no person has done this reading yet.
+
+The review of `operate` saw a run try to get a shell through a subagent, without saying whether that
+worked, so the same day this was tested on Claude Code 2.1.310. Under `--disallowedTools Bash`, a
+general-purpose subagent asked to run `touch` had no Bash tool in 4 of 4 runs, 2 of them with that
+command also allowed by `--allowedTools`. Without the flag and with the command allowed, a subagent
+ran it (1 of 1), so the flag is what stopped it. Other kinds of subagent were not tried.
 
 The rule changes listed above have **not** been tested by another review.
 
