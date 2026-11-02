@@ -41,6 +41,7 @@ Deming.
 | [decision-log](skills/decision-log/SKILL.md) | A decision is reasoned in the open. |
 | [decision-analysis](skills/decision-analysis/SKILL.md) | Give the decider what they need to weigh a choice themselves. |
 | [adopting-standards](skills/adopting-standards/SKILL.md) | Adopt an existing standard before inventing your own. |
+| [dependency-versions](skills/dependency-versions/SKILL.md) | Use the best-supported version of everything the project depends on. |
 | [writing-structure](skills/writing-structure/SKILL.md) | Order a document so its reader gets what they need first. |
 | [writing-style](skills/writing-style/SKILL.md) | Write sentences a reader understands on the first reading. |
 
