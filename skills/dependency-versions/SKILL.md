@@ -24,18 +24,19 @@ best-supported version is usually the latest stable release.
 
 3. **Let a release settle before taking it.** A runtime's own stability signal, such as promotion
    to LTS, decides for that runtime. Anything else waits out a cooldown of at least three
-   days,[^cooldown] and a new major line waits for its first patch release as well. A security fix
-   doesn't wait.
+   days,[^cooldown] and a new major line waits for its first patch release as well. A range that
+   would resolve to the waiting release hasn't waited. A security fix doesn't wait.
 
-4. **Only compatibility holds a version back, and the hold is named.** When something that relies
+4. **Once a release has settled, only compatibility holds it back, and the hold is named.** When something that relies
    on the dependency can't take the latest, use the newest version it accepts. Say which dependency
    blocks it and file the follow-up, so the hold is lifted when the blocker moves. Confirm by
    installing and running, because a declared range is only a claim.
 
-5. **Test on the version you ship.** Developer machines, CI and production run the same line, so
-   pin the line rather than a range where the platform allows it. A range lets each environment
-   pick a different version, and then nothing tests what ships. A library others install is the
-   exception: it declares the range it tests, and it tests every line in that range.
+5. **Test on the version you ship.** Developer machines, CI and production run the same runtime
+   line, so pin the line rather than a range where the platform allows it. A range lets each
+   environment pick a different version, and then nothing tests what ships. A lockfile does this
+   for packages. A library others install is the exception: it declares the oldest line it supports,
+   leaves the top open, and tests every supported line.
 
 6. **Apply the same test later, not only at the start.** A version chosen once ages. An upgrade is
    its own unit of work, and a line nearing end of life is a reason to schedule one.
@@ -44,7 +45,8 @@ best-supported version is usually the latest stable release.
 
 Whether to take on a dependency at all is `simplicity`: *Weigh dependencies both ways*. Stating the
 support baseline, and not building on deprecations, is `platform-correctness`. Whether to adopt a
-standard is `adopting-standards`. Recording a held-back version or an exception is `decision-log`.
+standard is `adopting-standards`. Recording a held-back version or an exception is `decision-log`, and where a follow-up lives is
+`durable-context`.
 This governs which version to use.
 
 ---

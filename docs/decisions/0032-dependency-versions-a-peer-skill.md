@@ -35,13 +35,15 @@ purpose and its first rule.
 Four things in the rules are Claude's proposals from that goal, not Hampton's words, and are
 accepted only as he reviews this record:
 
-- **The cooldown of three days** comes from Dependabot's default, the only number found in official
-  documentation. It was chosen over a coined number. It's also a supply-chain measure more than a
-  stability one, so it may be too short for Hampton's "good chance of being stable".
+- **The cooldown of three days** comes from Dependabot's default, and Renovate's
+  `security:minimumReleaseAge*` presets use the same number. It was chosen over a coined number.
+  Both are supply-chain measures more than stability ones, so it may be too short for Hampton's "good chance of being stable".
 - **A new major line waits for its first patch release** as a cheap sign that early bugs have been
   through a round of fixes. This one is judgment, with no source.
 - **Pin the line rather than a range** (rule 5) follows from the failure above, and libraries are
-  excepted because their users choose the version.
+  excepted because their users choose the version. A library leaves the top of its range open, as
+  Vitest and ESLint do, because a closed range made a new Node.js line an install failure for some
+  package managers.
 - **Apply the same test later** (rule 6) extends the goal from choosing to keeping.
 
 ## Consequences
