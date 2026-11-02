@@ -85,16 +85,25 @@ what can differ, not how often.
 
 So the skill found little that careful reading didn't, on a skill whose defects could be read. What it
 changed was the method: all three with the skill ran tasks with and without `tidy` (25, 18 and 37
-runs), so they could say whether it helped, and reviewers without it could not. It cost $5.37 in total
-against $3.21.
+runs), so they could say whether it helped, and reviewers without it could not. That method costs
+several times as much: a review without the skill cost $0.54 to $1.41. A review with it cost $1.55 to
+$1.92 for its own session, and those runs are billed separately. The one of these three that stated
+its run costs came to $6.81 in all.
+
+After the rules changed, one more review with the skill confirmed the two new outcomes. It failed `tidy`
+on rule 3 (loaded in 5 of 5 runs), and said that failures and blocked checks both stop the merge. It
+cost $5.28 in all. A second review hit a usage limit and produced nothing. This review wasn't blind:
+it read this record, which names `tidy` as a fixture, before its runs.
 
 The retest didn't cover rule 9 (the fixture had no commits or remote) or confirm the macOS claim (no
-Mac, and the setup refused `WebFetch`). False findings were not counted.
+Mac, and the setup refused `WebFetch`). False findings were not counted. Rule 9 did catch a real case
+in this skill's own PR: main twice took the version number the PR had chosen, and the first time git
+reported no conflict.
 
 ## Consequences
 
-- A review costs more than reading: several minutes and over 100,000 tokens, more when it runs tasks
-  both ways.
+- A review costs more than reading, at several dollars when it runs tasks both ways. A batch of
+  reviews can use up a plan's usage limit, as this retest did.
 - A skill with a broad description now fails review, so authors have to narrow it.
 - Most merged skills have sentences rule 10 would fail, and they stay as they are until next edited.
 - The reference's commands are for Claude Code only.
