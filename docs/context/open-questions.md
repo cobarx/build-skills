@@ -20,6 +20,23 @@ question is whether non-code linting counts, which is itself an open question be
 point by point. Raised in review of #110. An unfinished draft in
 [deming-points-in-successors.md](deming-points-in-successors.md); the proper analysis is #115.
 
+## For `skill-review`
+
+**Is there a limit on a description's length?** `operate`'s 782 characters stood out against this
+library's longest description, at 516, but no written standard exists.
+
+**How should a reference say when to load it?** All four of `operate`'s references were read at once
+in two runs, for a question that needed one or two. "On demand" doesn't say how to write that
+condition, and `simplicity` and `steward` (in stewardship-skills) do it differently.
+
+**Does a small change need a run at all?** Rewording a rule may not justify the cost of a review, at
+several minutes and over 100,000 tokens.
+
+**Do rule 10's terms leave enough room for examples and reasons?** It allows an example of what the
+rule requires, and a reason only as part of a sentence that says what to do.
+
+**Does it work with agents other than Claude Code?** The reference gives commands for one agent only.
+
 ## For `linting`, before it can be written
 
 **How is a linter chosen for a stack?** Settled as an ordered procedure, kept here because it was
