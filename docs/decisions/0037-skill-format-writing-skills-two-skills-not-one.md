@@ -9,8 +9,8 @@
 PR [#171](https://github.com/cobarx/build-skills/pull/171) adds a rule to `definition-of-done`. Its
 reviewer could not judge the rule from the diff, since two lines of wording say little about what an
 agent does with them. Hampton asked for examples of the skill working, and then for the repo to
-require them on any skill update. `skill-review` says how a reviewer tests a skill; nothing says what
-an author must offer.
+require them on any skill update. `skill-review` says how a reviewer tests a skill; nothing says
+what an author must offer.
 
 Hampton then asked for the format of numbered rules in the same skill. Two independent reviews under
 `skill-review` rule 1 failed that skill on AGENTS.md's test, "if its purpose needs an 'and', it is
@@ -39,6 +39,7 @@ were too long to compare.
 - A skill PR costs the author agent runs. A spelling or whitespace fix is exempt (`writing-skills`
   rule 8).
 - `skill-format` states the counting command from 0031 but not the cap's reasons, and defers to a
-  record in `docs/decisions/` for any raised limit (0036), so a change to a limit needs no edit to it.
+  record in `docs/decisions/` for any raised limit (0036), so a change to a limit needs no edit
+  to it.
 - Overlap with `skill-review` rules 2, 4 and 10 is intended: the author shows what the reviewer then
   tests.
