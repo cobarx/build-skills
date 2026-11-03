@@ -38,7 +38,9 @@ skill. A reversed decision gets a new record, and the old one is marked supersed
 | [0028](0028-a-failures-impact-decides-when-it-earns-a-rule.md) | A failure's impact decides when it earns a rule | Accepted |
 | [0029](0029-writing-structure-writing-style-two-skills-project-guide-first.md) | Writing is two skills, and the project's own guide comes first | Accepted |
 | [0030](0030-writing-style-punctuation-names-the-relation.md) | Punctuation names the relation, rather than banning the dash | Accepted |
-| [0031](0031-fifty-lines-of-rules.md) | No skill's rules run past fifty lines | Accepted |
+| [0031](0031-fifty-lines-of-rules.md) | No skill's rules run past fifty lines | Accepted, amended by 0036 |
 | [0032](0032-dependency-versions-a-peer-skill.md) | Which version to use is a peer skill, and the answer is the best-supported one | Accepted |
 | [0033](0033-skill-review-judged-by-running-it.md) | `skill-review`: a skill is judged by running it, and a failure stops the merge | Accepted |
 | [0034](0034-definition-of-done-say-how-a-person-evaluates.md) | `definition-of-done`: say how a person evaluates the output | Accepted |
+| [0035](0035-skill-review-repeats-are-reported-not-condensed.md) | `skill-review`: repeated rules are reported, and condensing stays with the author | Accepted |
+| [0036](0036-skill-review-rules-limit-seventy.md) | `skill-review`: its rules may run to seventy lines | Accepted |

@@ -110,7 +110,8 @@ Two conventions do most of the work:
 
 **The outline is the skill.** No expanded rationale, no worked examples where the rule is already
 unambiguous. No skill's rules run past fifty lines, counting every section from the first heading
-up to "Not here" ([0031](docs/decisions/0031-fifty-lines-of-rules.md)).
+up to "Not here" ([0031](docs/decisions/0031-fifty-lines-of-rules.md)), except `skill-review`, a
+checklist, at seventy ([0036](docs/decisions/0036-skill-review-rules-limit-seventy.md)).
 
 **Draft long, then keep only what is a rule.** The long draft is a discovery tool, not the
 deliverable. The test applied to every line: does this change what anyone does? See
