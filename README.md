@@ -36,6 +36,7 @@ Deming.
 | [essays](skills/essays/SKILL.md) | An essay carries its provenance. |
 | [review](skills/review/SKILL.md) | A reviewer tries to break the work against the standard it claims to meet. |
 | [skill-review](skills/skill-review/SKILL.md) | Judge a skill by what it makes an agent do, not by how it reads. |
+| [writing-skills](skills/writing-skills/SKILL.md) | A skill change shows an agent running it. |
 | [skill-format](skills/skill-format/SKILL.md) | Every skill's rules have one shape. |
 | [durable-context](skills/durable-context/SKILL.md) | Context lives in the project, where the next reader, human or agent, will find it. |
 | [spec](skills/spec/SKILL.md) | Say what the system must do before choosing how. |
