@@ -26,6 +26,7 @@ the one-sentence test, and a change to a skill passes the same gates as a change
 - **Every sentence of a rule says what to do or how to tell it's done.** Rewrite or move any other
   sentence; an example of what the rule requires counts. Check this while writing a rule, and
   `skill-review` rule 10 checks it in review. A merged skill meets this when it is next edited.
+- **A skill's rules take one shape.** `skill-format` says what it is.
 - **Skills never link to context; context links to skills.** Each skill carries one stable glob at
   its foot rather than a list that grows.
 
