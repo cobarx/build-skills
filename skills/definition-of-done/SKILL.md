@@ -35,23 +35,27 @@ not approval, and neither is a green check.
    30 fps is nothing the person it is for cares about.
 
 5. **Show the artifact in the form its user consumes.** Put a page that loads or a clip that plays
-   in front of the reviewer, never a screenshot of one. The artifact carries the property under
-   test; commit the command that regenerates it, not the artifact, and trim a large one along the
-   axis that preserves it.
+   in front of the reviewer, never only a screenshot of one. The artifact carries the property
+   under test; commit the command that regenerates it, not the artifact, and trim a large one along
+   the axis that preserves it.
 
-6. **Say how a person evaluates it.** Tell the reader where the output is, what to do with it, and
+6. **Show the change where the reviewer looks.** Put a screenshot of a change in appearance, or a
+   short clip of a change in movement such as a drop, a spinner or a transition, in the PR
+   description. It points at the artifact; it does not stand in for it.
+
+7. **Say how a person evaluates it.** Tell the reader where the output is, what to do with it, and
    what good looks like. Try that yourself first, or say you couldn't.
 
-7. **Build the tell into the artifact.** A demo that could look right while being wrong shows
+8. **Build the tell into the artifact.** A demo that could look right while being wrong shows
    nothing. Put the check on screen (the burned-in timecode beside the cue) so a reviewer sees
    the defect, not only the feature.
 
-8. **Demo for quality, not only correctness.** Following the spec is not the same as being good,
+9. **Demo for quality, not only correctness.** Following the spec is not the same as being good,
    and the demo is where a spec that missed the point shows it. Show the output and judge it against
    what you wanted.
 
-9. **Scale the proof to the blast radius.** A rename defends itself; core logic does not. Match the
-   evidence to what breaks if the change is wrong.
+10. **Scale the proof to the blast radius.** A rename defends itself; core logic does not. Match the
+    evidence to what breaks if the change is wrong.
 
 ## Not here
 
