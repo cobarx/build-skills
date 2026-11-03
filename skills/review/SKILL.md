@@ -38,6 +38,14 @@ the author's (to find what is wrong), and it cannot be done by the one who built
    the current verdict on top, then a history of what each pass raised and how it was resolved. A
    reader should see the standing verdict without parsing the thread.
 
+7. **Run the adversarial mode when it is invoked.** Load
+   [references/adversarial-review.md](references/adversarial-review.md) when the owner asks for an
+   adversarial review, or when a change adds or changes a skill, changes a public contract, makes a
+   one-way-door decision, or touches security-sensitive code. The critic attacks the design before
+   the build and the diff before the author's self-review, writes findings before seeing the
+   author's summary or self-review, and gives a reproduction for every finding. Skip it for typos,
+   formatting, renames, mechanical refactors, and docs-only edits.
+
 ## Not here
 
 What "done" means is `definition-of-done`; a review checks against it, never redefines it. Whether a

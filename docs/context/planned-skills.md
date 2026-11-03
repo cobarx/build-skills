@@ -243,3 +243,6 @@ it an explicitly invoked mode rather than hoping it happens. Two passes, not one
 the spec and plan, asking what would make this the wrong thing to build; and after implementation,
 from the diff, running the checkpoints. The implementation pass runs *before* the author's own
 review, or it anchors on the author's framing instead of attacking it.
+
+Implemented as a mode of `review` in
+[0037](../decisions/0037-review-adversarial-review-is-a-mode.md).
