@@ -46,3 +46,4 @@ skill. A reversed decision gets a new record, and the old one is marked supersed
 | [0036](0036-skill-review-rules-limit-seventy.md) | `skill-review`: its rules may run to seventy lines | Accepted |
 | [0037](0037-writing-skills-a-skill-change-shows-an-agent-running-it.md) | `writing-skills`: a skill change shows an agent running it | Accepted |
 | [0038](0038-skill-format-every-skills-rules-have-one-shape.md) | `skill-format`: every skill's rules have one shape | Accepted |
+| [0039](0039-definition-of-done-show-the-change-where-the-reviewer-looks.md) | `definition-of-done`: show the change where the reviewer looks | Accepted |
