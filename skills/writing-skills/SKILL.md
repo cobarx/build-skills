@@ -1,6 +1,6 @@
 ---
 name: writing-skills
-description: This skill should be used when adding, editing, or renaming a skill (a SKILL.md or its reference files); when opening a PR that changes a skill; or when a PR description for a skill says the skill "works" without showing an agent using it. It governs what an author brings so that a reviewer can judge a skill change: rules in house format, examples of an agent running them. It does not govern whether the skill is good or how the change is reviewed.
+description: This skill should be used when writing the PR description, commit message or review request for a change under a `skills/` directory or to any SKILL.md or skill reference file; when adding, editing, renaming or removing a skill; or when such a description says the skill "works" without showing an agent using it. It governs what an author brings so that a reviewer can judge a skill change: rules in house format, examples of an agent running them. It does not govern whether the skill is good or how the change is reviewed.
 license: CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)
 metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills/tree/main/skills/writing-skills"}
 ---
