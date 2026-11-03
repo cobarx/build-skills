@@ -25,7 +25,7 @@ offers. Nothing says what an author must offer.
 
 ## Decision
 
-`writing-skills` governs what an author shows with a skill change. Examples are a before and an
+`writing-skills` governs what an author brings to a skill change: rules in one format, and examples. Examples are a before and an
 after pair for each kind of task, put in the PR description and not committed. A pair is shown as
 an outline of both outputs and the passages only one has, because #171's four full outputs, about
 3 KB each, were too long to compare.
