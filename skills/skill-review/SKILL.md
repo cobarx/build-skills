@@ -48,7 +48,7 @@ an author offers to show the skill working.
 7. **Check that the skill follows its own rules, and that its rules and reference files agree.**
    Apply the skill's instructions to its own text, reference files and PR: a skill that says "never
    from memory" can't ship commands written from memory. The skill fails if it breaks its own rule
-   or a rule contradicts a reference file.
+   or a rule contradicts a reference file. A rule that repeats another or a reference is a note.
 
 8. **Verify every factual statement in the skill, and run every command it gives.** Check each
    statement, including the reasons rules give, against the documentation for its version, and cite

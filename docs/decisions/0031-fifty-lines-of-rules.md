@@ -1,7 +1,8 @@
 # 0031. No skill's rules run past fifty lines
 
 - **Status:** Accepted. Amends [0009](0009-seventy-line-limit.md) and
-  [0013](0013-cite-sources-in-footnotes.md) (what is counted, and the number).
+  [0013](0013-cite-sources-in-footnotes.md) (what is counted, and the number). Amended by
+  [0036](0036-skill-review-rules-limit-seventy.md) for `skill-review`.
 - **Decided:** 2026-10-28 · **Recorded:** 2026-10-28 · Claude Opus 5.5
 - **Affects:** every skill
 
