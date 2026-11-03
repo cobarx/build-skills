@@ -34,6 +34,6 @@ an outline of both outputs and the passages only one has, because #171's four fu
 
 - AGENTS.md points to the skill, so a change to any skill meets the rule.
 - A skill PR now costs the author agent runs. A change that cannot alter behaviour is exempt by
-  rule 8.
+  rule 9.
 - Overlap with `skill-review` rules 2 and 4 is intended: the author shows what the reviewer then
   tests.
