@@ -43,7 +43,8 @@ output, put where the reviewer can read it.
 
 7. **Say what they leave open.** List what no example covered: the failure the change targets if it
    wasn't reproduced, kinds of task not run, anything the agents could not do. A reviewer relies on
-   the examples for exactly what this list does not name.
+   the examples for exactly what this list does not name. When no pair could be run, say so in one
+   line and name the pairs owed; do not draft tables or outputs for runs that did not happen.
 
 8. **Tell the reviewer what to compare.** Point to the lines in each pair to read, and say what good
    looks like (`definition-of-done` rule 6).
