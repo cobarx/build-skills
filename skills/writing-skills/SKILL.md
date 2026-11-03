@@ -1,6 +1,6 @@
 ---
 name: writing-skills
-description: This skill should be used when writing the PR description for a change that adds, edits, renames or removes a file named SKILL.md or a file in a skill's `references/` directory; or when such a description says the skill "works" without showing an agent using it. It governs the examples an author brings to a skill change, not whether the skill is good, how its rules are formatted, or how the change is reviewed.
+description: This skill should be used when writing the PR description for a change that adds, edits, renames or removes a file named SKILL.md or a file in a skill's `references/` directory; or when such a description says the skill "works" without showing an agent using it. It governs the examples an author brings to a skill change, not whether the skill is good, how its rules are worded, or how the change is reviewed.
 license: CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)
 metadata: {author: Hampton Maxwell, source: "https://github.com/cobarx/build-skills/tree/main/skills/writing-skills"}
 ---
@@ -51,9 +51,9 @@ runs it. An example is that run's output, put where the reviewer can read it.
 
 ## Not here
 
-Whether the examples hold up (loading, following, better or worse) is `skill-review`. How a rule is
-formatted is `skill-format`. How a PR description is organised is `writing-structure`. What a skill
-change's version is, is `skill-versioning`.
+Whether the examples hold up (loading, following, better or worse) is `skill-review`. How a rule's
+sentences read is `writing-style`. How a PR description is organised is `writing-structure`. What a
+skill change's version is, is `skill-versioning`.
 
 ---
 
