@@ -28,8 +28,8 @@ description are two jobs.
 
 `skill-format` governs the shape of a skill's numbered rules: the numbered paragraph and bold lead,
 one instruction or test per sentence, reasons moved to `docs/essays/`, lines wrapped at 100, and the
-counted lines kept within the limit. It states the counting command from 0031 but not the limit's
-reasons, and defers to a record in `docs/decisions/` for any raised limit, so a change to a limit
+counted lines kept within the limit. It says what to count but not the limit's reasons or a
+command, and defers to a record in `docs/decisions/` for any raised limit, so a change to a limit
 needs no edit to the skill.
 
 ## Consequences

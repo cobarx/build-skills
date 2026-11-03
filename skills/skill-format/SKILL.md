@@ -24,12 +24,8 @@ laid out the same way.
 3. **Wrap lines at 100 characters.** Count the rule-bearing lines after wrapping, never before.
 
 4. **Keep the counted lines at fifty, or at the limit a record in `docs/decisions/` sets for that
-   skill.** Count from the first `##` heading to `## Not here` with
-   `awk '/^## Not here/{f=0;next} /^## /{f=1} /^---$/{f=0} f' SKILL.md | wc -l`, and cut or move a
-   rule to `references/` when the count passes the limit.
-
-## Not here`, with the command in decision 0031's record. A skill with a record
-   that raises its limit keeps to that one.
+   skill.** Count from the first `##` heading to `## Not here`, and move a rule to `references/`
+   when the count passes the limit.
 
 ## Not here
 
