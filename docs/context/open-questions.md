@@ -68,6 +68,33 @@ fresh-session check can't reproduce that. Testing it needs a replayed long conve
 prompt; the fallback is an always-on rule in CLAUDE.md. Raised in 0020; the test and the
 decision it feeds are #58.
 
+**Is it depth, or a trigger that arrives mid-conversation?** A second instance, 2026-10-13, in a
+short session (twelve brief prompts, small context, a repo unrelated to the work). The talk was
+about a web UI bug and a blog post. Hampton said "i think the better approach is to create a chrome
+extension to block it", and the agent began building: it opened a browser tab to inspect the page.
+`spec` was listed and its "starting a unit of work" trigger matched; it did not load. Depth does not
+explain this one. Claude's guess, untested: what the two sessions share is a trigger arriving as a
+turn in a running conversation, not as a fresh request. The 0020 check used fresh sessions only; a
+replay with a few turns of chat before the prompt would test it. Bears on #58.
+
+**When does talk become a request to build?** From the same session. Hampton's correction: "i did
+not tell you to build it. i said that would be a good solution", and "the agent is an assistant. it
+recommends and requests." A candidate rule, "An opinion is not an instruction: ask before starting
+new work", was added to `spec` rule 3 and taken out again the same day: one instance, and a rule
+inside a skill that did not load would not have helped. Its always-on home may be the entry-point
+statement of #127. Two limits Hampton set on it: it gates starting work, not finishing it, which is
+a separate rule that may not generalise; and work a person has asked to run unattended is already
+requested.
+
+Hampton's wider point, which any such rule has to leave room for: a spec is arrived at through
+discussion, and the agent is used to research and understand the lay of the land as well as to
+build, "like jotting down notes as i'm browsing". Those notes may go through a spec pass later or
+never. The flow is not linear, and "it is ok for creativity to wander". Claude's reading: `spec`
+rule 2 (explore to find the what) and 0020 already allow a goal built in pieces, but nothing says
+that a conversation may stay a conversation, with no spec and no build expected of it. The model
+that came out of this, and the loose check built on it, are in
+[co-working-session.md](co-working-session.md).
+
 ## Stranded elsewhere
 
 Research for the **playhead** project, including the caption test corpus (Sintel's ~40 languages,
