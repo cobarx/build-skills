@@ -4,3 +4,5 @@ node_modules/
 .agents/memory
 # Claude Code worktrees (claude --worktree, EnterWorktree)
 .claude/worktrees/
+# Output of claude plugin eval
+evals/results/
