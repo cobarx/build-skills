@@ -20,6 +20,13 @@ question is whether non-code linting counts, which is itself an open question be
 point by point. Raised in review of #110. An unfinished draft in
 [deming-points-in-successors.md](deming-points-in-successors.md); the proper analysis is #115.
 
+**Does least privilege need a skill of its own, and does `decision-analysis` need a rule about the
+conventional option?** Raised 2026-10-30 after an agent recommended building documents in the
+browser without weighing the usual server-side option. The draft analysis, with a recommendation
+and what would change it, is in
+[least-privilege-and-the-conventional-option.md](least-privilege-and-the-conventional-option.md).
+Not decided.
+
 ## For `linting`, before it can be written
 
 **How is a linter chosen for a stack?** Settled as an ordered procedure, kept here because it was
