@@ -31,7 +31,7 @@ Deming.
 | [contracts](skills/contracts/SKILL.md) | Units meet only at explicit contracts, never internals. |
 | [fixtures](skills/fixtures/SKILL.md) | Test data comes from the real world, or says that it does not. |
 | [skill-versioning](skills/skill-versioning/SKILL.md) | Version the skill library by how its skills changed. |
-| [parallel-work](skills/parallel-work/SKILL.md) | Isolate concurrent units of work at the lowest level that prevents them from colliding. |
+| [parallel-work](skills/parallel-work/SKILL.md) | Isolate every unit of work at the lowest level that prevents it from colliding with another. |
 | [definition-of-done](skills/definition-of-done/SKILL.md) | Done is the goal shown to be met. |
 | [essays](skills/essays/SKILL.md) | An essay carries its provenance. |
 | [review](skills/review/SKILL.md) | A reviewer tries to break the work against the standard it claims to meet. |
