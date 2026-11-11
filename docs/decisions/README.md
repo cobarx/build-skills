@@ -47,3 +47,4 @@ skill. A reversed decision gets a new record, and the old one is marked supersed
 | [0037](0037-writing-skills-a-skill-change-shows-an-agent-running-it.md) | `writing-skills`: a skill change shows an agent running it | Accepted |
 | [0038](0038-skill-format-every-skills-rules-have-one-shape.md) | `skill-format`: every skill's rules have one shape | Accepted |
 | [0039](0039-parallel-work-assume-parallel-by-default.md) | `parallel-work`: assume parallel by default, so every change gets a worktree | Accepted |
+| [0040](0040-definition-of-done-a-decision-ships-with-its-record.md) | `definition-of-done`: a change that carries out a decision ships with its record | Accepted |

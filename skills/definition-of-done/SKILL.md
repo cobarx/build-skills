@@ -53,6 +53,10 @@ not approval, and neither is a green check.
 9. **Scale the proof to the blast radius.** A rename defends itself; core logic does not. Match the
    evidence to what breaks if the change is wrong.
 
+10. **Ship a decision's record with the change that carries it out.** Put the record in the same
+    PR, or in a PR merged before it that says the implementation follows. Until a change that
+    carries out a decision has its record, it is not done: block the merge.
+
 ## Not here
 
 How a test earns the right to fail is `test-fidelity`. What a good spec contains is `spec`. Where a
