@@ -35,9 +35,12 @@ change in one means one thing.
 Judge the reason by the fix the rejection calls for, not by suspected intent. Where two reasons
 seem to fit, decide with these tests:
 
-- **Client or business rule.** If the request itself is wrong (its shape, credentials,
-  permission or rate), it is `client`. If the request is right and the business refuses it, it is
-  `business-rule`.
+- **Client or business rule.** Ask whether the client could have known the request would fail
+  from the API contract and its own data, without server state that can change. If it could, the
+  code is `client`: a missing parameter, an expired token, a resource it does not own, a rate
+  limit, a reused idempotency key. If the answer depends on state that changes between the
+  client's last read and its request, the code is `business-rule`: stock, or an order that has
+  shipped. When one request cannot tell the two apart, register one code and classify it by the fix.
 - **Client or abuse.** A client over its rate limit is `client`. Traffic is `abuse` only when it
   should be blocked outright.
 - **Service or client.** If the same request would succeed once the service or its dependency
