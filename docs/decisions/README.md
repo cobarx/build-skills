@@ -48,3 +48,8 @@ skill. A reversed decision gets a new record, and the old one is marked supersed
 | [0038](0038-skill-format-every-skills-rules-have-one-shape.md) | `skill-format`: every skill's rules have one shape | Accepted |
 | [0039](0039-parallel-work-assume-parallel-by-default.md) | `parallel-work`: assume parallel by default, so every change gets a worktree | Accepted |
 | [0040](0040-definition-of-done-a-decision-ships-with-its-record.md) | `definition-of-done`: a change that carries out a decision ships with its record | Accepted |
+| [0041](0041-error-reporting-replaces-the-planned-error-taxonomy.md) | `error-reporting`: this skill replaces the planned `error-taxonomy` | Accepted |
+| [0042](0042-error-reporting-a-response-carries-only-the-code.md) | `error-reporting`: a response carries only the code and the request ID | Accepted |
+| [0043](0043-error-reporting-the-code-form-is-tt-sss-nnn.md) | `error-reporting`: the code form is `TT-SSS-NNN` | Accepted |
+| [0044](0044-error-reporting-classify-every-error-by-the-fix.md) | `error-reporting`: classify every error by the fix | Accepted |
+| [0045](0045-error-reporting-standards-adopted-in-part.md) | `error-reporting`: standards adopted in part, and what was left out | Accepted |
