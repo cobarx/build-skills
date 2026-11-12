@@ -4,9 +4,9 @@ Each example shows one failure of a request to `orders-api`, a hypothetical serv
 checkout orders. It gives what the caller receives and what the server logs. The payloads are plain
 HTTP and JSON; any language can produce them, and `typescript.md` shows one implementation.
 
-The payloads are constructed. The native fields are real platform values in examples 5, 9, 10, 11
-and 12 (SQLSTATE `23505` and `53300`, `ECONNRESET`, Stripe's `lock_timeout`, `EMFILE`); the rest
-are labeled synthetic where they appear.
+The payloads are constructed. The native fields in examples 5, 9, 10 and 11 are real platform
+values (SQLSTATE `23505` and `53300`, `ECONNRESET`, Stripe's `lock_timeout`); the other values are
+made up.
 
 ## The two shapes
 
@@ -40,14 +40,14 @@ Every code has a runbook entry in `docs/runbook/<code>.md`.
 | 2 | `01-401-001` | The credentials are expired | request | client | 401 |
 | 3 | `01-403-001` | The client asks for a resource that is not theirs | request | client | 403 |
 | 4 | `01-429-001` | The client exceeded its rate limit | request | client | 429 |
-| 5 | `04-409-001` | The idempotency key was already used | db | business rule | 409 |
+| 5 | `04-409-001` | The idempotency key was reused for a different request | db | client | 409 |
 | 6 | `01-422-001` | The order asks for more stock than exists | request | business rule | 422 |
 | 7 | `01-403-002` | The request comes from a blocked address | request | abuse | 403 |
 | 8 | `06-500-001` | An unhandled error in this service's code | int | service | 500 |
 | 9 | `03-502-001` | The inventory service reset the connection | net | service | 502 |
 | 10 | `04-503-001` | No database connection is free | db | service | 503 |
 | 11 | `02-429-001` | The payment provider timed out on an object lock | api | service | 503 |
-| 12 | `05-503-001` | The process ran out of file descriptors | sys | service | 503 |
+| 12 | `01-409-001` | A shipped order cannot be cancelled | request | business rule | 409 |
 
 ---
 
@@ -249,11 +249,14 @@ Retry-After: 30
 This is the same HTTP status as example 11, with a different reason: here the client sent too
 many requests, there a dependency failed. The reason separates them, and only the log shows it.
 
-## 5. The idempotency key was already used: `04-409-001`
+## 5. The idempotency key was reused for a different request: `04-409-001`
 
-The request is `POST /orders` with `Idempotency-Key: order_4412_checkout`, sent a second time. The
-database refuses the insert. The failure is a business rule, and its type is `db` because the
-platform's own code comes from the database.
+The request is `POST /orders` with `Idempotency-Key: order_4412_checkout`, the key of an earlier
+order, but with different items. A request that repeats the first one exactly is a retry, not a
+failure: the service returns the saved order and logs no error. Here the database refuses the
+insert, and the service finds that the stored request differs from this one. The reason is
+`client`, because the fix is a new key. The type is `db` because the native code comes from the
+database.
 
 **The caller receives**
 
@@ -275,10 +278,10 @@ Error-Code: 04-409-001
   "requestId": "req_b7730a",
   "code": "04-409-001",
   "type": "db",
-  "reason": "business-rule",
+  "reason": "client",
   "responseStatus": 409,
   "retryable": false,
-  "message": "An order with this idempotency key already exists",
+  "message": "An idempotency key was reused for a different request",
   "request": {
     "method": "POST",
     "route": "/orders"
@@ -292,7 +295,9 @@ Error-Code: 04-409-001
   },
   "context": {
     "idempotencyKey": "order_4412_checkout",
-    "existingOrderId": "4412"
+    "existingOrderId": "4412",
+    "storedRequestHash": "sha256:9f2c61",
+    "receivedRequestHash": "sha256:41ab07"
   },
   "cause": [
     {
@@ -305,7 +310,7 @@ Error-Code: 04-409-001
 ```
 
 `native.sqlstate` is `23505`, `unique_violation` in PostgreSQL's table of error codes, kept as the
-database sent it.
+database sent it. The two hashes show that the requests differ without logging either payload.
 
 ## 6. The order asks for more stock than exists: `01-422-001`
 
@@ -658,20 +663,18 @@ because the fault is not the caller's. Stripe's documentation says a 429 without
 `Stripe-Rate-Limited-Reason` header is not a rate limit, which is why `native` records its absence.
 Stripe assigns no request ID to a lock timeout, so none is logged.
 
-## 12. The process ran out of file descriptors: `05-503-001`
+## 12. A shipped order cannot be cancelled: `01-409-001`
 
-The request is `POST /orders`; writing the receipt fails because the process holds 1,021 of its
-1,024 descriptors.
+The request is `POST /orders/4412/cancel`; the order shipped yesterday.
 
 **The caller receives**
 
 ```http
-HTTP/1.1 503 Service Unavailable
+HTTP/1.1 409 Conflict
 Content-Type: application/problem+json
-Error-Code: 05-503-001
-Retry-After: 5
+Error-Code: 01-409-001
 
-{"type":"about:blank","status":503,"code":"05-503-001","requestId":"req_d80b36"}
+{"type":"about:blank","status":409,"code":"01-409-001","requestId":"req_d80b36"}
 ```
 
 **The server logs**
@@ -679,43 +682,34 @@ Retry-After: 5
 ```json
 {
   "time": "2026-11-11T10:09:27.356Z",
-  "level": "error",
+  "level": "info",
   "service": "orders-api",
   "requestId": "req_d80b36",
-  "code": "05-503-001",
-  "type": "sys",
-  "reason": "service",
-  "responseStatus": 503,
-  "retryable": true,
-  "message": "The process has no free file descriptors",
+  "code": "01-409-001",
+  "type": "request",
+  "reason": "business-rule",
+  "responseStatus": 409,
+  "retryable": false,
+  "message": "The order is in a state that does not allow this action",
   "request": {
     "method": "POST",
-    "route": "/orders"
+    "route": "/orders/{id}/cancel"
   },
-  "native": {
-    "code": "EMFILE",
-    "errno": -24,
-    "syscall": "open",
-    "path": "/var/data/receipts/4412.pdf"
-  },
+  "native": null,
   "context": {
-    "operation": "receipts.write",
-    "fdSoftLimit": 1024,
-    "fdOpen": 1021,
-    "writesInFlight": 380
+    "orderId": "4412",
+    "action": "cancel",
+    "orderState": "shipped",
+    "allowedStates": ["pending", "paid"],
+    "shippedAt": "2026-11-10T14:12:00Z"
   },
-  "cause": [
-    {
-      "name": "SystemError",
-      "message": "EMFILE: too many open files, open '/var/data/receipts/4412.pdf'"
-    }
-  ],
+  "cause": null,
   "stack": [
-    "writeReceipt (receipts/store:34)",
-    "createOrder (orders/create:44)"
+    "assertCancellable (orders/cancel:22)",
+    "cancelOrder (orders/cancel:9)"
   ]
 }
 ```
 
-`native.errno` is `-24` on Linux, where `EMFILE` is 24. The context separates a leak from a low
-limit: `fdOpen` near `fdSoftLimit` with hundreds of writes in flight points to unbounded concurrency.
+The request is valid and the order exists; a rule of the business refuses it. Retrying does not
+help, and the customer's route is a return, which is a different request.

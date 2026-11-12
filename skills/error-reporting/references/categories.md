@@ -29,7 +29,7 @@ change in one means one thing.
 |---|---|---|---|---|
 | `service` | This service, or a dependency it relies on, failed. | Repair the service or the dependency. | 5xx | `error` |
 | `client` | The client should not have made this request: a missing parameter, an expired token, a resource it may not read, too many requests. | The client changes its request. | 4xx | `info` |
-| `business-rule` | The request is valid, and a rule of the business refuses it: a stock limit, a plan limit, a duplicate. | The customer's situation or the rule changes. | 4xx | `info` |
+| `business-rule` | The request is valid, and a rule of the business refuses it: a stock limit, a plan limit, a one-per-customer limit. | The customer's situation or the rule changes. | 4xx | `info` |
 | `abuse` | Traffic that should be blocked: a known bad address, a scanner's user agent. | The operator blocks the traffic. | 4xx | `warn` |
 
 Judge the reason by the fix the rejection calls for, not by suspected intent. Where two reasons
