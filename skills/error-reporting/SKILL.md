@@ -34,9 +34,10 @@ what the server logs.
    or abuse. Return 5xx for service and 4xx for the rest. Done when every log record carries both,
    and a registry test fails on a reason whose `responseStatus` is in the other class.
 
-5. **Write the runbook entry in the same change as the code.** The entry holds the symptom, what it
-   means, the likely causes, the diagnosis steps with their commands, the fix, whether a retry is
-   safe, and who to escalate to. Done when a test fails for any registry code without an entry.
+5. **Write the runbook entry in the same change as the code.** Keep one file per code, named by the
+   code (`runbook/<code>.md`). The entry holds the symptom, what it means, the likely causes, the
+   diagnosis steps with their commands, the fix, whether a retry is safe, and who to escalate to.
+   Done when a test fails for any registry code without a file.
 
 6. **Capture the context a diagnosis needs where the error is thrown, and attach it to the error.**
    Record the stack trace, the operation, the identifiers of its inputs, the request ID, the

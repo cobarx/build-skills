@@ -9,7 +9,8 @@ values (SQLSTATE `23505` and `53300`, `ECONNRESET`, Stripe's `lock_timeout`). Th
 names (`code`, `severity`) follow node-postgres's documented error shape and were not captured
 here. The other values are made up.
 
-Every code has a runbook entry in `docs/runbook/<code>.md`.
+Rule 5 gives every code a runbook entry, `runbook/<code>.md` in the service's repository. The
+entries are not written yet (#193).
 
 | # | Code | Failure | Type | Reason | Returned |
 |---|---|---|---|---|---|
@@ -18,13 +19,13 @@ Every code has a runbook entry in `docs/runbook/<code>.md`.
 | 3 | `01-403-001` | The client asks for a resource that is not theirs | request | client | 403 |
 | 4 | `01-429-001` | The client exceeded its rate limit | request | client | 429 |
 | 5 | `04-422-001` | The idempotency key was reused for a different request | db | client | 422 |
-| 6 | `01-422-001` | The order asks for more stock than exists | request | business rule | 422 |
+| 6 | `01-422-001` | The order asks for more stock than exists | request | business-rule | 422 |
 | 7 | `01-403-002` | The request comes from a blocked address | request | abuse | 403 |
 | 8 | `06-500-001` | An unhandled error in this service's code | int | service | 500 |
 | 9 | `03-502-001` | The inventory service reset the connection | net | service | 502 |
 | 10 | `04-503-001` | No database connection is free | db | service | 503 |
 | 11 | `02-429-001` | The payment provider timed out on an object lock | api | service | 503 |
-| 12 | `01-409-001` | A shipped order cannot be cancelled | request | business rule | 409 |
+| 12 | `01-409-001` | A shipped order cannot be cancelled | request | business-rule | 409 |
 
 ---
 
