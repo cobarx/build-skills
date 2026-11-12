@@ -1,8 +1,8 @@
 # 0045. `error-reporting`: standards adopted in part, and what was left out
 
 - **Status:** Accepted
-- **Decided:** 2026-11-11, by the owner in build-skills ("i'd like to get in what we have
-  already") · **Recorded:** 2026-11-11 · Claude Sonnet 5.5
+- **Decided:** 2026-11-11, by the owner in build-skills, on accepting the draft's choices as they
+  stood · **Recorded:** 2026-11-11 · Claude Sonnet 5.5
 - **Affects:** `error-reporting`
 
 ## Context
