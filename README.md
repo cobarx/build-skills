@@ -49,7 +49,7 @@ Deming.
 | [error-reporting](skills/error-reporting/SKILL.md) | Report every error with enough to fix it without reproducing it. |
 
 Planned: `linting`, `test-fidelity`, `glossary`, `harness`, `project-setup`, a skill for the *why*
-behind a goal (name not settled), plus ports of `tdd` and `error-taxonomy`.
+behind a goal (name not settled), plus a port of `tdd`.
 
 ## Installation
 

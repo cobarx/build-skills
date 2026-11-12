@@ -2,35 +2,12 @@
 
 Each example shows one failure of a request to `orders-api`, a hypothetical service that takes
 checkout orders. It gives what the caller receives and what the server logs. The payloads are plain
-HTTP and JSON; any language can produce them, and `typescript.md` shows one implementation.
+HTTP and JSON; any language can produce them. `record.md` defines the response and the log record.
 
-The payloads are constructed. The native fields in examples 5, 9, 10 and 11 are real platform
-values (SQLSTATE `23505` and `53300`, `ECONNRESET`, Stripe's `lock_timeout`); the other values are
-made up.
-
-## The two shapes
-
-**What the caller receives** is the same shape for every failure. It has the status line, an
-`Error-Code` header, and a problem-details body (RFC 9457) with four members. It carries no
-message, no title, no detail, no reason and no failure type. `Retry-After` is added where the
-registry sets it, and a 401 carries `WWW-Authenticate` because RFC 9110 requires it.
-
-**What the server logs** is one record per failure, with these fields:
-
-| Field | What it holds |
-|---|---|
-| `time`, `level`, `service`, `requestId` | When, how loud, which service, and the key that joins the response to this record. |
-| `code`, `type`, `reason` | The registry entry: the code, the failure type's name, and the reason class. |
-| `responseStatus`, `retryable` | What the caller was sent, and whether the same request may be sent again. |
-| `message` | The registry's summary, written for the person reading the log. |
-| `request` | The method and the route template (never the raw URL). |
-| `native` | The platform's own error fields, copied unchanged; `null` when there are none. |
-| `context` | What the runbook's diagnosis steps need. |
-| `cause` | The chain of errors that were caught, outermost first; `null` when there is none. |
-| `stack` | The runtime's stack trace, shortened here. |
-
-The level follows the reason: `error` for service, `warn` for abuse, `info` for client and
-business rule. A page on `error` then never fires for a caller's mistake.
+The payloads are constructed. The native fields in examples 5, 9, 10 and 11 follow real platform
+values (SQLSTATE `23505` and `53300`, `ECONNRESET`, Stripe's `lock_timeout`). The database field
+names (`code`, `severity`) follow node-postgres's documented error shape and were not captured
+here. The other values are made up.
 
 Every code has a runbook entry in `docs/runbook/<code>.md`.
 
@@ -40,7 +17,7 @@ Every code has a runbook entry in `docs/runbook/<code>.md`.
 | 2 | `01-401-001` | The credentials are expired | request | client | 401 |
 | 3 | `01-403-001` | The client asks for a resource that is not theirs | request | client | 403 |
 | 4 | `01-429-001` | The client exceeded its rate limit | request | client | 429 |
-| 5 | `04-409-001` | The idempotency key was reused for a different request | db | client | 409 |
+| 5 | `04-422-001` | The idempotency key was reused for a different request | db | client | 422 |
 | 6 | `01-422-001` | The order asks for more stock than exists | request | business rule | 422 |
 | 7 | `01-403-002` | The request comes from a blocked address | request | abuse | 403 |
 | 8 | `06-500-001` | An unhandled error in this service's code | int | service | 500 |
@@ -85,6 +62,7 @@ Error-Code: 01-400-001
   },
   "native": null,
   "context": {
+    "operation": "orders.create",
     "parameter": "customerId",
     "location": "body",
     "received": ["items", "currency"]
@@ -135,6 +113,7 @@ WWW-Authenticate: Bearer
   },
   "native": null,
   "context": {
+    "operation": "orders.get",
     "scheme": "Bearer",
     "failure": "expired",
     "expiredAt": "2026-11-11T08:30:00Z",
@@ -182,6 +161,7 @@ Error-Code: 01-403-001
   },
   "native": null,
   "context": {
+    "operation": "orders.get",
     "resource": "order",
     "resourceId": "9001",
     "principal": "cust_204",
@@ -232,11 +212,11 @@ Retry-After: 30
   },
   "native": null,
   "context": {
+    "operation": "orders.list",
     "principal": "key_ab12",
     "limit": 100,
     "windowSeconds": 60,
-    "observed": 101,
-    "clientAddress": "203.0.113.9"
+    "observed": 101
   },
   "cause": null,
   "stack": [
@@ -246,26 +226,28 @@ Retry-After: 30
 }
 ```
 
-This is the same HTTP status as example 11, with a different reason: here the client sent too
-many requests, there a dependency failed. The reason separates them, and only the log shows it.
+The code of example 11 also ends in 429, because the payment provider returned that status, but
+its response is 503 and its reason is `service`. The reason separates them, and only the log shows
+it.
 
-## 5. The idempotency key was reused for a different request: `04-409-001`
+## 5. The idempotency key was reused for a different request: `04-422-001`
 
 The request is `POST /orders` with `Idempotency-Key: order_4412_checkout`, the key of an earlier
 order, but with different items. A request that repeats the first one exactly is a retry, not a
 failure: the service returns the saved order and logs no error. Here the database refuses the
-insert, and the service finds that the stored request differs from this one. The reason is
-`client`, because the fix is a new key. The type is `db` because the native code comes from the
-database.
+insert, and the service finds that the stored request differs from this one. The IETF draft for the
+`Idempotency-Key` header asks for a 422 in this case, and for a 409 while the first request is
+still being processed. The reason is `client`, because the fix is a new key. The type is `db`
+because the native code comes from the database.
 
 **The caller receives**
 
 ```http
-HTTP/1.1 409 Conflict
+HTTP/1.1 422 Unprocessable Content
 Content-Type: application/problem+json
-Error-Code: 04-409-001
+Error-Code: 04-422-001
 
-{"type":"about:blank","status":409,"code":"04-409-001","requestId":"req_b7730a"}
+{"type":"about:blank","status":422,"code":"04-422-001","requestId":"req_b7730a"}
 ```
 
 **The server logs**
@@ -276,10 +258,10 @@ Error-Code: 04-409-001
   "level": "info",
   "service": "orders-api",
   "requestId": "req_b7730a",
-  "code": "04-409-001",
+  "code": "04-422-001",
   "type": "db",
   "reason": "client",
-  "responseStatus": 409,
+  "responseStatus": 422,
   "retryable": false,
   "message": "An idempotency key was reused for a different request",
   "request": {
@@ -287,13 +269,13 @@ Error-Code: 04-409-001
     "route": "/orders"
   },
   "native": {
-    "sqlstate": "23505",
-    "condition": "unique_violation",
+    "code": "23505",
     "severity": "ERROR",
     "table": "orders",
     "constraint": "orders_idempotency_key_key"
   },
   "context": {
+    "operation": "orders.create",
     "idempotencyKey": "order_4412_checkout",
     "existingOrderId": "4412",
     "storedRequestHash": "sha256:9f2c61",
@@ -309,8 +291,8 @@ Error-Code: 04-409-001
 }
 ```
 
-`native.sqlstate` is `23505`, `unique_violation` in PostgreSQL's table of error codes, kept as the
-database sent it. The two hashes show that the requests differ without logging either payload.
+`native.code` is `23505`, `unique_violation` in PostgreSQL's table of error codes, kept as the
+driver reports it. The two hashes show that the requests differ without logging either payload.
 
 ## 6. The order asks for more stock than exists: `01-422-001`
 
@@ -346,6 +328,7 @@ Error-Code: 01-422-001
   },
   "native": null,
   "context": {
+    "operation": "orders.create",
     "sku": "SKU-88121",
     "requested": 5,
     "available": 2,
@@ -390,6 +373,7 @@ Error-Code: 01-403-002
   },
   "native": null,
   "context": {
+    "operation": "orders.list",
     "clientAddress": "203.0.113.77",
     "userAgent": "masscan/1.3",
     "matchedRule": "blocklist:address",
@@ -448,7 +432,7 @@ Error-Code: 06-500-001
   },
   "cause": [
     {
-      "name": "NullReferenceError",
+      "name": "Error",
       "message": "order.pricing is null"
     }
   ],
@@ -503,6 +487,7 @@ Error-Code: 03-502-001
     "syscall": "read"
   },
   "context": {
+    "operation": "inventory.reserve",
     "dependency": "inventory",
     "method": "POST",
     "url": "http://inventory.internal/reserve",
@@ -517,7 +502,7 @@ Error-Code: 03-502-001
       "message": "request to http://inventory.internal/reserve failed, reason: read ECONNRESET"
     },
     {
-      "name": "SystemError",
+      "name": "Error",
       "message": "read ECONNRESET"
     }
   ],
@@ -530,8 +515,8 @@ npm/make-fetch-happen issue 199, where an idle connection outlived the server's 
 
 ## 10. No database connection is free: `04-503-001`
 
-The request is `POST /orders`; all twenty pooled connections are in use and thirty-seven requests
-are waiting.
+The request is `POST /orders`. The pool holds 12 of its 20 connections, all busy, and the database
+refuses a thirteenth because it has reached its connection limit across every instance.
 
 **The caller receives**
 
@@ -563,8 +548,7 @@ Retry-After: 2
     "route": "/orders"
   },
   "native": {
-    "sqlstate": "53300",
-    "condition": "too_many_connections",
+    "code": "53300",
     "severity": "FATAL",
     "message": "remaining connection slots are reserved for non-replication superuser connections"
   },
@@ -572,7 +556,7 @@ Retry-After: 2
     "operation": "orders.insert",
     "pool": {
       "max": 20,
-      "total": 20,
+      "total": 12,
       "idle": 0,
       "waiting": 37
     },
@@ -592,8 +576,10 @@ Retry-After: 2
 }
 ```
 
-The error text is the one GitLab's production issue 122 recorded. `context.pool` is what the runbook
-reads first: `idle: 0` with many waiting means the pool is held, not too small.
+The error text is the one GitLab's production issue 122 recorded. `53300` is the database's limit
+across every client, not this pool's `max`, so the runbook's first step compares the server's
+`max_connections` with the sum of every instance's pool `max`. `idle: 0` with requests waiting shows
+that the pool cannot grow.
 
 ## 11. The payment provider timed out on an object lock: `02-429-001`
 
@@ -631,19 +617,23 @@ Retry-After: 2
   },
   "native": {
     "httpStatus": 429,
-    "provider": {
-      "type": "invalid_request_error",
-      "code": "lock_timeout"
-    },
-    "rateLimitedReasonHeader": null
+    "body": {
+      "error": {
+        "type": "invalid_request_error",
+        "code": "lock_timeout",
+        "message": "This object cannot be accessed right now because another API request or Stripe process is currently accessing it."
+      }
+    }
   },
   "context": {
+    "operation": "orders.capture",
     "dependency": "stripe",
-    "operation": "payment_intents.update",
+    "providerOperation": "payment_intents.update",
     "providerObjectId": "pi_3Q1x",
     "attempt": 1,
     "maxRetries": 0,
-    "idempotencyKey": "order_4412_capture"
+    "idempotencyKey": "order_4412_capture",
+    "rateLimitedReasonHeader": null
   },
   "cause": [
     {
@@ -658,10 +648,11 @@ Retry-After: 2
 }
 ```
 
-The code ends in 429 because that is the status the provider returned; the response is 503
-because the fault is not the caller's. Stripe's documentation says a 429 without a
-`Stripe-Rate-Limited-Reason` header is not a rate limit, which is why `native` records its absence.
-Stripe assigns no request ID to a lock timeout, so none is logged.
+The code ends in 429 because that is the status the provider returned; the response is 503 because
+the fault is not the caller's. Stripe's documentation says a 429 without a
+`Stripe-Rate-Limited-Reason` header is not a rate limit, which is why `context` records its
+absence. Stripe assigns no request ID to a lock timeout, so none is logged. The error type and
+code come from the report in stripe-node issue 2056.
 
 ## 12. A shipped order cannot be cancelled: `01-409-001`
 
@@ -697,6 +688,7 @@ Error-Code: 01-409-001
   },
   "native": null,
   "context": {
+    "operation": "orders.cancel",
     "orderId": "4412",
     "action": "cancel",
     "orderState": "shipped",

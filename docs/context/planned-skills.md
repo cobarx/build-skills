@@ -219,8 +219,7 @@ one. `linting` owns the mechanism, this owns standing it up on day one.
 
 ## Also planned
 
-`harness` (make the system locally observable without external services), `tdd` (port),
-`error-taxonomy` (port).
+`harness` (make the system locally observable without external services), `tdd` (port).
 
 ## The adversarial stance is not a skill
 

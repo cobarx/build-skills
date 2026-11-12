@@ -1,12 +1,15 @@
 # Failure types and reasons
 
-Every code is classified twice, in the registry. The classification appears in the log record and
-never in a response (rule 9).
+Every code is classified twice, in the registry. The reason appears only in the log record. The
+failure type appears in the log record by name, and in a response only as the opaque number in the
+code (rule 9).
 
 ## Failure type: the first segment of a code
 
 The type says where the failure arose. Its number is the `TT` in `TT-SSS-NNN`. Choose the type by
-the origin of the native error, not by who is at fault.
+the origin of the native error, not by who is at fault. When one situation can be detected in two
+places (a constraint in the database, a check in the service), register one code and give it the
+type of the check the service relies on, so that refactoring the check does not change the code.
 
 | `TT` | Type | Use it when | Native fields to capture |
 |---|---|---|---|
@@ -46,8 +49,8 @@ seem to fit, decide with these tests:
 - **Service or client.** If the same request would succeed once the service or its dependency
   recovers, it is `service`.
 
-Two codes that share a status but differ in reason get two codes. Examples 3 and 7 are both 403,
-and examples 4 and 11 are both 429.
+Two codes that share a status but differ in reason get two codes. Examples 3 and 7 both return 403,
+and the codes of examples 4 and 11 both end in 429.
 
 ## Dashboards
 
@@ -56,7 +59,7 @@ rise means something different in each, and the usual response differs.
 
 | Reason | A rise usually means | Who responds |
 |---|---|---|
-| `service` | This service or a dependency is failing. Split by `type` to find which. | Page the service owner. |
+| `service` | This service or a dependency is failing. Split by `type` to find which. | The service owner. |
 | `client` | A client release or integration changed, or a change here broke clients. | Check this service's last deploy, then contact the client owner. |
-| `business-rule` | A limit or rule is being hit more often. | Tell the product owner. |
+| `business-rule` | A limit or rule is being hit more often. | The product owner. |
 | `abuse` | Hostile traffic is arriving. | The security owner extends the blocking. |
