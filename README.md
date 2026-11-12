@@ -46,9 +46,10 @@ Deming.
 | [dependency-versions](skills/dependency-versions/SKILL.md) | Use the best-supported version of everything the project depends on. |
 | [writing-structure](skills/writing-structure/SKILL.md) | Order a document so its reader gets what they need first. |
 | [writing-style](skills/writing-style/SKILL.md) | Write sentences a reader understands on the first reading. |
+| [error-reporting](skills/error-reporting/SKILL.md) | Report every error with enough to fix it without reproducing it. |
 
 Planned: `linting`, `test-fidelity`, `glossary`, `harness`, `project-setup`, a skill for the *why*
-behind a goal (name not settled), plus ports of `tdd` and `error-taxonomy`.
+behind a goal (name not settled), plus a port of `tdd`.
 
 ## Installation
 
