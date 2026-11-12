@@ -1,7 +1,7 @@
 # 0044. `error-reporting`: classify every error by the fix
 
 - **Status:** Accepted
-- **Decided:** 2026-11-10 to 2026-11-11, by the owner in build-skills ("the reason reflects what
+- **Decided:** 2026-11-11, by the owner in build-skills ("the reason reflects what
   should be done to fix the issue"; "if it's in a situation where the client is unaware, then
   business rule would make sense") · **Recorded:** 2026-11-11 · Claude Sonnet 5.5
 - **Affects:** `error-reporting`

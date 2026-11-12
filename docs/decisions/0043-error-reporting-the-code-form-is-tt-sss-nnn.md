@@ -1,7 +1,7 @@
 # 0043. `error-reporting`: the code form is `TT-SSS-NNN`
 
 - **Status:** Accepted
-- **Decided:** 2026-11-10, by the owner in build-skills ("tightly aligned with the http status
+- **Decided:** 2026-11-11, by the owner in build-skills ("tightly aligned with the http status
   codes"; "one option would be to have the category be a number. 02-429-02 for example") ·
   **Recorded:** 2026-11-11 · Claude Sonnet 5.5
 - **Affects:** `error-reporting`
