@@ -31,11 +31,11 @@ DRAFT: `references/typescript.md` and the runbook template are not written yet.
    its HTTP response said no, and the status this service returns for every other failure. Done
    when `SSS` equals the status in the response, or the dependency's status in `native`.
 
-4. **Classify every code by failure type and by reason, in the registry only.** The reasons are
-   integration, service, business rule and abuse; judge by the policy that rejected the request,
-   not by suspected intent. Return 4xx for a business rule or abuse, and 5xx for integration or
-   service. Done when every log record carries both, and a registry test fails on a reason that
-   disagrees with its status class.
+4. **Classify every code by failure type and by reason, in the registry only.** The reason names
+   the fix: service (repair this service or a dependency), client (the client changes its request),
+   business rule (a valid request the business refuses) or abuse (block the traffic). Return 4xx
+   for all but service, and 5xx for service. Done when every log record carries both, and a
+   registry test fails on a reason that disagrees with its status class.
 
 5. **Write the runbook entry in the same change as the code.** The entry holds the symptom, what it
    means, the likely causes, the diagnosis steps with their commands, the fix, whether a retry is
@@ -51,9 +51,9 @@ DRAFT: `references/typescript.md` and the runbook template are not written yet.
    contain it.
 
 8. **Log each error once, through the helpers, at the boundary that handles it.** Rethrow with
-   `cause` at every other catch, and set the level from the reason: `error` for integration and
-   service, `warn` for abuse, `info` for a business rule. Use `references/typescript.md`. Done when
-   one failure produces one record, and every service names its fields the same way.
+   `cause` at every other catch, and set the level from the reason: `error` for service, `warn`
+   for abuse, `info` for client and business rule. Use `references/typescript.md`. Done when one
+   failure produces one record, and every service names its fields the same way.
 
 9. **Return only the code and the request ID to the caller.** Send them in the body as RFC 9457
    problem details (`type` `about:blank`, `status`, `code`, `requestId`) and the code in the

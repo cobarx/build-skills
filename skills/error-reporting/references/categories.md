@@ -1,7 +1,7 @@
 # Failure types and reasons
 
 Every code is classified twice, in the registry. The classification appears in the log record and
-never in a response (rule 4).
+never in a response (rule 9).
 
 ## Failure type: the first segment of a code
 
@@ -21,24 +21,39 @@ Add a type by taking the next number. Never reuse or renumber one.
 
 ## Reason: why the request failed
 
-The reason says who must act. A code has exactly one.
+The reason names the fix. To classify a code, ask what has to change for the request to succeed,
+and who changes it. A code has exactly one reason, and each reason has its own dashboard, so a
+change in one means one thing.
 
-| Reason | Meaning | Who acts | Status class | Log level |
+| Reason | Meaning | The fix | Status class | Log level |
 |---|---|---|---|---|
-| `integration` | A dependency failed or refused this service. | The service owner, with the dependency's owner. | 5xx | `error` |
-| `service` | This service or its infrastructure failed. | The service owner. | 5xx | `error` |
-| `business-rule` | A request the domain refuses, or that breaks the request's contract. | The caller. | 4xx | `info` |
-| `abuse` | A rejection that exists to protect the service. | The caller, or the security owner. | 4xx | `warn` |
+| `service` | This service, or a dependency it relies on, failed. | Repair the service or the dependency. | 5xx | `error` |
+| `client` | The client should not have made this request: a missing parameter, an expired token, a resource it may not read, too many requests. | The client changes its request. | 4xx | `info` |
+| `business-rule` | The request is valid, and a rule of the business refuses it: a stock limit, a plan limit, a duplicate. | The customer's situation or the rule changes. | 4xx | `info` |
+| `abuse` | Traffic that should be blocked: a known bad address, a scanner's user agent. | The operator blocks the traffic. | 4xx | `warn` |
 
-Judge the reason by the policy that rejected the request, not by suspected intent. A single 401 is
-a policy outcome, and a run of them is found by counting its code.
+Judge the reason by the fix the rejection calls for, not by suspected intent. Where two reasons
+seem to fit, decide with these tests:
 
-Two codes that share a status but differ in reason get two codes. Example 7 and example 11 are both
-429: the first is `abuse`, the second `integration`.
+- **Client or business rule.** If the request itself is wrong (its shape, credentials,
+  permission or rate), it is `client`. If the request is right and the business refuses it, it is
+  `business-rule`.
+- **Client or abuse.** A client over its rate limit is `client`. Traffic is `abuse` only when it
+  should be blocked outright.
+- **Service or client.** If the same request would succeed once the service or its dependency
+  recovers, it is `service`.
 
-## Graphing
+Two codes that share a status but differ in reason get two codes. Examples 3 and 7 are both 403,
+and examples 4 and 11 are both 429.
 
-Graph by `reason`, then by `code`. The roll-up "the service is failing" is `service` plus
-`integration`; the roll-up "the caller must change something" is `business-rule` plus `abuse`.
-A rise in a `business-rule` code right after a deploy can still be this service's bug, so watch the
-rate of each such code against its own baseline.
+## Dashboards
+
+Build one dashboard per reason, graph each by `code`, and watch each against its own baseline. A
+rise means something different in each, and the usual response differs.
+
+| Reason | A rise usually means | Who responds |
+|---|---|---|
+| `service` | This service or a dependency is failing. Split by `type` to find which. | Page the service owner. |
+| `client` | A client release or integration changed, or a change here broke clients. | Check this service's last deploy, then contact the client owner. |
+| `business-rule` | A limit or rule is being hit more often. | Tell the product owner. |
+| `abuse` | Hostile traffic is arriving. | The security owner extends the blocking. |

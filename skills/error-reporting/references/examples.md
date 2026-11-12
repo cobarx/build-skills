@@ -29,24 +29,24 @@ registry sets it, and a 401 carries `WWW-Authenticate` because RFC 9110 requires
 | `cause` | The chain of errors that were caught, outermost first; `null` when there is none. |
 | `stack` | The runtime's stack trace, shortened here. |
 
-The level follows the reason: `error` for service and integration, `warn` for abuse, `info` for a
+The level follows the reason: `error` for service, `warn` for abuse, `info` for client and
 business rule. A page on `error` then never fires for a caller's mistake.
 
 Every code has a runbook entry in `docs/runbook/<code>.md`.
 
 | # | Code | Failure | Type | Reason | Returned |
 |---|---|---|---|---|---|
-| 1 | `01-400-001` | A required parameter is missing | request | business rule | 400 |
-| 2 | `01-401-001` | The credentials are expired | request | business rule | 401 |
-| 3 | `01-403-001` | The caller asks for a resource that is not theirs | request | business rule | 403 |
-| 4 | `01-404-001` | The resource does not exist | request | business rule | 404 |
+| 1 | `01-400-001` | A required parameter is missing | request | client | 400 |
+| 2 | `01-401-001` | The credentials are expired | request | client | 401 |
+| 3 | `01-403-001` | The client asks for a resource that is not theirs | request | client | 403 |
+| 4 | `01-429-001` | The client exceeded its rate limit | request | client | 429 |
 | 5 | `04-409-001` | The idempotency key was already used | db | business rule | 409 |
 | 6 | `01-422-001` | The order asks for more stock than exists | request | business rule | 422 |
-| 7 | `01-429-001` | The caller exceeded its rate limit | request | abuse | 429 |
+| 7 | `01-403-002` | The request comes from a blocked address | request | abuse | 403 |
 | 8 | `06-500-001` | An unhandled error in this service's code | int | service | 500 |
-| 9 | `03-502-001` | The inventory service reset the connection | net | integration | 502 |
+| 9 | `03-502-001` | The inventory service reset the connection | net | service | 502 |
 | 10 | `04-503-001` | No database connection is free | db | service | 503 |
-| 11 | `02-429-001` | The payment provider timed out on an object lock | api | integration | 503 |
+| 11 | `02-429-001` | The payment provider timed out on an object lock | api | service | 503 |
 | 12 | `05-503-001` | The process ran out of file descriptors | sys | service | 503 |
 
 ---
@@ -71,7 +71,7 @@ Error-Code: 01-400-001
 {
   "time": "2026-11-11T09:02:14.331Z", "level": "info", "service": "orders-api",
   "requestId": "req_7b2e41",
-  "code": "01-400-001", "type": "request", "reason": "business-rule",
+  "code": "01-400-001", "type": "request", "reason": "client",
   "responseStatus": 400, "retryable": false,
   "message": "A required parameter is missing",
   "request": { "method": "POST", "route": "/orders" },
@@ -106,7 +106,7 @@ WWW-Authenticate: Bearer
 {
   "time": "2026-11-11T09:14:40.007Z", "level": "info", "service": "orders-api",
   "requestId": "req_0c9d52",
-  "code": "01-401-001", "type": "request", "reason": "business-rule",
+  "code": "01-401-001", "type": "request", "reason": "client",
   "responseStatus": 401, "retryable": false,
   "message": "The credentials are missing, expired or invalid",
   "request": { "method": "GET", "route": "/orders/{id}" },
@@ -117,8 +117,8 @@ WWW-Authenticate: Bearer
 }
 ```
 
-The log holds the token's ID and never the token. One 401 is a policy outcome; a run of them from
-one source is what the abuse graphs look for, by counting this code.
+The log holds the token's ID and never the token. One 401 is a client to fix; a run of them from
+one source is a lead for whoever owns the blocklist, found by counting this code per source.
 
 ## 3. The caller asks for a resource that is not theirs: `01-403-001`
 
@@ -140,7 +140,7 @@ Error-Code: 01-403-001
 {
   "time": "2026-11-11T09:21:03.882Z", "level": "info", "service": "orders-api",
   "requestId": "req_5a18f3",
-  "code": "01-403-001", "type": "request", "reason": "business-rule",
+  "code": "01-403-001", "type": "request", "reason": "client",
   "responseStatus": 403, "retryable": false,
   "message": "The caller may not access this resource",
   "request": { "method": "GET", "route": "/orders/{id}" },
@@ -157,36 +157,40 @@ Error-Code: 01-403-001
 RFC 9110 lets a service answer 404 instead, to hide that the resource exists. A service that does
 so registers the 404 code for this case and logs the same context.
 
-## 4. The resource does not exist: `01-404-001`
+## 4. The caller exceeded its rate limit: `01-429-001`
 
-The request is `GET /orders/777777`.
+The request is the 101st `GET /orders` in a minute from API key `key_ab12`, whose limit is 100.
 
 **The caller receives**
 
 ```http
-HTTP/1.1 404 Not Found
+HTTP/1.1 429 Too Many Requests
 Content-Type: application/problem+json
-Error-Code: 01-404-001
+Error-Code: 01-429-001
+Retry-After: 30
 
-{"type":"about:blank","status":404,"code":"01-404-001","requestId":"req_e4410b"}
+{"type":"about:blank","status":429,"code":"01-429-001","requestId":"req_3f6e9d"}
 ```
 
 **The server logs**
 
 ```json
 {
-  "time": "2026-11-11T09:25:51.120Z", "level": "info", "service": "orders-api",
-  "requestId": "req_e4410b",
-  "code": "01-404-001", "type": "request", "reason": "business-rule",
-  "responseStatus": 404, "retryable": false,
-  "message": "The resource does not exist",
-  "request": { "method": "GET", "route": "/orders/{id}" },
+  "time": "2026-11-11T09:41:55.402Z", "level": "info", "service": "orders-api",
+  "requestId": "req_3f6e9d",
+  "code": "01-429-001", "type": "request", "reason": "client",
+  "responseStatus": 429, "retryable": true,
+  "message": "The caller exceeded its request rate",
+  "request": { "method": "GET", "route": "/orders" },
   "native": null,
-  "context": { "resource": "order", "resourceId": "777777", "principal": "cust_204" },
+  "context": { "principal": "key_ab12", "limit": 100, "windowSeconds": 60, "observed": 101, "clientAddress": "203.0.113.9" },
   "cause": null,
-  "stack": ["getOrder (orders/get:27)"]
+  "stack": ["consume (ratelimit/bucket:29)", "limitRate (ratelimit/middleware:15)"]
 }
 ```
+
+This is the same HTTP status as example 11, with a different reason: here the client sent too
+many requests, there a dependency failed. The reason separates them, and only the log shows it.
 
 ## 5. The idempotency key was already used: `04-409-001`
 
@@ -258,40 +262,44 @@ Error-Code: 01-422-001
 }
 ```
 
-## 7. The caller exceeded its rate limit: `01-429-001`
+## 7. The request comes from a blocked address: `01-403-002`
 
-The request is the 101st `GET /orders` in a minute from API key `key_ab12`, whose limit is 100.
+The request is `GET /orders` from an address on the blocklist, with a scanner's user agent.
 
 **The caller receives**
 
 ```http
-HTTP/1.1 429 Too Many Requests
+HTTP/1.1 403 Forbidden
 Content-Type: application/problem+json
-Error-Code: 01-429-001
-Retry-After: 30
+Error-Code: 01-403-002
 
-{"type":"about:blank","status":429,"code":"01-429-001","requestId":"req_3f6e9d"}
+{"type":"about:blank","status":403,"code":"01-403-002","requestId":"req_2e95c0"}
 ```
 
 **The server logs**
 
 ```json
 {
-  "time": "2026-11-11T09:41:55.402Z", "level": "warn", "service": "orders-api",
-  "requestId": "req_3f6e9d",
-  "code": "01-429-001", "type": "request", "reason": "abuse",
-  "responseStatus": 429, "retryable": true,
-  "message": "The caller exceeded its request rate",
+  "time": "2026-11-11T09:44:19.640Z", "level": "warn", "service": "orders-api",
+  "requestId": "req_2e95c0",
+  "code": "01-403-002", "type": "request", "reason": "abuse",
+  "responseStatus": 403, "retryable": false,
+  "message": "The request comes from a blocked source",
   "request": { "method": "GET", "route": "/orders" },
   "native": null,
-  "context": { "principal": "key_ab12", "limit": 100, "windowSeconds": 60, "observed": 101, "clientAddress": "203.0.113.9" },
+  "context": {
+    "clientAddress": "203.0.113.77", "userAgent": "masscan/1.3", "matchedRule": "blocklist:address",
+    "listEntry": "203.0.113.64/26", "listUpdatedAt": "2026-11-10T00:00:00Z"
+  },
   "cause": null,
-  "stack": ["consume (ratelimit/bucket:29)", "limitRate (ratelimit/middleware:15)"]
+  "stack": ["checkBlocklist (security/blocklist:37)", "guard (security/middleware:12)"]
 }
 ```
 
-This is the same HTTP status as example 11, with the opposite fault: here the caller is at fault,
-there a dependency is. The reason separates them, and only the log shows it.
+This is the same status as example 3 with a different reason: example 3 is a client asking for
+something that is not theirs, and this is traffic that should be blocked. The code differs, so a
+blocked caller can tell the two apart. A service that wants to hide that returns one code for both
+and gives up the separate graph.
 
 ## 8. An unhandled error in this service's code: `06-500-001`
 
@@ -348,7 +356,7 @@ Error-Code: 03-502-001
 {
   "time": "2026-11-11T09:52:30.209Z", "level": "error", "service": "orders-api",
   "requestId": "req_6d03b8",
-  "code": "03-502-001", "type": "net", "reason": "integration",
+  "code": "03-502-001", "type": "net", "reason": "service",
   "responseStatus": 502, "retryable": true,
   "message": "The inventory service reset the connection",
   "request": { "method": "POST", "route": "/orders" },
@@ -429,7 +437,7 @@ Retry-After: 2
 {
   "time": "2026-11-11T10:03:41.918Z", "level": "error", "service": "orders-api",
   "requestId": "req_47fd12",
-  "code": "02-429-001", "type": "api", "reason": "integration",
+  "code": "02-429-001", "type": "api", "reason": "service",
   "responseStatus": 503, "retryable": true,
   "message": "The payment provider timed out on an object lock",
   "request": { "method": "POST", "route": "/orders/{id}/capture" },
