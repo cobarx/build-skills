@@ -69,16 +69,31 @@ Error-Code: 01-400-001
 
 ```json
 {
-  "time": "2026-11-11T09:02:14.331Z", "level": "info", "service": "orders-api",
+  "time": "2026-11-11T09:02:14.331Z",
+  "level": "info",
+  "service": "orders-api",
   "requestId": "req_7b2e41",
-  "code": "01-400-001", "type": "request", "reason": "client",
-  "responseStatus": 400, "retryable": false,
+  "code": "01-400-001",
+  "type": "request",
+  "reason": "client",
+  "responseStatus": 400,
+  "retryable": false,
   "message": "A required parameter is missing",
-  "request": { "method": "POST", "route": "/orders" },
+  "request": {
+    "method": "POST",
+    "route": "/orders"
+  },
   "native": null,
-  "context": { "parameter": "customerId", "location": "body", "received": ["items", "currency"] },
+  "context": {
+    "parameter": "customerId",
+    "location": "body",
+    "received": ["items", "currency"]
+  },
   "cause": null,
-  "stack": ["validateOrder (orders/validate:31)", "createOrder (orders/create:12)"]
+  "stack": [
+    "validateOrder (orders/validate:31)",
+    "createOrder (orders/create:12)"
+  ]
 }
 ```
 
@@ -104,14 +119,27 @@ WWW-Authenticate: Bearer
 
 ```json
 {
-  "time": "2026-11-11T09:14:40.007Z", "level": "info", "service": "orders-api",
+  "time": "2026-11-11T09:14:40.007Z",
+  "level": "info",
+  "service": "orders-api",
   "requestId": "req_0c9d52",
-  "code": "01-401-001", "type": "request", "reason": "client",
-  "responseStatus": 401, "retryable": false,
+  "code": "01-401-001",
+  "type": "request",
+  "reason": "client",
+  "responseStatus": 401,
+  "retryable": false,
   "message": "The credentials are missing, expired or invalid",
-  "request": { "method": "GET", "route": "/orders/{id}" },
+  "request": {
+    "method": "GET",
+    "route": "/orders/{id}"
+  },
   "native": null,
-  "context": { "scheme": "Bearer", "failure": "expired", "expiredAt": "2026-11-11T08:30:00Z", "tokenId": "tok_91c2" },
+  "context": {
+    "scheme": "Bearer",
+    "failure": "expired",
+    "expiredAt": "2026-11-11T08:30:00Z",
+    "tokenId": "tok_91c2"
+  },
   "cause": null,
   "stack": ["verifyToken (auth/verify:58)", "authenticate (auth/middleware:20)"]
 }
@@ -138,16 +166,28 @@ Error-Code: 01-403-001
 
 ```json
 {
-  "time": "2026-11-11T09:21:03.882Z", "level": "info", "service": "orders-api",
+  "time": "2026-11-11T09:21:03.882Z",
+  "level": "info",
+  "service": "orders-api",
   "requestId": "req_5a18f3",
-  "code": "01-403-001", "type": "request", "reason": "client",
-  "responseStatus": 403, "retryable": false,
+  "code": "01-403-001",
+  "type": "request",
+  "reason": "client",
+  "responseStatus": 403,
+  "retryable": false,
   "message": "The caller may not access this resource",
-  "request": { "method": "GET", "route": "/orders/{id}" },
+  "request": {
+    "method": "GET",
+    "route": "/orders/{id}"
+  },
   "native": null,
   "context": {
-    "resource": "order", "resourceId": "9001", "principal": "cust_204",
-    "ownerId": "cust_377", "requiredScope": "orders:read:any", "grantedScopes": ["orders:read:own"]
+    "resource": "order",
+    "resourceId": "9001",
+    "principal": "cust_204",
+    "ownerId": "cust_377",
+    "requiredScope": "orders:read:any",
+    "grantedScopes": ["orders:read:own"]
   },
   "cause": null,
   "stack": ["authorizeRead (orders/policy:44)", "getOrder (orders/get:19)"]
@@ -176,16 +216,33 @@ Retry-After: 30
 
 ```json
 {
-  "time": "2026-11-11T09:41:55.402Z", "level": "info", "service": "orders-api",
+  "time": "2026-11-11T09:41:55.402Z",
+  "level": "info",
+  "service": "orders-api",
   "requestId": "req_3f6e9d",
-  "code": "01-429-001", "type": "request", "reason": "client",
-  "responseStatus": 429, "retryable": true,
+  "code": "01-429-001",
+  "type": "request",
+  "reason": "client",
+  "responseStatus": 429,
+  "retryable": true,
   "message": "The caller exceeded its request rate",
-  "request": { "method": "GET", "route": "/orders" },
+  "request": {
+    "method": "GET",
+    "route": "/orders"
+  },
   "native": null,
-  "context": { "principal": "key_ab12", "limit": 100, "windowSeconds": 60, "observed": 101, "clientAddress": "203.0.113.9" },
+  "context": {
+    "principal": "key_ab12",
+    "limit": 100,
+    "windowSeconds": 60,
+    "observed": 101,
+    "clientAddress": "203.0.113.9"
+  },
   "cause": null,
-  "stack": ["consume (ratelimit/bucket:29)", "limitRate (ratelimit/middleware:15)"]
+  "stack": [
+    "consume (ratelimit/bucket:29)",
+    "limitRate (ratelimit/middleware:15)"
+  ]
 }
 ```
 
@@ -212,18 +269,37 @@ Error-Code: 04-409-001
 
 ```json
 {
-  "time": "2026-11-11T09:31:12.664Z", "level": "info", "service": "orders-api",
+  "time": "2026-11-11T09:31:12.664Z",
+  "level": "info",
+  "service": "orders-api",
   "requestId": "req_b7730a",
-  "code": "04-409-001", "type": "db", "reason": "business-rule",
-  "responseStatus": 409, "retryable": false,
+  "code": "04-409-001",
+  "type": "db",
+  "reason": "business-rule",
+  "responseStatus": 409,
+  "retryable": false,
   "message": "An order with this idempotency key already exists",
-  "request": { "method": "POST", "route": "/orders" },
-  "native": {
-    "sqlstate": "23505", "condition": "unique_violation", "severity": "ERROR",
-    "table": "orders", "constraint": "orders_idempotency_key_key"
+  "request": {
+    "method": "POST",
+    "route": "/orders"
   },
-  "context": { "idempotencyKey": "order_4412_checkout", "existingOrderId": "4412" },
-  "cause": [{ "name": "DatabaseError", "message": "duplicate key value violates unique constraint \"orders_idempotency_key_key\"" }],
+  "native": {
+    "sqlstate": "23505",
+    "condition": "unique_violation",
+    "severity": "ERROR",
+    "table": "orders",
+    "constraint": "orders_idempotency_key_key"
+  },
+  "context": {
+    "idempotencyKey": "order_4412_checkout",
+    "existingOrderId": "4412"
+  },
+  "cause": [
+    {
+      "name": "DatabaseError",
+      "message": "duplicate key value violates unique constraint \"orders_idempotency_key_key\""
+    }
+  ],
   "stack": ["insertOrder (orders/repo:73)", "createOrder (orders/create:40)"]
 }
 ```
@@ -249,14 +325,27 @@ Error-Code: 01-422-001
 
 ```json
 {
-  "time": "2026-11-11T09:36:29.015Z", "level": "info", "service": "orders-api",
+  "time": "2026-11-11T09:36:29.015Z",
+  "level": "info",
+  "service": "orders-api",
   "requestId": "req_91ac07",
-  "code": "01-422-001", "type": "request", "reason": "business-rule",
-  "responseStatus": 422, "retryable": false,
+  "code": "01-422-001",
+  "type": "request",
+  "reason": "business-rule",
+  "responseStatus": 422,
+  "retryable": false,
   "message": "The order asks for more stock than is available",
-  "request": { "method": "POST", "route": "/orders" },
+  "request": {
+    "method": "POST",
+    "route": "/orders"
+  },
   "native": null,
-  "context": { "sku": "SKU-88121", "requested": 5, "available": 2, "warehouse": "ams-1" },
+  "context": {
+    "sku": "SKU-88121",
+    "requested": 5,
+    "available": 2,
+    "warehouse": "ams-1"
+  },
   "cause": null,
   "stack": ["reserveStock (orders/stock:61)", "createOrder (orders/create:33)"]
 }
@@ -280,19 +369,33 @@ Error-Code: 01-403-002
 
 ```json
 {
-  "time": "2026-11-11T09:44:19.640Z", "level": "warn", "service": "orders-api",
+  "time": "2026-11-11T09:44:19.640Z",
+  "level": "warn",
+  "service": "orders-api",
   "requestId": "req_2e95c0",
-  "code": "01-403-002", "type": "request", "reason": "abuse",
-  "responseStatus": 403, "retryable": false,
+  "code": "01-403-002",
+  "type": "request",
+  "reason": "abuse",
+  "responseStatus": 403,
+  "retryable": false,
   "message": "The request comes from a blocked source",
-  "request": { "method": "GET", "route": "/orders" },
+  "request": {
+    "method": "GET",
+    "route": "/orders"
+  },
   "native": null,
   "context": {
-    "clientAddress": "203.0.113.77", "userAgent": "masscan/1.3", "matchedRule": "blocklist:address",
-    "listEntry": "203.0.113.64/26", "listUpdatedAt": "2026-11-10T00:00:00Z"
+    "clientAddress": "203.0.113.77",
+    "userAgent": "masscan/1.3",
+    "matchedRule": "blocklist:address",
+    "listEntry": "203.0.113.64/26",
+    "listUpdatedAt": "2026-11-10T00:00:00Z"
   },
   "cause": null,
-  "stack": ["checkBlocklist (security/blocklist:37)", "guard (security/middleware:12)"]
+  "stack": [
+    "checkBlocklist (security/blocklist:37)",
+    "guard (security/middleware:12)"
+  ]
 }
 ```
 
@@ -319,16 +422,37 @@ Error-Code: 06-500-001
 
 ```json
 {
-  "time": "2026-11-11T09:47:08.771Z", "level": "error", "service": "orders-api",
+  "time": "2026-11-11T09:47:08.771Z",
+  "level": "error",
+  "service": "orders-api",
   "requestId": "req_c28a54",
-  "code": "06-500-001", "type": "int", "reason": "service",
-  "responseStatus": 500, "retryable": false,
+  "code": "06-500-001",
+  "type": "int",
+  "reason": "service",
+  "responseStatus": 500,
+  "retryable": false,
   "message": "An unhandled error reached the boundary",
-  "request": { "method": "POST", "route": "/orders" },
+  "request": {
+    "method": "POST",
+    "route": "/orders"
+  },
   "native": null,
-  "context": { "operation": "orders.create", "orderDraftId": "draft_5521" },
-  "cause": [{ "name": "NullReferenceError", "message": "order.pricing is null" }],
-  "stack": ["totalPrice (orders/pricing:88)", "priceOrder (orders/pricing:41)", "createOrder (orders/create:36)", "route (http/router:102)"]
+  "context": {
+    "operation": "orders.create",
+    "orderDraftId": "draft_5521"
+  },
+  "cause": [
+    {
+      "name": "NullReferenceError",
+      "message": "order.pricing is null"
+    }
+  ],
+  "stack": [
+    "totalPrice (orders/pricing:88)",
+    "priceOrder (orders/pricing:41)",
+    "createOrder (orders/create:36)",
+    "route (http/router:102)"
+  ]
 }
 ```
 
@@ -354,20 +478,43 @@ Error-Code: 03-502-001
 
 ```json
 {
-  "time": "2026-11-11T09:52:30.209Z", "level": "error", "service": "orders-api",
+  "time": "2026-11-11T09:52:30.209Z",
+  "level": "error",
+  "service": "orders-api",
   "requestId": "req_6d03b8",
-  "code": "03-502-001", "type": "net", "reason": "service",
-  "responseStatus": 502, "retryable": true,
+  "code": "03-502-001",
+  "type": "net",
+  "reason": "service",
+  "responseStatus": 502,
+  "retryable": true,
   "message": "The inventory service reset the connection",
-  "request": { "method": "POST", "route": "/orders" },
-  "native": { "code": "ECONNRESET", "errno": -104, "syscall": "read" },
+  "request": {
+    "method": "POST",
+    "route": "/orders"
+  },
+  "native": {
+    "code": "ECONNRESET",
+    "errno": -104,
+    "syscall": "read"
+  },
   "context": {
-    "dependency": "inventory", "method": "POST", "url": "http://inventory.internal/reserve",
-    "reusedSocket": true, "attempt": 1, "idleSocketTimeoutMs": 15000, "idempotencyKey": "order_4412_reserve"
+    "dependency": "inventory",
+    "method": "POST",
+    "url": "http://inventory.internal/reserve",
+    "reusedSocket": true,
+    "attempt": 1,
+    "idleSocketTimeoutMs": 15000,
+    "idempotencyKey": "order_4412_reserve"
   },
   "cause": [
-    { "name": "FetchError", "message": "request to http://inventory.internal/reserve failed, reason: read ECONNRESET" },
-    { "name": "SystemError", "message": "read ECONNRESET" }
+    {
+      "name": "FetchError",
+      "message": "request to http://inventory.internal/reserve failed, reason: read ECONNRESET"
+    },
+    {
+      "name": "SystemError",
+      "message": "read ECONNRESET"
+    }
   ],
   "stack": ["reserve (inventory/client:57)", "createOrder (orders/create:38)"]
 }
@@ -396,19 +543,47 @@ Retry-After: 2
 
 ```json
 {
-  "time": "2026-11-11T09:58:14.540Z", "level": "error", "service": "orders-api",
+  "time": "2026-11-11T09:58:14.540Z",
+  "level": "error",
+  "service": "orders-api",
   "requestId": "req_a19e60",
-  "code": "04-503-001", "type": "db", "reason": "service",
-  "responseStatus": 503, "retryable": true,
+  "code": "04-503-001",
+  "type": "db",
+  "reason": "service",
+  "responseStatus": 503,
+  "retryable": true,
   "message": "No database connection is available",
-  "request": { "method": "POST", "route": "/orders" },
+  "request": {
+    "method": "POST",
+    "route": "/orders"
+  },
   "native": {
-    "sqlstate": "53300", "condition": "too_many_connections", "severity": "FATAL",
+    "sqlstate": "53300",
+    "condition": "too_many_connections",
+    "severity": "FATAL",
     "message": "remaining connection slots are reserved for non-replication superuser connections"
   },
-  "context": { "operation": "orders.insert", "pool": { "max": 20, "total": 20, "idle": 0, "waiting": 37 }, "instance": "orders-api-7d9f" },
-  "cause": [{ "name": "DatabaseError", "message": "remaining connection slots are reserved for non-replication superuser connections" }],
-  "stack": ["acquire (db/pool:112)", "insertOrder (orders/repo:70)", "createOrder (orders/create:40)"]
+  "context": {
+    "operation": "orders.insert",
+    "pool": {
+      "max": 20,
+      "total": 20,
+      "idle": 0,
+      "waiting": 37
+    },
+    "instance": "orders-api-7d9f"
+  },
+  "cause": [
+    {
+      "name": "DatabaseError",
+      "message": "remaining connection slots are reserved for non-replication superuser connections"
+    }
+  ],
+  "stack": [
+    "acquire (db/pool:112)",
+    "insertOrder (orders/repo:70)",
+    "createOrder (orders/create:40)"
+  ]
 }
 ```
 
@@ -435,22 +610,46 @@ Retry-After: 2
 
 ```json
 {
-  "time": "2026-11-11T10:03:41.918Z", "level": "error", "service": "orders-api",
+  "time": "2026-11-11T10:03:41.918Z",
+  "level": "error",
+  "service": "orders-api",
   "requestId": "req_47fd12",
-  "code": "02-429-001", "type": "api", "reason": "service",
-  "responseStatus": 503, "retryable": true,
+  "code": "02-429-001",
+  "type": "api",
+  "reason": "service",
+  "responseStatus": 503,
+  "retryable": true,
   "message": "The payment provider timed out on an object lock",
-  "request": { "method": "POST", "route": "/orders/{id}/capture" },
+  "request": {
+    "method": "POST",
+    "route": "/orders/{id}/capture"
+  },
   "native": {
-    "httpStatus": 429, "provider": { "type": "invalid_request_error", "code": "lock_timeout" },
+    "httpStatus": 429,
+    "provider": {
+      "type": "invalid_request_error",
+      "code": "lock_timeout"
+    },
     "rateLimitedReasonHeader": null
   },
   "context": {
-    "dependency": "stripe", "operation": "payment_intents.update", "providerObjectId": "pi_3Q1x",
-    "attempt": 1, "maxRetries": 0, "idempotencyKey": "order_4412_capture"
+    "dependency": "stripe",
+    "operation": "payment_intents.update",
+    "providerObjectId": "pi_3Q1x",
+    "attempt": 1,
+    "maxRetries": 0,
+    "idempotencyKey": "order_4412_capture"
   },
-  "cause": [{ "name": "ProviderApiError", "message": "This object cannot be accessed right now because another API request or Stripe process is currently accessing it." }],
-  "stack": ["updatePaymentIntent (payments/client:90)", "capture (orders/capture:25)"]
+  "cause": [
+    {
+      "name": "ProviderApiError",
+      "message": "This object cannot be accessed right now because another API request or Stripe process is currently accessing it."
+    }
+  ],
+  "stack": [
+    "updatePaymentIntent (payments/client:90)",
+    "capture (orders/capture:25)"
+  ]
 }
 ```
 
@@ -479,16 +678,42 @@ Retry-After: 5
 
 ```json
 {
-  "time": "2026-11-11T10:09:27.356Z", "level": "error", "service": "orders-api",
+  "time": "2026-11-11T10:09:27.356Z",
+  "level": "error",
+  "service": "orders-api",
   "requestId": "req_d80b36",
-  "code": "05-503-001", "type": "sys", "reason": "service",
-  "responseStatus": 503, "retryable": true,
+  "code": "05-503-001",
+  "type": "sys",
+  "reason": "service",
+  "responseStatus": 503,
+  "retryable": true,
   "message": "The process has no free file descriptors",
-  "request": { "method": "POST", "route": "/orders" },
-  "native": { "code": "EMFILE", "errno": -24, "syscall": "open", "path": "/var/data/receipts/4412.pdf" },
-  "context": { "operation": "receipts.write", "fdSoftLimit": 1024, "fdOpen": 1021, "writesInFlight": 380 },
-  "cause": [{ "name": "SystemError", "message": "EMFILE: too many open files, open '/var/data/receipts/4412.pdf'" }],
-  "stack": ["writeReceipt (receipts/store:34)", "createOrder (orders/create:44)"]
+  "request": {
+    "method": "POST",
+    "route": "/orders"
+  },
+  "native": {
+    "code": "EMFILE",
+    "errno": -24,
+    "syscall": "open",
+    "path": "/var/data/receipts/4412.pdf"
+  },
+  "context": {
+    "operation": "receipts.write",
+    "fdSoftLimit": 1024,
+    "fdOpen": 1021,
+    "writesInFlight": 380
+  },
+  "cause": [
+    {
+      "name": "SystemError",
+      "message": "EMFILE: too many open files, open '/var/data/receipts/4412.pdf'"
+    }
+  ],
+  "stack": [
+    "writeReceipt (receipts/store:34)",
+    "createOrder (orders/create:44)"
+  ]
 }
 ```
 
