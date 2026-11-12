@@ -238,8 +238,10 @@ order, but with different items. A request that repeats the first one exactly is
 failure: the service returns the saved order and logs no error. Here the database refuses the
 insert, and the service finds that the stored request differs from this one. The IETF draft for the
 `Idempotency-Key` header asks for a 422 in this case, and for a 409 while the first request is
-still being processed. The reason is `client`, because the fix is a new key. The type is `db`
-because the native code comes from the database.
+still being processed. The reason is `client`, because the fix is a new key. The service could
+also catch this with its own check, so the situation is detectable in two places; `categories.md`
+says to register one code with the type of the check the service relies on. Here that is the
+database's unique constraint, so the type is `db`.
 
 **The caller receives**
 

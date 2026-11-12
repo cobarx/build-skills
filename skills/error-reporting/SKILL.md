@@ -29,10 +29,10 @@ what the server logs.
    its HTTP response said no, and the status this service returns for every other failure. Done
    when `SSS` equals the status in the response, or the dependency's status in `native`.
 
-4. **Classify every code by failure type and by reason, in the registry only.** Choose the reason
-   by the fix the failure calls for (`references/categories.md`): service, client, business rule
-   or abuse. Return 5xx for service and 4xx for the rest. Done when every log record carries both,
-   and a registry test fails on a reason whose `responseStatus` is in the other class.
+4. **Classify every code by failure type and by reason, and record both in the registry.** Choose
+   the reason by the fix the failure calls for (`references/categories.md`): service, client,
+   business-rule or abuse. Return 5xx for service and 4xx for the rest. Done when every log record
+   carries both, and a registry test fails on a reason whose `responseStatus` is in the other class.
 
 5. **Write the runbook entry in the same change as the code.** Keep one file per code, named by the
    code (`runbook/<code>.md`). The entry holds the symptom, what it means, the likely causes, the

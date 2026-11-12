@@ -11,13 +11,22 @@
 IETF RFCs, the OWASP cheat sheet, OpenTelemetry semantic conventions, the Node.js and PostgreSQL
 docs, and the Google, Microsoft, Zalando and JSON:API style guides.
 
+## Options
+
+- **Adopt each standard whole.** Rejected: RFC 9457 and RFC 6585 both ask for human-readable
+  detail in a response, which 0042 rules out.
+- **Invent a format.** Rejected: `adopting-standards` rule 1; the standards below cover every
+  field but the one 0042 removes.
+- **Adopt each in part and name what is left** (chosen).
+
 ## Decision
 
 - **RFC 9457** is adopted in part:[^rfc9457] media type `application/problem+json`, `type` set to
   `about:blank`, `status`, and two extension members, `code` and `requestId`. `title`, `detail` and
-  `instance` are left out (0042). `code`, not `type`, is the identifier.
-- **RFC 6585** says a 429 response SHOULD include details;[^rfc6585] this is deliberately not
-  followed.
+  `instance` are left out (0042). This breaks a SHOULD: for `about:blank`, `title` SHOULD be the
+  HTTP status phrase.[^rfc9457s421] `code`, not `type`, is the identifier.
+- **RFC 6585** says a 429 response SHOULD include details;[^rfc6585] this SHOULD is deliberately
+  not followed.
 - **`Error-Code` header:** the IANA field registry has no such field;[^iana] the name has no `X-`
   prefix, per RFC 6648.[^rfc6648]
 - **`Error.cause`** holds the native error (rule 1).[^cause] Native fields follow Node.js[^node] and
@@ -32,6 +41,9 @@ docs, and the Google, Microsoft, Zalando and JSON:API style guides.
 - The Idempotency-Key draft may change before publication; the statuses are a line in the registry.
 
 [^rfc9457]: IETF, *RFC 9457*, <https://www.rfc-editor.org/rfc/rfc9457.html>.
+[^rfc9457s421]: RFC 9457 s4.2.1, <https://www.rfc-editor.org/rfc/rfc9457.html#section-4.2.1>:
+    "When "about:blank" is used, the title SHOULD be the same as the recommended HTTP status phrase
+    for that code".
 [^rfc6585]: IETF, *RFC 6585*, s4, <https://www.rfc-editor.org/rfc/rfc6585.html#section-4>.
 [^iana]: IANA, *Hypertext Transfer Protocol (HTTP) Field Name Registry*,
     <https://www.iana.org/assignments/http-fields/http-fields.xhtml>.
