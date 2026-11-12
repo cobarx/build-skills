@@ -11,8 +11,10 @@ Report every error with enough to fix it without reproducing it.
 
 An error that arrives as a message string sends the next person to the code to guess. A code, the
 original failure, and the context at the moment it happened let them look the error up and act.
+`references/examples.md` shows twelve failures of an API request, with what the caller receives and
+what the server logs.
 
-DRAFT: step one of the skill. Rules 1 to 9 are for review; `references/` is not written yet.
+DRAFT: `references/typescript.md` and the runbook template are not written yet.
 
 ## Rules
 
@@ -20,17 +22,20 @@ DRAFT: step one of the skill. Rules 1 to 9 are for review; `references/` is not 
    (`ECONNRESET`, SQLSTATE `53300`, the HTTP status and body) unchanged into `native`. Done when
    the code the OS, driver or API produced appears in the record exactly as it produced it.
 
-2. **Give every error one code, and never reuse a code.** Define each code once, in one registry.
-   Done when a search of the repository for the code finds one definition; a retired code stays in
-   the registry marked retired.
+2. **Give every error one code `TT-SSS-NNN`, and never reuse a code.** `TT` numbers the failure
+   type (`references/categories.md`), `SSS` is an HTTP status, and `NNN` counts from 001 within
+   `TT-SSS`. Define each code once, in one registry. Done when a search of the repository for the
+   code finds one definition; a retired code stays in the registry marked retired.
 
-3. **Put every code in one category, and make the category its prefix.** Choose from the list in
-   `references/categories.md` by where the failure happened, not by who is to blame. Add a category
-   there before using a new one. Done when each code's prefix names its category.
+3. **Set `SSS` to the status of the party that failed.** Use the status a dependency returned when
+   its HTTP response said no, and the status this service returns for every other failure. Done
+   when `SSS` equals the status in the response, or the dependency's status in `native`.
 
-4. **Write an API code as `API-<status>-<nnn>`, with the status the failing API returned.** Number
-   from 001 within each status, and give two causes that share a status two codes. Done when the
-   status in the code equals the status in the response it describes.
+4. **Classify every code by failure type and by reason, in the registry only.** The reasons are
+   integration, service, business rule and abuse; judge by the policy that rejected the request,
+   not by suspected intent. Return 4xx for a business rule or abuse, and 5xx for integration or
+   service. Done when every log record carries both, and a registry test fails on a reason that
+   disagrees with its status class.
 
 5. **Write the runbook entry in the same change as the code.** The entry holds the symptom, what it
    means, the likely causes, the diagnosis steps with their commands, the fix, whether a retry is
@@ -46,13 +51,14 @@ DRAFT: step one of the skill. Rules 1 to 9 are for review; `references/` is not 
    contain it.
 
 8. **Log each error once, through the helpers, at the boundary that handles it.** Rethrow with
-   `cause` at every other catch. Use the helpers in `references/typescript.md`. Done when one
-   failure produces one record, and every service names its fields the same way.
+   `cause` at every other catch, and set the level from the reason: `error` for integration and
+   service, `warn` for abuse, `info` for a business rule. Use `references/typescript.md`. Done when
+   one failure produces one record, and every service names its fields the same way.
 
 9. **Return only the code and the request ID to the caller.** Send them in the body as RFC 9457
    problem details (`type` `about:blank`, `status`, `code`, `requestId`) and the code in the
-   `Error-Code` header. Leave out any message, title, detail, runbook URL and native error. Done
-   when a forced failure returns no text describing what failed, and its log record is found by
+   `Error-Code` header. Leave out any message, title, detail, reason, failure type, runbook URL and
+   native error. Done when a forced failure returns none of them, and its log record is found by
    the `requestId` alone.
 
 ## Not here
